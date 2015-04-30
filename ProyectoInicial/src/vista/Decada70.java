@@ -1,16 +1,17 @@
 package vista;
 
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import java.awt.Font;
 
 public class Decada70 extends JPanel {
 	
@@ -65,13 +66,34 @@ public class Decada70 extends JPanel {
 		button10.setBounds(335, 432, 58, 23);
 		add(button10);
 		
-
+		//PRUEBA//
+		JScrollPane jscroll = new JScrollPane();
+		jscroll.setBounds(216, 29, 227, 276);
+		this.add(jscroll);
+		
+		JLabel hola = new JLabel();
+		hola.setFont(new Font("BatangChe", Font.PLAIN, 15));
+		hola.setForeground(Color.WHITE);
+		jscroll.setViewportView(hola);
+		hola.setText("Hola");
+		//PRUEBA//
+		
 		//IMAGEN DE FONDO
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
 		JLabel imgFondo = new JLabel("/Fondo.png");
+		imgFondo.setForeground(Color.WHITE);
 		imgFondo.setBounds(0, 0, 1355, 600);
 		imgFondo.setIcon(new ImageIcon(iFondo));
 		this.add(imgFondo);
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 
