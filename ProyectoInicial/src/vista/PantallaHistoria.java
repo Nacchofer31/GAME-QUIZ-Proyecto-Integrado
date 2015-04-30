@@ -85,10 +85,12 @@ public class PantallaHistoria extends JPanel {
 		lblMarco80.setIcon(new ImageIcon(marco80));
 		this.add(lblMarco80);
 		
-		JLabel lblMarco90 = new JLabel("/Marco.png");
+		Image marco90 = new ImageIcon(this.getClass().getResource("/Marco90.png")).getImage();
+		JLabel lblMarco90 = new JLabel("/Marco90.png");
 		lblMarco90.setBounds(575,200,200,350);
-		lblMarco90.setIcon(new ImageIcon(marcoDecadas));
+		lblMarco90.setIcon(new ImageIcon(marco90));
 		this.add(lblMarco90);
+		
 		
 		JLabel lblMarco00 = new JLabel("/Marco.png");
 		lblMarco00.setBounds(825,200,200,350);
