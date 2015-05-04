@@ -8,13 +8,26 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 
 import javax.swing.JSeparator;
+import java.awt.event.ActionListener;
 
 public class PantallaInicio extends JPanel {
 
+	private String mensajes[]={"En el arcade original de Donkey Kong  Mario se llama JumpMan y es un carpintero, no un fontanero.",
+								"El que los enemigos acelerasen en el “Space Invaders” original de 1971, fue un bug, pero se mantuvo.",
+								"A partir del nivel 18, los fantasmas del “Pacman” dejan de volverse azules y ya no se pueden comer.",
+								"Halo 2 es el juego de Xbox mas vendido,vendió 8 millones de copias,le sigue de cerca Halo I,con 5 millones.",
+								"La protagonista de Tomb Raider, Lara Croft, originalmente se iba a llamar Laura Cruz.",
+								"El Polybius es el juego arcade más misterioso de todos los tiempos y no se conserva ni una sola copia del mismo.",
+								"En el nivel de la feria agrícola del Bioshock I puedes encontrar una clara referencia a Pacman.",
+								"La potencia de la ps3 permite utilizarla para investigar enfermedades.",
+								"La Xbox originalmente se iba a llamar DirextX-box.",
+								"Mega Man es azul gracias a que la primera aparición fue en NES, que tennia una limitada seleccion de colores."};
 	public PantallaInicio() {
 		setLayout(null);
 		setBounds(0, 0, 1355, 600);
@@ -70,23 +83,31 @@ public class PantallaInicio extends JPanel {
 		lblTipsTricks.setBounds(566, 404, 206, 49);
 		add(lblTipsTricks);
 		
+		
+		
+		JLabel lblMensaje = new JLabel(mensajes[0]);
+		lblMensaje.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMensaje.setForeground(Color.WHITE);
+		lblMensaje.setFont(new Font("BatangChe",  Font.ITALIC, 17));
+		lblMensaje.setBounds(92, 454, 1079, 77);
+		add(lblMensaje);
+
 		JButton Arrow = new JButton("");
 		Image imgArrow = new ImageIcon(this.getClass().getResource("/arrow.png")).getImage();
-		
 		Arrow.setIcon(new ImageIcon(imgArrow));
 		Arrow.setOpaque(false);
 		Arrow.setContentAreaFilled(false);
 		Arrow.setBorderPainted(false);
 		Arrow.setBounds(1153, 454, 91, 87);
 		add(Arrow);
+		Arrow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int numAleat=(int) (Math.random()*mensajes.length);
+				lblMensaje.setText(mensajes[numAleat]);
+			}
+		});
 		
-		JLabel lblMensaje = new JLabel("\"En el arcade original de Donkey Kong  Mario se llama JumpMan y es un carpintero, no un fontanero.\"");
-		lblMensaje.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblMensaje.setForeground(Color.WHITE);
-		lblMensaje.setFont(new Font("BatangChe", Font.BOLD | Font.ITALIC, 18));
-		lblMensaje.setBounds(107, 454, 1072, 77);
-		add(lblMensaje);
-
+		
 
 		JSeparator separator = new JSeparator();
 		separator.setBounds(188, 351, 1019, 11);

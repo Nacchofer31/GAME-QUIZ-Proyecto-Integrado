@@ -10,8 +10,7 @@ import vista.PantallaPrincipal;
 import com.thehowtotutorial.splashscreen.JSplash;
 
 public class Principal {
-
-
+	
 	public static void main(String[] args) {
 		//pantallaCarga();
 		//Genera la pantalla del proyecto

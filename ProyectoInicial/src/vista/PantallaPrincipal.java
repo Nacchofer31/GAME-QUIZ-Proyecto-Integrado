@@ -11,11 +11,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 import java.awt.Font;
 import java.awt.SystemColor;
 
 public class PantallaPrincipal extends JFrame {
-
+	
 	private JPanel contentPane;
 	private static JPanel panelPantallas = new JPanel();
 	PantallaInicio pI= new PantallaInicio();
