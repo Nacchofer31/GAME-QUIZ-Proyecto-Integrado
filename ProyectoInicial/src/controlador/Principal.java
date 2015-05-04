@@ -2,6 +2,8 @@ package controlador;
 
 import java.awt.Color;
 
+import javax.swing.text.StyledEditorKit.FontSizeAction;
+
 import modelo.ApiJSONVideojuegos;
 import vista.PantallaPrincipal;
 
@@ -26,15 +28,15 @@ public class Principal {
 			//Crea una pantalla de cargando.
 			JSplash splash = new JSplash (Principal.class.getResource("/Welcome.png"),true,true,false,"GameQuiz-preAlpha 0.1",null,Color.RED,Color.BLACK);
 			splash.splashOn();
-			splash.setProgress(20,"Iniciando...  (20%)");
+			splash.setProgress(20,"Sacando de la caja...  (20%)");
 			Thread.sleep(3000);
-			splash.setProgress(40,"Ejecutando librerías...  (40%)");
+			splash.setProgress(40,"Enchufando a la corriente...  (40%)");
 			Thread.sleep(2000);
-			splash.setProgress(60,"Ejecutando interfaces...  (60%)");
+			splash.setProgress(60,"Conectando los mandos...  (60%)");
 			Thread.sleep(1000);
-			splash.setProgress(80,"Cargando base de datos...  (80%)");
+			splash.setProgress(80,"Soplando el cartucho...  (80%)");
 			Thread.sleep(2000);
-			splash.setProgress(100,"Iniciando aplicación  (99%)");
+			splash.setProgress(100,"Encendiendo la consola  (99%)");
 			Thread.sleep(1000);
 			splash.splashOff();
 		} catch (Exception e) {
