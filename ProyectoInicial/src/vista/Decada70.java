@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
-import java.awt.Font;
+import javax.swing.JTextPane;
 
 public class Decada70 extends JPanel {
 	
@@ -68,14 +69,28 @@ public class Decada70 extends JPanel {
 		
 		//PRUEBA//
 		JScrollPane jscroll = new JScrollPane();
+		jscroll.setEnabled(false);
 		jscroll.setBounds(475, 30, 775, 550);
+		jscroll.setBorder(null);
 		this.add(jscroll);
-		//PRUEBA//
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setEnabled(false);
+		textPane.setFont(new Font("BatangChe", Font.PLAIN, 16));
+		textPane.setForeground(Color.WHITE);
+		textPane.setOpaque(false);
+		textPane.setText("Aqui se incorporara \n"
+				+ "el texto de la decada de los 70");
+		jscroll.setViewportView(textPane);
+		
+		jscroll.setOpaque(false);
+		jscroll.getViewport().setOpaque(false);
+		
 		
 		//IMAGEN DE FONDO
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
 		JLabel imgFondo = new JLabel("/Fondo.png");
-		imgFondo.setForeground(Color.WHITE);
+		imgFondo.setForeground(Color.RED);
 		imgFondo.setBounds(0, 0, 1355, 600);
 		imgFondo.setIcon(new ImageIcon(iFondo));
 		this.add(imgFondo);
