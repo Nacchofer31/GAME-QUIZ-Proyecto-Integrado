@@ -33,7 +33,7 @@ public class Decada70 extends JPanel {
 				PantallaPrincipal.ponerDecada80();
 			}
 		});
-		button80.setBounds(131, 432, 58, 23);
+		button80.setBounds(90, 400, 60, 100);
 		add(button80);
 				
 		//Boton Decada 90
@@ -43,7 +43,7 @@ public class Decada70 extends JPanel {
 				PantallaPrincipal.ponerDecada90();
 			}
 		});
-		button90.setBounds(199, 432, 58, 23);
+		button90.setBounds(180, 400, 60, 100);
 		add(button90);
 				
 		//Boton Decada 00's
@@ -53,7 +53,7 @@ public class Decada70 extends JPanel {
 				PantallaPrincipal.ponerDecada00();
 			}
 				});
-		button00.setBounds(267, 432, 58, 23);
+		button00.setBounds(270, 400, 60, 100);
 		add(button00);
 				
 		//Boton Decada 10's
@@ -63,19 +63,13 @@ public class Decada70 extends JPanel {
 				PantallaPrincipal.ponerDecada10();
 			}
 		});
-		button10.setBounds(335, 432, 58, 23);
+		button10.setBounds(360, 400, 60, 100);
 		add(button10);
 		
 		//PRUEBA//
 		JScrollPane jscroll = new JScrollPane();
-		jscroll.setBounds(216, 29, 227, 276);
+		jscroll.setBounds(475, 30, 775, 550);
 		this.add(jscroll);
-		
-		JLabel hola = new JLabel();
-		hola.setFont(new Font("BatangChe", Font.PLAIN, 15));
-		hola.setForeground(Color.WHITE);
-		jscroll.setViewportView(hola);
-		hola.setText("Hola");
 		//PRUEBA//
 		
 		//IMAGEN DE FONDO
