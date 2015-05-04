@@ -3,10 +3,14 @@ package vista;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
 import java.awt.Color;
 import java.awt.Font;
+
 import javax.swing.JSeparator;
 
 public class PantallaInicio extends JPanel {
@@ -59,6 +63,31 @@ public class PantallaInicio extends JPanel {
 		lblopcionesdesarrollaYPon.setBounds(228, 291, 936, 32);
 		add(lblopcionesdesarrollaYPon);
 		
+		JLabel lblTipsTricks = new JLabel("Tips & Tricks");
+		lblTipsTricks.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTipsTricks.setForeground(Color.WHITE);
+		lblTipsTricks.setFont(new Font("BatangChe", Font.BOLD, 26));
+		lblTipsTricks.setBounds(566, 404, 206, 49);
+		add(lblTipsTricks);
+		
+		JButton Arrow = new JButton("");
+		Image imgArrow = new ImageIcon(this.getClass().getResource("/arrow.png")).getImage();
+		
+		Arrow.setIcon(new ImageIcon(imgArrow));
+		Arrow.setOpaque(false);
+		Arrow.setContentAreaFilled(false);
+		Arrow.setBorderPainted(false);
+		Arrow.setBounds(1153, 454, 91, 87);
+		add(Arrow);
+		
+		JLabel lblMensaje = new JLabel("\"En el arcade original de Donkey Kong  Mario se llama JumpMan y es un carpintero, no un fontanero.\"");
+		lblMensaje.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblMensaje.setForeground(Color.WHITE);
+		lblMensaje.setFont(new Font("BatangChe", Font.BOLD | Font.ITALIC, 18));
+		lblMensaje.setBounds(107, 454, 1072, 77);
+		add(lblMensaje);
+
+
 		JSeparator separator = new JSeparator();
 		separator.setBounds(188, 351, 1019, 11);
 		add(separator);
