@@ -13,18 +13,17 @@ import javax.json.JsonReader;
 
 public class ApiJSONVideojuegos{
 	private static String ID_VID="Id_Juego";
-	private static String IDCON_VID="idconsola";
-	private static String IDEMPRESA_VID="idempresa";
-	private static String NOMBRE_VID="nombre";
-	private static String GENERO_VID="genero";
-	private static String SINOPSIS_VID="sinopsis";
-	private static String FECHA_VID="fecha";
-	private static String MULTI_VID="multijugador";
-	private static String CARATULA_COL="caratula";
+	private static String IDCON_VID="Id_Consola";
+	private static String IDEMPRESA_VID="Id_Empresa";
+	private static String NOMBRE_VID="Nombre";
+	private static String GENERO_VID="Genero";
+	private static String SINOPSIS_VID="Sinopsis";
+	private static String FECHA_VID="Fecha_Salida";
+	private static String MULTI_VID="Multijugador";
+	private static String CARATULA_COL="Caratula";
 	
 	private ArrayList<Array> datos;
-	/*private ArrayList<Episode> episodio;*/
-	private Array titulos;
+	private String titulos[]={ID_VID,IDCON_VID,IDEMPRESA_VID,NOMBRE_VID,GENERO_VID,SINOPSIS_VID,FECHA_VID,MULTI_VID,CARATULA_COL};
 	
 	
 	public void videojuegosQuerry() {
@@ -35,9 +34,12 @@ public class ApiJSONVideojuegos{
 			JsonObject obj = rdr.readObject();
 			JsonArray data = obj.getJsonArray("0");
 			JsonObject data1 = data.getJsonObject(0);
+			for(int x = 0; x<data1.size(); x++){
+				
+			}
 			String f = data1.getString(ID_VID);
 			
-			System.out.println(f);
+			System.out.println(obj);
 			}catch(Exception e){
 				e.printStackTrace();
 			}
