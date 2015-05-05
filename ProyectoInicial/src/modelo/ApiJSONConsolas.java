@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import javax.json.Json;
+import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 
@@ -24,7 +25,9 @@ public class ApiJSONConsolas {
 			InputStream is = url.openStream();
 			JsonReader rdr = Json.createReader(is);
 			JsonObject obj = rdr.readObject();
-			System.out.println(obj);
+			JsonArray data = obj.getJsonArray("0");
+			JsonObject data1 = data.getJsonObject(0);
+			//String f = data1.getString();
 			}catch(Exception e){
 				e.printStackTrace();
 			}
