@@ -1,10 +1,13 @@
 package vista;
 
+import java.awt.Font;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -64,6 +67,25 @@ public class Decada90 extends JPanel {
 		});
 		button10.setBounds(335, 432, 58, 23);
 		add(button10);
+		
+		//JScrollPane
+		JScrollPane jscroll = new JScrollPane();
+		jscroll.setEnabled(false);
+		jscroll.setBounds(475, 30, 775, 550);
+		jscroll.setBorder(null);
+		this.add(jscroll);
+				
+		JTextPane textPane = new JTextPane();
+		textPane.setEnabled(false);
+		textPane.setFont(new Font("BatangChe", Font.PLAIN, 16));
+		textPane.setForeground(Color.WHITE);
+		textPane.setOpaque(false);
+		textPane.setText("Aqui se incorporara \n"
+				+ "el texto de la decada de los 90");
+		jscroll.setViewportView(textPane);
+				
+		jscroll.setOpaque(false);
+		jscroll.getViewport().setOpaque(false);
 		
 
 		//IMAGEN DE FONDO

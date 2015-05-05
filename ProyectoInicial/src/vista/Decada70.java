@@ -67,7 +67,7 @@ public class Decada70 extends JPanel {
 		button10.setBounds(360, 400, 60, 100);
 		add(button10);
 		
-		//PRUEBA//
+		//JScrollPane
 		JScrollPane jscroll = new JScrollPane();
 		jscroll.setEnabled(false);
 		jscroll.setBounds(475, 30, 775, 550);
