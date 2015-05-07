@@ -19,7 +19,6 @@ public class Principal {
 		ApiJSONVideojuegos api;
 		//Genera una consulta de PRUEBA de los videojuegos de la base de datos
 		api = new ApiJSONVideojuegos();
-		api.videojuegosQuerry();
 	}
 	
 	public static void pantallaCarga(){
