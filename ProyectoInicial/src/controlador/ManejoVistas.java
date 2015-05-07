@@ -31,7 +31,7 @@ public class ManejoVistas {
 	private PantallaDeCarga pCar;
 
 	public ManejoVistas() {
-		pCar=new PantallaDeCarga();
+		//pCar=new PantallaDeCarga();
 		pI= new PantallaInicio();
 		pH= new PantallaHistoria();
 		d70 = new Decada70();
