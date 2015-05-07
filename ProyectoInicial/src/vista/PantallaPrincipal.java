@@ -29,7 +29,7 @@ public class PantallaPrincipal extends JFrame {
 	PantallaConsolas pC= new PantallaConsolas();
 	PantallaJuegos pJ= new PantallaJuegos();
 	PantallaQuiz pQ= new PantallaQuiz();
-	PantallaOpciones pO= new PantallaOpciones();	
+	PantallaOpciones pO= new PantallaOpciones();
 	
 	public PantallaPrincipal() {
 		

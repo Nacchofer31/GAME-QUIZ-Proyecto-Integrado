@@ -63,14 +63,14 @@ public class PantallaOpciones extends JPanel {
 		
 		//Imagen español
 		Image imgEspañol = new ImageIcon(this.getClass().getResource("/español.png")).getImage();
-		JLabel labelEsp = new JLabel("New label");
+		JLabel labelEsp = new JLabel(" ");
 		labelEsp.setBounds(492, 62, 100, 80);
 		labelEsp.setIcon(new ImageIcon(imgEspañol));
 		this.add(labelEsp);
 		
 		//Label ingles
 		Image imgIngles = new ImageIcon(this.getClass().getResource("/ingles.png")).getImage();
-		JLabel labelIng = new JLabel("New label");
+		JLabel labelIng = new JLabel(" ");
 		labelIng.setBounds(766, 62, 100, 80);
 		labelIng.setIcon(new ImageIcon(imgIngles));
 		this.add(labelIng);
@@ -83,12 +83,17 @@ public class PantallaOpciones extends JPanel {
 		this.add(textoEnlace);
 		
 		//Space 1
-		Image spaceInvaders1 = new ImageIcon(this.getClass().getResource("/")).getImage();;
-		JLabel space1 = new JLabel("New label");
-		space1.setBounds(84, 62, 343, 483);
-		space1.setIcon(new ImageIcon(spaceInvaders1));
-		this.add(space1);
+		Image space1 = new ImageIcon(this.getClass().getResource("/Space1.png")).getImage();
+		JLabel lblSpace1 = new JLabel(" ");
+		lblSpace1.setBounds(84, 62, 375, 475);
+		lblSpace1.setIcon(new ImageIcon(space1));
+		this.add(lblSpace1);
 	
+		Image space2 = new ImageIcon(this.getClass().getResource("/Space2.png")).getImage();
+		JLabel lblSpace2 = new JLabel(" ");
+		lblSpace2.setBounds(915, 47, 375, 475);
+		lblSpace2.setIcon(new ImageIcon(space2));
+		this.add(lblSpace2);
 		//Enlace web
 		enlaceWeb = new JTextField();
 		enlaceWeb.setForeground(SystemColor.textHighlight);
@@ -114,7 +119,7 @@ public class PantallaOpciones extends JPanel {
 		CopyRigth.setFont(new Font("BatangChe", Font.PLAIN, 21));
 		CopyRigth.setForeground(Color.WHITE);
 		CopyRigth.setOpaque(false);
-		CopyRigth.setText("Copyright \r\nTodas las imagenes usadas en nuestra aplicaci\u00F3n son propias y elaboradas por nuestro dise\u00F1ador gr\u00E1fico Jorge Ombuena");
+		CopyRigth.setText("Copyright \r\nTodas las imagenes pertenecen a sus autores originales, todos los derechos reservados. ");
 		CopyRigth.getStyledDocument().setCharacterAttributes(0, 9, sas, false);
 	
 		//IMAGEN DE FONDO
@@ -135,40 +140,4 @@ public class PantallaOpciones extends JPanel {
 		jscroll.getViewport().setOpaque(false);
 	}
 	
-private void makeLink() {
-	addMouseListener(new MouseListener() {
-		
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			try {
-				Desktop.getDesktop().browse(new URI("gamequiz.esy.es/web/descripcionNosotros.html"));
-			} catch (IOException | URISyntaxException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-	});
-	
-}
 }
