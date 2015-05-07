@@ -1,13 +1,11 @@
 package modelo;
 
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 
 import javax.json.Json;
 import javax.json.JsonArray;
-import javax.json.JsonException;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 
@@ -22,24 +20,35 @@ public class ApiJSONVideojuegos{
 	private static String MULTI_VID="Multijugador";
 	private static String CARATULA_COL="Caratula";
 	
-	private ArrayList<Array> datos;
+	private ArrayList<String[]> datos;
+	private String nombreDatos[];
 	private String titulos[]={ID_VID,IDCON_VID,IDEMPRESA_VID,NOMBRE_VID,GENERO_VID,SINOPSIS_VID,FECHA_VID,MULTI_VID,CARATULA_COL};
 	
 	
 	public void videojuegosQuerry() {
+		datos = new ArrayList <String[]>();
 		try{
-			URL url = new URL("http://gamequiz.esy.es/api.php?accion=videojuegos"); 
+			URL url = new URL("http://gamequiz.esy.es/consultas/api.php?accion=videojuegos"); 
 			InputStream is = url.openStream();
 			JsonReader rdr = Json.createReader(is);
 			JsonObject obj = rdr.readObject();
 			JsonArray data = obj.getJsonArray("0");
-			JsonObject data1 = data.getJsonObject(0);
-			for(int x = 0; x<data1.size(); x++){
-				
-			}
-			String f = data1.getString(ID_VID);
+			nombreDatos = new String[data.size()];
 			
-			System.out.println(obj);
+			for(int x = 0; x<data.size(); x++){
+				String g []=new String[titulos.length];
+				String nombre ="";
+				JsonObject data1 = data.getJsonObject(x);
+				for(int e = 0; e<titulos.length;e++){
+					g[e] = data1.getString(titulos[e]);
+					//System.out.println(datos.get(0)[0]);
+					if(e==3) nombre=data1.getString(titulos[e]);
+				}
+				nombreDatos[x]=nombre;
+				datos.add(g);
+			}
+			System.out.println(datos.get(1)[3]);
+			
 			}catch(Exception e){
 				e.printStackTrace();
 			}
