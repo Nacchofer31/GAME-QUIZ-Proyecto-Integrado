@@ -2,8 +2,8 @@ package controlador;
 
 import java.awt.Color;
 
-import javax.swing.text.StyledEditorKit.FontSizeAction;
-
+import modelo.ApiJSONEmpresas;
+import modelo.ApiJSONGenero;
 import modelo.ApiJSONVideojuegos;
 import vista.PantallaPrincipal;
 
@@ -16,9 +16,13 @@ public class Principal {
 		//Genera la pantalla del proyecto
 		PantallaPrincipal frame = new PantallaPrincipal();
 		frame.setVisible(true);
-		ApiJSONVideojuegos api;
+		ApiJSONVideojuegos apiVid;
+		ApiJSONEmpresas apiEmpr;
+		ApiJSONGenero apiGen;
 		//Genera una consulta de PRUEBA de los videojuegos de la base de datos
-		api = new ApiJSONVideojuegos();
+		apiVid = new ApiJSONVideojuegos();
+		apiEmpr = new ApiJSONEmpresas();
+		apiGen = new ApiJSONGenero();
 	}
 	
 	public static void pantallaCarga(){
