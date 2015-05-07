@@ -114,7 +114,7 @@ public class PantallaOpciones extends JPanel {
 		CopyRigth.setFont(new Font("BatangChe", Font.PLAIN, 21));
 		CopyRigth.setForeground(Color.WHITE);
 		CopyRigth.setOpaque(false);
-		CopyRigth.setText("Copyrigth \r\nTodas las imagenes usadas en nuestra aplicaci\u00F3n son propias y elaboradas por nuestro dise\u00F1ador gr\u00E1fico Jorge Ombuena");
+		CopyRigth.setText("Copyright \r\nTodas las imagenes usadas en nuestra aplicaci\u00F3n son propias y elaboradas por nuestro dise\u00F1ador gr\u00E1fico Jorge Ombuena");
 		CopyRigth.getStyledDocument().setCharacterAttributes(0, 9, sas, false);
 	
 		//IMAGEN DE FONDO
