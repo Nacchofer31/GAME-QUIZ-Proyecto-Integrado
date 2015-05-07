@@ -47,4 +47,58 @@ public class ManejoVistas {
 		pP.setVisible(true);
 	}
 
+	public PantallaInicio getpI() {
+		return pI;
+	}
+
+	public PantallaHistoria getpH() {
+		return pH;
+	}
+
+	public Decada70 getD70() {
+		return d70;
+	}
+
+	public Decada80 getD80() {
+		return d80;
+	}
+
+	public Decada90 getD90() {
+		return d90;
+	}
+
+	public Decada00 getD00() {
+		return d00;
+	}
+
+	public Decada10 getD10() {
+		return d10;
+	}
+
+	public PantallaConsolas getpC() {
+		return pC;
+	}
+
+	public PantallaJuegos getpJ() {
+		return pJ;
+	}
+
+	public PantallaQuiz getpQ() {
+		return pQ;
+	}
+
+	public PantallaOpciones getpO() {
+		return pO;
+	}
+
+	public PantallaPrincipal getpP() {
+		return pP;
+	}
+
+	public PantallaDeCarga getpCar() {
+		return pCar;
+	}
+	
+	
+
 }
