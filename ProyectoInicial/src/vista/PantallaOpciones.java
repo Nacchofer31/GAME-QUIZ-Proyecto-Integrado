@@ -82,6 +82,13 @@ public class PantallaOpciones extends JPanel {
 		textoEnlace.setBounds(475, 192, 275, 59);
 		this.add(textoEnlace);
 		
+		//Space 1
+		Image spaceInvaders1 = new ImageIcon(this.getClass().getResource("/")).getImage();;
+		JLabel space1 = new JLabel("New label");
+		space1.setBounds(84, 62, 343, 483);
+		space1.setIcon(new ImageIcon(spaceInvaders1));
+		this.add(space1);
+	
 		//Enlace web
 		enlaceWeb = new JTextField();
 		enlaceWeb.setForeground(SystemColor.textHighlight);
@@ -109,7 +116,7 @@ public class PantallaOpciones extends JPanel {
 		CopyRigth.setOpaque(false);
 		CopyRigth.setText("Copyrigth \r\nTodas las imagenes usadas en nuestra aplicaci\u00F3n son propias y elaboradas por nuestro dise\u00F1ador gr\u00E1fico Jorge Ombuena");
 		CopyRigth.getStyledDocument().setCharacterAttributes(0, 9, sas, false);
-		
+	
 		//IMAGEN DE FONDO
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
 		JLabel imgFondo = new JLabel("/Fondo.png");
@@ -124,7 +131,6 @@ public class PantallaOpciones extends JPanel {
 		jscroll.setEnabled(false);
 		jscroll.setBorder(null);
 		this.add(jscroll);
-		
 		jscroll.setOpaque(false);
 		jscroll.getViewport().setOpaque(false);
 	}
