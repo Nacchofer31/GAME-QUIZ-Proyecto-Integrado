@@ -60,4 +60,17 @@ public class ApiJSONConsolas {
 			}
 
 	}
+	
+	public String[] getFilaConsulta(int x){
+		return datos.get(x);
+	}
+	
+	public String getDato(int x, int y){
+		return datos.get(x)[y];
+	}
+	
+	public String[] getTitulos (){
+		return titulos;
+	}
+
 }
