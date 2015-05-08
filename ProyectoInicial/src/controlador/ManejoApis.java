@@ -16,4 +16,18 @@ public class ManejoApis {
 		
 	}
 
+	public ApiJSONVideojuegos getApiJuegos() {
+		return apiJuegos;
+	}
+
+	public ApiJSONGenero getApiGenero() {
+		return apiGenero;
+	}
+
+	public ApiJSONEmpresas getApiEmpresa() {
+		return apiEmpresa;
+	}
+	
+	
+
 }
