@@ -111,16 +111,16 @@ public class PantallaOpciones extends JPanel {
 		StyleConstants.setBold(sas, true);
 		StyleConstants.setItalic(sas, true);
 		StyleConstants.setFontSize(sas, 35);
-		JTextPane CopyRigth = new JTextPane();
-		CopyRigth.setBounds(475, 262, 453, 134);
-		add(CopyRigth);
-		CopyRigth.setEditable(false);
-		CopyRigth.setEnabled(false);
-		CopyRigth.setFont(new Font("BatangChe", Font.PLAIN, 21));
-		CopyRigth.setForeground(Color.WHITE);
-		CopyRigth.setOpaque(false);
-		CopyRigth.setText("Copyright \r\nTodas las imagenes pertenecen a sus autores originales, todos los derechos reservados. ");
-		CopyRigth.getStyledDocument().setCharacterAttributes(0, 9, sas, false);
+		JTextPane CopyRight = new JTextPane();
+		CopyRight.setBounds(475, 262, 453, 134);
+		add(CopyRight);
+		CopyRight.setEditable(false);
+		CopyRight.setEnabled(false);
+		CopyRight.setFont(new Font("BatangChe", Font.PLAIN, 21));
+		CopyRight.setForeground(Color.WHITE);
+		CopyRight.setOpaque(false);
+		CopyRight.setText("Copyright \r\nTodas las imagenes pertenecen a sus autores originales, todos los derechos reservados. ");
+		CopyRight.getStyledDocument().setCharacterAttributes(0, 9, sas, false);
 	
 		//IMAGEN DE FONDO
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
