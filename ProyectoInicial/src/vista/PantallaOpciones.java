@@ -26,9 +26,9 @@ import javax.swing.text.StyleConstants;
 
 import java.awt.SystemColor;
 import java.awt.Rectangle;
+import java.awt.event.MouseAdapter;
 
 public class PantallaOpciones extends JPanel {
-	private JTextField enlaceWeb;
 
 	public PantallaOpciones() {
 		
@@ -94,8 +94,33 @@ public class PantallaOpciones extends JPanel {
 		lblSpace2.setBounds(915, 47, 375, 475);
 		lblSpace2.setIcon(new ImageIcon(space2));
 		this.add(lblSpace2);
+		
 		//Enlace web
-		enlaceWeb = new JTextField();
+		JLabel enlaceWeb = new JLabel("");
+		enlaceWeb.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				try {
+					if (Desktop.isDesktopSupported()) {
+					Desktop desktop = Desktop.getDesktop();
+					if (desktop.isSupported(Desktop.Action.BROWSE)) {
+					desktop.browse(new URI("http://www.gamequiz.esy.es/web/descripcionNosotros.html"));
+					}
+					}
+					} catch (Exception e) {
+					e.printStackTrace();
+					}
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+			}
+		});
 		enlaceWeb.setForeground(SystemColor.textHighlight);
 		enlaceWeb.setBorder(null);
 		enlaceWeb.setVerifyInputWhenFocusTarget(false);
