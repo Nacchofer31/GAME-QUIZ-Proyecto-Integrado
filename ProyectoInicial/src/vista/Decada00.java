@@ -22,50 +22,76 @@ public class Decada00 extends JPanel {
 		setLayout(null);
 		setBounds(0, 105, 1355, 591);
 		
-		JLabel lblDecada = new JLabel("DECADA00");
-		lblDecada.setForeground(Color.RED);
-		lblDecada.setBounds(10, 68, 84, 41);
-		add(lblDecada);
 		
-		//Boton Decada 70
-		JButton button70 = new JButton("70's");
-		button70.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				PantallaPrincipal.ponerDecada70();
-			}
-		});
-		button70.setBounds(63, 432, 58, 23);
-		add(button70);
+		Image miniMarco70 = new ImageIcon(this.getClass().getResource("/MiniMarco70.png")).getImage();
+		JLabel lblMiniMarco70 = new JLabel();
+		lblMiniMarco70.setBounds(90, 400, 85, 125);
+		lblMiniMarco70.setIcon(new ImageIcon(miniMarco70));
+		this.add(lblMiniMarco70);
+			
+		Image miniMarco80 = new ImageIcon(this.getClass().getResource("/MiniMarco80.png")).getImage();
+		JLabel lblMiniMarco80 = new JLabel();
+		lblMiniMarco80.setBounds(180, 400, 85, 125);
+		lblMiniMarco80.setIcon(new ImageIcon(miniMarco80));
+		this.add(lblMiniMarco80);
 				
-		//Boton Decada 80
-		JButton button80 = new JButton("80's");
+		Image miniMarco90 = new ImageIcon(this.getClass().getResource("/MiniMarco90.png")).getImage();
+		JLabel lblMiniMarco90 = new JLabel();
+		lblMiniMarco90.setBounds(270, 400, 85, 125);
+		lblMiniMarco90.setIcon(new ImageIcon(miniMarco90));
+		this.add(lblMiniMarco90);
+				
+		Image miniMarco10 = new ImageIcon(this.getClass().getResource("/MiniMarco10.png")).getImage();
+		JLabel lblMiniMarco10 = new JLabel();
+		lblMiniMarco10.setBounds(360, 400, 85, 125);
+		lblMiniMarco10.setIcon(new ImageIcon(miniMarco10));
+		this.add(lblMiniMarco10);
+	
+		JButton button70 = new JButton();
+		button70.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent arg0) {
+				PantallaPrincipal.ponerDecada70();
+	}
+});
+		button70.setBounds(90, 400, 85, 125);
+		button70.setContentAreaFilled(false);
+		button70.setBorderPainted(false);
+		add(button70);
+						
+			
+		JButton button80 = new JButton();
 		button80.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PantallaPrincipal.ponerDecada80();
-			}
-		});
-		button80.setBounds(131, 432, 58, 23);
+}
+});
+		button80.setBounds(180, 400, 85, 125);
+		button80.setContentAreaFilled(false);
+		button80.setBorderPainted(false);
 		add(button80);
-				
-		//Boton Decada 90
-		JButton button90 = new JButton("90's");
+						
+			
+		JButton button90 = new JButton();
 		button90.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				PantallaPrincipal.ponerDecada90();
-			}
-		});
-		button90.setBounds(199, 432, 58, 23);
+				public void actionPerformed(ActionEvent arg0) {
+				    PantallaPrincipal.ponerDecada90();
+}
+});
+		button90.setBounds(270, 400, 85, 125);
+		button90.setContentAreaFilled(false);
+		button90.setBorderPainted(false);
 		add(button90);
-				
-				
-		//Boton Decada 10's
-		JButton button10 = new JButton("10's");
+						
+			
+		JButton button10 = new JButton();
 		button10.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				PantallaPrincipal.ponerDecada10();
-			}
-		});
-		button10.setBounds(335, 432, 58, 23);
+				public void actionPerformed(ActionEvent arg0) {
+					PantallaPrincipal.ponerDecada10();
+}
+});
+		button10.setBounds(360, 400, 85, 125);
+		button10.setContentAreaFilled(false);
+		button10.setBorderPainted(false);
 		add(button10);
 		
 		//JScrollPane

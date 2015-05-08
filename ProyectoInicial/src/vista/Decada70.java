@@ -58,7 +58,7 @@ public class Decada70 extends JPanel {
 				
 		
 		//Boton Decada 80
-		JButton button80 = new JButton("");
+		JButton button80 = new JButton();
 		button80.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PantallaPrincipal.ponerDecada80();
@@ -70,7 +70,7 @@ public class Decada70 extends JPanel {
 		add(button80);
 				
 		//Boton Decada 90
-		JButton button90 = new JButton("");
+		JButton button90 = new JButton();
 		button90.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PantallaPrincipal.ponerDecada90();
@@ -82,7 +82,7 @@ public class Decada70 extends JPanel {
 		add(button90);
 				
 		//Boton Decada 00's
-		JButton button00 = new JButton("");
+		JButton button00 = new JButton();
 		button00.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PantallaPrincipal.ponerDecada00();
@@ -94,7 +94,7 @@ public class Decada70 extends JPanel {
 		add(button00);
 				
 		//Boton Decada 10's
-		JButton button10 = new JButton("");
+		JButton button10 = new JButton();
 		button10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PantallaPrincipal.ponerDecada10();

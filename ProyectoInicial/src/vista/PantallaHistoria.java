@@ -20,68 +20,6 @@ public class PantallaHistoria extends JPanel {
 		setBounds(0, 0, 1355, 600);
 		
 		
-		
-		//Boton Decada 70
-		JButton button70 = new JButton("");
-		button70.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				PantallaPrincipal.ponerDecada70();
-			}
-		});
-		button70.setBounds(60,100,225,400);
-		button70.setContentAreaFilled(false);
-		button70.setBorderPainted(false);
-		add(button70);
-		
-		//Boton Decada 80
-		JButton button80 = new JButton("");
-		button80.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				PantallaPrincipal.ponerDecada80();
-			}
-		});
-		button80.setBounds(311,100,225,400);
-		button80.setContentAreaFilled(false);
-		button80.setBorderPainted(false);
-		add(button80);
-		
-		//Boton Decada 90
-		JButton button90 = new JButton("");
-		button90.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				PantallaPrincipal.ponerDecada90();
-			}
-		});
-		button90.setBounds(560,100,225,400);
-		button90.setContentAreaFilled(false);
-		button90.setBorderPainted(false);
-		add(button90);
-		
-		//Boton Decada 00's
-		JButton button00 = new JButton("");
-		button00.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				PantallaPrincipal.ponerDecada00();
-			}
-		});
-		button00.setBounds(810,100,225,400);
-		button00.setContentAreaFilled(false);
-		button00.setBorderPainted(false);
-		add(button00);
-		
-		//Boton Decada 10's
-		JButton button10 = new JButton("");
-		button10.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				PantallaPrincipal.ponerDecada10();
-			}
-		});
-		button10.setBounds(1065,100,225,400);
-		button10.setContentAreaFilled(false);
-		button10.setBorderPainted(false);
-		add(button10);
-		
-		
 		Image marcoDecadas = new ImageIcon(this.getClass().getResource("/Marco.png")).getImage();
 		Image marco70 = new ImageIcon(this.getClass().getResource("/Marco70.png")).getImage();
 		JLabel lblMarco70 = new JLabel("/Marco70.png");
@@ -112,6 +50,67 @@ public class PantallaHistoria extends JPanel {
 		lblMarco10.setBounds(1065,100,225,400);
 		lblMarco10.setIcon(new ImageIcon(marco10));
 		this.add(lblMarco10);
+		
+		
+		//Boton Decada 70
+		JButton button70 = new JButton();
+		button70.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PantallaPrincipal.ponerDecada70();
+			}
+		});
+		button70.setBounds(60,100,225,400);
+		button70.setContentAreaFilled(false);
+		button70.setBorderPainted(false);
+		add(button70);
+		
+		//Boton Decada 80
+		JButton button80 = new JButton();
+		button80.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PantallaPrincipal.ponerDecada80();
+			}
+		});
+		button80.setBounds(311,100,225,400);
+		button80.setContentAreaFilled(false);
+		button80.setBorderPainted(false);
+		add(button80);
+		
+		//Boton Decada 90
+		JButton button90 = new JButton();
+		button90.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PantallaPrincipal.ponerDecada90();
+			}
+		});
+		button90.setBounds(560,100,225,400);
+		button90.setContentAreaFilled(false);
+		button90.setBorderPainted(false);
+		add(button90);
+		
+		//Boton Decada 00's
+		JButton button00 = new JButton();
+		button00.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PantallaPrincipal.ponerDecada00();
+			}
+		});
+		button00.setBounds(810,100,225,400);
+		button00.setContentAreaFilled(false);
+		button00.setBorderPainted(false);
+		add(button00);
+		
+		//Boton Decada 10's
+		JButton button10 = new JButton();
+		button10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PantallaPrincipal.ponerDecada10();
+			}
+		});
+		button10.setBounds(1065,100,225,400);
+		button10.setContentAreaFilled(false);
+		button10.setBorderPainted(false);
+		add(button10);
 		
 		
 		//Label elige
