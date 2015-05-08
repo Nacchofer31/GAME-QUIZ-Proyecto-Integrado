@@ -78,6 +78,10 @@ public class ApiJSONVideojuegos{
 		return titulos;
 	}
 	
+	public String[] getNombreDatos (){
+		return nombreDatos;
+	}
+	
 	
 }
 
