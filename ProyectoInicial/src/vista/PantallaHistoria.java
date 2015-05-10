@@ -18,7 +18,7 @@ public class PantallaHistoria extends JPanel {
 
 		setLayout(null);
 		setBounds(0, 0, 1355, 600);
-		
+		//MENSAJE DE MIERDA
 		
 		Image marcoDecadas = new ImageIcon(this.getClass().getResource("/Marco.png")).getImage();
 		Image marco70 = new ImageIcon(this.getClass().getResource("/Marco70.png")).getImage();

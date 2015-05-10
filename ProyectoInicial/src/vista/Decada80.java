@@ -21,7 +21,7 @@ public class Decada80 extends JPanel {
 		
 		setLayout(null);
 		setBounds(0, 105, 1355, 591);
-		
+		//MENSAJE DE MIERDA
 		
 		Image letras80 = new ImageIcon(this.getClass().getResource("/Letras80.png")).getImage();
 		JLabel lblLetras80 = new JLabel("");

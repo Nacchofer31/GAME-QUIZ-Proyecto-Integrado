@@ -22,6 +22,8 @@ public class Decada70 extends JPanel {
 		
 		setLayout(null);
 		setBounds(0, 105, 1355, 591);
+		//MENSAJE DE MIERDA
+		
 		
 		//IMAGEN DECADA
 		

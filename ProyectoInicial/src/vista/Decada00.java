@@ -21,7 +21,7 @@ public class Decada00 extends JPanel {
 		
 		setLayout(null);
 		setBounds(0, 105, 1355, 591);
-		
+		//MENSAJE DE MIERDA
 		
 		Image miniMarco70 = new ImageIcon(this.getClass().getResource("/MiniMarco70.png")).getImage();
 		JLabel lblMiniMarco70 = new JLabel();
