@@ -27,6 +27,7 @@ public class ApiJSONConsolas {
 	}
 	
 	public void consolasQuerry() {
+		datos = new ArrayList <String[]>();
 		try{
 			//COPIAMOS LA URL DE NUESTRO SERVICIO
 			URL url = new URL("http://gamequiz.esy.es/consultas/api.php?accion=consolas"); 
@@ -48,12 +49,11 @@ public class ApiJSONConsolas {
 				//RECORREMS CADA ARRAY CONSULTADO
 				for(int e = 0; e<titulos.length;e++){
 					g[e] = data1.getString(titulos[e]);
-					if(e==1) nombre=data1.getString(titulos[e]);
+					if(e==2) nombre=data1.getString(titulos[e]);
 				}
 				//GUARDAMOS EL TITULO Y LOS DATOS EN SUS SITIOS
 				nombreDatos[x]=nombre;
-				datos.add(g);
-			}
+				datos.add(g);			}
 			
 			}catch(Exception e){
 				e.printStackTrace();

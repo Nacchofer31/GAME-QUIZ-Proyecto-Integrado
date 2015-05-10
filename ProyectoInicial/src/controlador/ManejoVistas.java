@@ -46,6 +46,8 @@ public class ManejoVistas {
 		pP= new PantallaPrincipal();
 		pP.setVisible(true);
 	}
+	
+	
 
 	public PantallaInicio getpI() {
 		return pI;
