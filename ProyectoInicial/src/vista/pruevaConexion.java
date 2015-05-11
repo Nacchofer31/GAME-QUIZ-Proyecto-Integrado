@@ -98,13 +98,13 @@ public class pruevaConexion extends JFrame {
 		JButton btnPonerJuego = new JButton("poner juego");
 		btnPonerJuego.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String f[]=t.buscarConsola(juegoBuscado.getText());
+				String f[]=t.mostrarJuegos();
 				idJuego.setText(f[0]);
-				nombre.setText(f[3]);
+				//nombre.setText(f[3]);
 				consola.setText(f[1]);
-				genero.setText(f[4]);
-				empresa.setText(f[2]);
-				sinopsis.setText(f[5]);
+				//genero.setText(f[4]);
+				//empresa.setText(f[2]);
+				//sinopsis.setText(f[5]);
 			}
 		});
 		btnPonerJuego.setBounds(387, 95, 149, 23);
@@ -120,7 +120,7 @@ public class pruevaConexion extends JFrame {
 		contentPane.add(label);
 		
 		idJuego = new JTextField();
-		idJuego.setBounds(72, 10, 118, 20);
+		idJuego.setBounds(142, 10, 118, 20);
 		contentPane.add(idJuego);
 		idJuego.setColumns(10);
 		
