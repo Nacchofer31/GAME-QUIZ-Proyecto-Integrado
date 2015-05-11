@@ -21,7 +21,12 @@ public class Decada00 extends JPanel {
 		
 		setLayout(null);
 		setBounds(0, 105, 1355, 591);
-		//MENSAJE DE MIERDA
+		
+		Image letrasMilenio = new ImageIcon(this.getClass().getResource("/NuevoMilenio.png")).getImage();
+		JLabel lblLetrasMilenio = new JLabel();
+		lblLetrasMilenio.setBounds(120, 0, 350, 450);
+		lblLetrasMilenio.setIcon(new ImageIcon(letrasMilenio));
+		this.add(lblLetrasMilenio);
 		
 		Image miniMarco70 = new ImageIcon(this.getClass().getResource("/MiniMarco70.png")).getImage();
 		JLabel lblMiniMarco70 = new JLabel();

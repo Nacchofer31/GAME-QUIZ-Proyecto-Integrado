@@ -21,7 +21,14 @@ public class Decada90 extends JPanel {
 		
 		setLayout(null);
 		setBounds(0, 105, 1355, 591);
-		//MENSAJE DE MIERDA
+		
+
+		Image letras90 = new ImageIcon(this.getClass().getResource("/Letras90.png")).getImage();
+		JLabel lblLetras90 = new JLabel();
+		lblLetras90.setBounds(120, 0, 350, 450);
+		lblLetras90.setIcon(new ImageIcon(letras90));
+		this.add(lblLetras90);
+	
 		
 		Image miniMarco70 = new ImageIcon(this.getClass().getResource("/MiniMarco70.png")).getImage();
 		JLabel lblMiniMarco70 = new JLabel();
