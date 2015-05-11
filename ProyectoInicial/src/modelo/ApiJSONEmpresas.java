@@ -53,6 +53,7 @@ public class ApiJSONEmpresas {
 				datos.add(g);
 			}
 			
+			
 			}catch(Exception e){
 				e.printStackTrace();
 			}
@@ -69,6 +70,9 @@ public class ApiJSONEmpresas {
 	public String[] getTitulos (){
 		return titulos;
 	}
-
+	
+	public String[] getNombreDatos (){
+		return nombreDatos;
+	}
 
 }

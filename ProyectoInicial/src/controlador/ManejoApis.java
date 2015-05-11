@@ -22,18 +22,65 @@ public class ManejoApis {
 	}
 	
 	public String[] buscarJuego(String juego){
-		String datos[]=new String[6];
+		String datos[]=new String[9];
 		int posicion =0;
 		for (int x = 0;x<apiJuegos.getNombreDatos().length;x++){
-			System.out.println(apiJuegos.getNombreDatos()[x]);
-			if(apiJuegos.getNombreDatos()[x]==juego){
-				System.out.println("hola");
+			if(apiJuegos.getNombreDatos()[x].equals(juego)){
 				posicion=x;
 			}
 		}
 		String datosConsulta[]=apiJuegos.getFilaConsulta(posicion);
 		for(int c = 0;c<datos.length;c++){
-			datos[c]=datosConsulta[c];
+			if(c==1){
+				for(int v = 0;v<apiConsola.getNombreDatos().length;v++){
+					if(datosConsulta[c].equals(apiConsola.getDato(v, 0))){
+						datos[c]=apiConsola.getDato(v, 2);
+						break;
+						
+					}
+				}
+			}else if (c==2){
+				for(int v = 0;v<apiEmpresa.getNombreDatos().length;v++){
+					if(datosConsulta[c].equals(apiEmpresa.getDato(v, 0))){
+						datos[c]=apiEmpresa.getDato(v, 1);
+						break;
+					}
+				}
+			}else if (c==4){
+				for(int v = 0;v<apiGenero.getNombreDatos().length;v++){
+					if(datosConsulta[c].equals(apiGenero.getDato(v, 0))){
+						datos[c]=apiGenero.getDato(v, 1);
+						break;            
+					}
+				}
+			}else{
+				datos[c]=datosConsulta[c];
+			}
+		}
+		
+		return datos;
+	}
+	
+	public String[] buscarConsola(String juego){
+		String datos[]=new String[6];
+		int posicion =0;
+		for (int x = 0;x<apiConsola.getNombreDatos().length;x++){
+			if(apiConsola.getNombreDatos()[x].equals(juego)){
+				posicion=x;
+			}
+		}
+		String datosConsulta[]=apiConsola.getFilaConsulta(posicion);
+		for(int c = 0;c<datos.length;c++){
+			if (c==1){
+				for(int v = 0;v<apiEmpresa.getNombreDatos().length;v++){
+					if(datosConsulta[c].equals(apiEmpresa.getDato(v, 0))){
+						datos[c]=apiEmpresa.getDato(v, 1);
+						break;
+					}
+				}
+			}else{
+				datos[c]=datosConsulta[c];
+			}
 		}
 		
 		return datos;

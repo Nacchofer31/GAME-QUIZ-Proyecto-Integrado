@@ -76,5 +76,9 @@ public class ApiJSONGenero {
 	public String[] getTitulos (){
 		return titulos;
 	}
+	
+	public String[] getNombreDatos (){
+		return nombreDatos;
+	}
 
 }
