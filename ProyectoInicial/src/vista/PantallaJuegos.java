@@ -89,7 +89,7 @@ public class PantallaJuegos extends JPanel {
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
 		
 		JPanel panelJuegos = new JPanel();
-		panelJuegos.setBounds(462, 152, 830, 411);
+		panelJuegos.setBounds(435, 131, 860, 424);
 		panelJuegos.setForeground(Color.WHITE);
 		panelJuegos.setBorder(null);
 		panelJuegos.setOpaque(false);
@@ -99,84 +99,84 @@ public class PantallaJuegos extends JPanel {
 		JLabel lblNom = new JLabel("Nombre:");
 		lblNom.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblNom.setForeground(Color.WHITE);
-		lblNom.setBounds(345, 10, 65, 25);
+		lblNom.setBounds(345, 5, 65, 25);
 		panelJuegos.add(lblNom);
 		
 		JLabel lblSinopsis = new JLabel("Sinopsis:");
 		lblSinopsis.setForeground(Color.WHITE);
 		lblSinopsis.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblSinopsis.setBounds(250, 265, 90, 25);
+		lblSinopsis.setBounds(345, 170, 90, 25);
 		panelJuegos.add(lblSinopsis);
 		
 		JLabel lblPlataforma = new JLabel("Plataforma:");
 		lblPlataforma.setForeground(Color.WHITE);
 		lblPlataforma.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblPlataforma.setBounds(345, 70, 100, 25);
+		lblPlataforma.setBounds(345, 55, 100, 25);
 		panelJuegos.add(lblPlataforma);
 		
 		JLabel lblGenero = new JLabel("G\u00E9nero:");
 		lblGenero.setForeground(Color.WHITE);
 		lblGenero.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblGenero.setBounds(345, 40, 65, 25);
+		lblGenero.setBounds(345, 30, 65, 25);
 		panelJuegos.add(lblGenero);
 		
 		JLabel lblFechaSalida = new JLabel("Fecha Salida:");
 		lblFechaSalida.setForeground(Color.WHITE);
 		lblFechaSalida.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblFechaSalida.setBounds(345, 130, 125, 25);
+		lblFechaSalida.setBounds(345, 105, 125, 25);
 		panelJuegos.add(lblFechaSalida);
 		
 		JLabel lblEmp = new JLabel("Empresa:");
 		lblEmp.setForeground(Color.WHITE);
 		lblEmp.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblEmp.setBounds(345, 100, 80, 25);
+		lblEmp.setBounds(345, 80, 80, 25);
 		panelJuegos.add(lblEmp);
 		
-		JLabel labelCaratula = new JLabel("");
+		JLabel labelCaratula = new JLabel();
 		labelCaratula.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		labelCaratula.setBounds(20, 10, 245, 240);
+		labelCaratula.setBounds(10, 13, 300, 315);
 		panelJuegos.add(labelCaratula);
 		
-		JLabel lblJuegoNom = new JLabel("");
+		JLabel lblJuegoNom = new JLabel();
 		lblJuegoNom.setForeground(Color.WHITE);
 		lblJuegoNom.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoNom.setBounds(445, 26, 302, 25);
+		lblJuegoNom.setBounds(410, 5, 300, 25);
 		panelJuegos.add(lblJuegoNom);
 		
-		JLabel lblJuegoGen = new JLabel("");
+		JLabel lblJuegoGen = new JLabel();
 		lblJuegoGen.setForeground(Color.WHITE);
 		lblJuegoGen.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoGen.setBounds(445, 62, 302, 25);
+		lblJuegoGen.setBounds(410, 30, 300, 25);
 		panelJuegos.add(lblJuegoGen);
 		
-		JLabel lblJuegoPlat = new JLabel("");
+		JLabel lblJuegoPlat = new JLabel();
 		lblJuegoPlat.setForeground(Color.WHITE);
 		lblJuegoPlat.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoPlat.setBounds(455, 98, 279, 25);
+		lblJuegoPlat.setBounds(445, 55, 280, 25);
 		panelJuegos.add(lblJuegoPlat);
 		
-		JLabel lblJuegoEmp = new JLabel("");
+		JLabel lblJuegoEmp = new JLabel();
 		lblJuegoEmp.setForeground(Color.WHITE);
 		lblJuegoEmp.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoEmp.setBounds(495, 134, 230, 25);
+		lblJuegoEmp.setBounds(420, 80, 230, 25);
 		panelJuegos.add(lblJuegoEmp);
 		
-		JLabel lblJuegoFecha = new JLabel("");
+		JLabel lblJuegoFecha = new JLabel();
 		lblJuegoFecha.setForeground(Color.WHITE);
 		lblJuegoFecha.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoFecha.setBounds(481, 166, 230, 25);
+		lblJuegoFecha.setBounds(460, 105, 230, 25);
 		panelJuegos.add(lblJuegoFecha);
 		
-		JLabel lblJuegoMulti = new JLabel("");
+		JLabel lblJuegoMulti = new JLabel();
 		lblJuegoMulti.setForeground(Color.WHITE);
 		lblJuegoMulti.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoMulti.setBounds(268, 345, 89, 25);
+		lblJuegoMulti.setBounds(465, 130, 65, 25);
 		panelJuegos.add(lblJuegoMulti);
 		
 		JLabel lblMulti = new JLabel("Multijugador:");
 		lblMulti.setForeground(Color.WHITE);
 		lblMulti.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblMulti.setBounds(345, 160, 125, 25);
+		lblMulti.setBounds(345, 130, 125, 25);
 		panelJuegos.add(lblMulti);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -185,7 +185,7 @@ public class PantallaJuegos extends JPanel {
 		scrollPane_1.setEnabled(false);
 		scrollPane_1.getViewport().setOpaque(false);
 		scrollPane_1.setOpaque(false);
-		scrollPane_1.setBounds(346, 202, 474, 198);
+		scrollPane_1.setBounds(345, 200, 475, 200);
 		panelJuegos.add(scrollPane_1);
 		
 		JTextPane textPane = new JTextPane();
@@ -203,7 +203,7 @@ public class PantallaJuegos extends JPanel {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setOpaque(false);
-		scrollPane.setBounds(96, 152, 330, 411);
+		scrollPane.setBounds(95, 145, 330, 410);
 		scrollPane.setViewportBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		scrollPane.setOpaque(false);
 		scrollPane.getViewport().setOpaque(false);
