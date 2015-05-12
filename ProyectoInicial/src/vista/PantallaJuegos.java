@@ -42,7 +42,7 @@ public class PantallaJuegos extends JPanel {
 		btnBuscar.setBorderPainted(false);
 		btnBuscar.setOpaque(false);
 		btnBuscar.setFont(new Font("Bell MT", Font.BOLD, 20));
-		btnBuscar.setBounds(1069, 46, 102, 23);
+		btnBuscar.setBounds(15, 15, 102, 23);
 		layeredPane.add(btnBuscar);
 		
 		JRadioButton rdbtnMultijugador = new JRadioButton("Multijugador");
@@ -50,38 +50,38 @@ public class PantallaJuegos extends JPanel {
 		rdbtnMultijugador.setForeground(Color.WHITE);
 		rdbtnMultijugador.setContentAreaFilled(false);
 		rdbtnMultijugador.setOpaque(false);
-		rdbtnMultijugador.setBounds(887, 25, 145, 31);
+		rdbtnMultijugador.setBounds(1020, 25, 145, 30);
 		layeredPane.add(rdbtnMultijugador);
 		
 		nombreField = new JTextField();
-		nombreField.setBounds(123, 30, 148, 20);
+		nombreField.setBounds(270, 30, 175, 20);
 		layeredPane.add(nombreField);
 		nombreField.setColumns(10);
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("BatangChe", Font.PLAIN, 19));
 		lblNombre.setForeground(Color.WHITE);
-		lblNombre.setBounds(46, 22, 89, 36);
+		lblNombre.setBounds(190, 20, 75, 35);
 		layeredPane.add(lblNombre);
 		
 		JLabel lblGnero = new JLabel("G\u00E9nero:");
 		lblGnero.setForeground(Color.WHITE);
 		lblGnero.setFont(new Font("BatangChe", Font.PLAIN, 19));
-		lblGnero.setBounds(314, 22, 89, 36);
+		lblGnero.setBounds(460, 20, 90, 35);
 		layeredPane.add(lblGnero);
 		
 		JComboBox comboBoxGen = new JComboBox();
-		comboBoxGen.setBounds(396, 30, 114, 20);
+		comboBoxGen.setBounds(545, 30, 150, 20);
 		layeredPane.add(comboBoxGen);
 		
 		JLabel lblPlataformas = new JLabel("Plataformas:");
 		lblPlataformas.setForeground(Color.WHITE);
 		lblPlataformas.setFont(new Font("BatangChe", Font.PLAIN, 19));
-		lblPlataformas.setBounds(566, 22, 137, 36);
+		lblPlataformas.setBounds(715, 20, 135, 35);
 		layeredPane.add(lblPlataformas);
 		
 		JComboBox comboBoxPlat = new JComboBox();
-		comboBoxPlat.setBounds(697, 30, 114, 20);
+		comboBoxPlat.setBounds(850, 30, 145, 20);
 		layeredPane.add(comboBoxPlat);
 		
 
@@ -99,42 +99,42 @@ public class PantallaJuegos extends JPanel {
 		JLabel lblNom = new JLabel("Nombre:");
 		lblNom.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblNom.setForeground(Color.WHITE);
-		lblNom.setBounds(346, 26, 89, 25);
+		lblNom.setBounds(345, 10, 65, 25);
 		panelJuegos.add(lblNom);
 		
 		JLabel lblSinopsis = new JLabel("Sinopsis:");
 		lblSinopsis.setForeground(Color.WHITE);
 		lblSinopsis.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblSinopsis.setBounds(246, 272, 107, 25);
+		lblSinopsis.setBounds(250, 265, 90, 25);
 		panelJuegos.add(lblSinopsis);
 		
 		JLabel lblPlataforma = new JLabel("Plataforma:");
 		lblPlataforma.setForeground(Color.WHITE);
 		lblPlataforma.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblPlataforma.setBounds(346, 98, 115, 25);
+		lblPlataforma.setBounds(345, 70, 100, 25);
 		panelJuegos.add(lblPlataforma);
 		
 		JLabel lblGenero = new JLabel("G\u00E9nero:");
 		lblGenero.setForeground(Color.WHITE);
 		lblGenero.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblGenero.setBounds(346, 62, 89, 25);
+		lblGenero.setBounds(345, 40, 65, 25);
 		panelJuegos.add(lblGenero);
 		
 		JLabel lblFechaSalida = new JLabel("Fecha Salida:");
 		lblFechaSalida.setForeground(Color.WHITE);
 		lblFechaSalida.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblFechaSalida.setBounds(346, 167, 133, 25);
+		lblFechaSalida.setBounds(345, 130, 125, 25);
 		panelJuegos.add(lblFechaSalida);
 		
 		JLabel lblEmp = new JLabel("Empresa:");
 		lblEmp.setForeground(Color.WHITE);
 		lblEmp.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblEmp.setBounds(346, 134, 159, 25);
+		lblEmp.setBounds(345, 100, 80, 25);
 		panelJuegos.add(lblEmp);
 		
 		JLabel labelCaratula = new JLabel("");
 		labelCaratula.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		labelCaratula.setBounds(21, 11, 251, 231);
+		labelCaratula.setBounds(20, 10, 245, 240);
 		panelJuegos.add(labelCaratula);
 		
 		JLabel lblJuegoNom = new JLabel("");
@@ -176,7 +176,7 @@ public class PantallaJuegos extends JPanel {
 		JLabel lblMulti = new JLabel("Multijugador:");
 		lblMulti.setForeground(Color.WHITE);
 		lblMulti.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblMulti.setBounds(148, 345, 144, 25);
+		lblMulti.setBounds(345, 160, 125, 25);
 		panelJuegos.add(lblMulti);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
