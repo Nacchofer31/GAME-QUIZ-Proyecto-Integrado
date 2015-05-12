@@ -104,7 +104,7 @@ public class PantallaOpciones extends JPanel {
 					if (Desktop.isDesktopSupported()) {
 					Desktop desktop = Desktop.getDesktop();
 					if (desktop.isSupported(Desktop.Action.BROWSE)) {
-					desktop.browse(new URI("http://www.gamequiz.esy.es/web/descripcionNosotros.html"));
+					desktop.browse(new URI("http://www.gamequiz.esy.es/web/"));
 					}
 					}
 					} catch (Exception e) {
