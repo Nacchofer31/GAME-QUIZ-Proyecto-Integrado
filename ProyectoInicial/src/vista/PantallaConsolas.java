@@ -52,15 +52,15 @@ public class PantallaConsolas extends JPanel {
 		lblNombre.setBounds(190, 20, 75, 35);
 		layeredPane.add(lblNombre);
 		
-		JLabel lblGnero = new JLabel("G\u00E9nero:");
-		lblGnero.setForeground(Color.WHITE);
-		lblGnero.setFont(new Font("BatangChe", Font.PLAIN, 19));
-		lblGnero.setBounds(460, 20, 90, 35);
-		layeredPane.add(lblGnero);
+		JLabel lblEmpresa = new JLabel("Empresa:");
+		lblEmpresa.setForeground(Color.WHITE);
+		lblEmpresa.setFont(new Font("BatangChe", Font.PLAIN, 19));
+		lblEmpresa.setBounds(460, 20, 90, 35);
+		layeredPane.add(lblEmpresa);
 		
-		JComboBox comboBoxGen = new JComboBox();
-		comboBoxGen.setBounds(545, 30, 150, 20);
-		layeredPane.add(comboBoxGen);
+		JComboBox comboBoxEmp = new JComboBox();
+		comboBoxEmp.setBounds(545, 30, 150, 20);
+		layeredPane.add(comboBoxEmp);
 		
 
 		//IMAGEN DE FONDO
@@ -89,13 +89,13 @@ public class PantallaConsolas extends JPanel {
 		JLabel lblPlataforma = new JLabel("Fecha Salida:");
 		lblPlataforma.setForeground(Color.WHITE);
 		lblPlataforma.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblPlataforma.setBounds(345, 35, 125, 25);
+		lblPlataforma.setBounds(345, 55, 125, 25);
 		panelJuegos.add(lblPlataforma);
 		
 		JLabel lblEmp = new JLabel("Empresa:");
 		lblEmp.setForeground(Color.WHITE);
 		lblEmp.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblEmp.setBounds(345, 65, 80, 25);
+		lblEmp.setBounds(345, 30, 80, 25);
 		panelJuegos.add(lblEmp);
 		
 		JLabel labelCaratula = new JLabel();
@@ -112,13 +112,13 @@ public class PantallaConsolas extends JPanel {
 		JLabel lblJuegoPlat = new JLabel();
 		lblJuegoPlat.setForeground(Color.WHITE);
 		lblJuegoPlat.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoPlat.setBounds(465, 35, 280, 25);
+		lblJuegoPlat.setBounds(463, 55, 280, 25);
 		panelJuegos.add(lblJuegoPlat);
 		
 		JLabel lblJuegoEmp = new JLabel();
 		lblJuegoEmp.setForeground(Color.WHITE);
 		lblJuegoEmp.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoEmp.setBounds(420, 65, 230, 25);
+		lblJuegoEmp.setBounds(420, 30, 230, 25);
 		panelJuegos.add(lblJuegoEmp);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -127,15 +127,15 @@ public class PantallaConsolas extends JPanel {
 		scrollPane_1.setEnabled(false);
 		scrollPane_1.getViewport().setOpaque(false);
 		scrollPane_1.setOpaque(false);
-		scrollPane_1.setBounds(345, 200, 475, 200);
+		scrollPane_1.setBounds(345, 210, 470, 200);
 		panelJuegos.add(scrollPane_1);
 		
 		JTextPane textPane = new JTextPane();
+		scrollPane_1.setViewportView(textPane);
 		textPane.setEnabled(false);
 		textPane.setOpaque(false);
 		textPane.setEditable(false);
 		textPane.setBorder(null);
-		scrollPane_1.setViewportView(textPane);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(0, 0, -17, 47);
