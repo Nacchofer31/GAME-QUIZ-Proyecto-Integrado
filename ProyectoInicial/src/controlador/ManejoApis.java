@@ -4,7 +4,6 @@ import modelo.ApiJSONConsolas;
 import modelo.ApiJSONEmpresas;
 import modelo.ApiJSONGenero;
 import modelo.ApiJSONVideojuegos;
-import vista.pruevaConexion;
 
 public class ManejoApis {
 	private ApiJSONVideojuegos apiJuegos;
@@ -18,8 +17,8 @@ public class ManejoApis {
 		apiGenero = new ApiJSONGenero();
 		apiEmpresa = new ApiJSONEmpresas();
 		apiConsola = new ApiJSONConsolas();
-		pruevaConexion frame = new pruevaConexion(this);
-		frame.setVisible(true);
+		juegosTodos=apiJuegos.getNombreDatos();
+		
 	}
 	
 	public String[] buscarJuego(String juego){
@@ -88,7 +87,6 @@ public class ManejoApis {
 	}
 	
 	public String[] mostrarJuegos(){
-		juegosTodos=apiJuegos.getNombreDatos();
 		return juegosTodos;
 	}
 	
@@ -100,8 +98,8 @@ public class ManejoApis {
 		for(int i = 0;i<viejo.length;i++){
 			String nombre = viejo[i];
 			for(int e = 0;e<apiJuegos.getNombreDatos().length;e++){
-				if(nombre.equals(apiJuegos.getDato(e, 4))){
-					genero[i]=apiJuegos.getDato(e, 5);
+				if(nombre.equals(apiJuegos.getDato(e, 3))){
+					genero[i]=apiJuegos.getDato(e, 4);
 				}
 			}
 		}
@@ -110,14 +108,19 @@ public class ManejoApis {
 				numeroCoincidencias++;
 			}
 		}
-		nuevo = new String[numeroCoincidencias];
-		for(int i = 0;i<viejo.length;i++){
-			if(genero[i].equals(generoPedido)){
-				nuevo[posicion]=viejo[i];
-				posicion++;
+		if(numeroCoincidencias!=0){
+			nuevo = new String[numeroCoincidencias];
+			for(int i = 0;i<viejo.length;i++){
+				if(genero[i].equals(generoPedido)){
+					nuevo[posicion]=viejo[i];
+					posicion++;
+				}
 			}
+			return nuevo;
 		}
-		return nuevo;
+		
+		return viejo;
+		
 	}
 	
 	public String[] filtroConsola(String[] viejo,String consolaPedido){
@@ -128,7 +131,7 @@ public class ManejoApis {
 		for(int i = 0;i<viejo.length;i++){
 			String nombre = viejo[i];
 			for(int e = 0;e<apiJuegos.getNombreDatos().length;e++){
-				if(nombre.equals(apiJuegos.getDato(e, 4))){
+				if(nombre.equals(apiJuegos.getDato(e, 3))){
 					consola[i]=apiJuegos.getDato(e, 1);
 				}
 			}
@@ -147,7 +150,7 @@ public class ManejoApis {
 		}
 		return nuevo;
 	}
-	public String[] filtroMultijugador(String[] viejo,int tipoPedido){
+	public String[] filtroMultijugador(String[] viejo,String tipoPedido){
 		int numeroCoincidencias=0;
 		String multijugador[]=new String[viejo.length];
 		String nuevo[];
@@ -155,7 +158,7 @@ public class ManejoApis {
 		for(int i = 0;i<viejo.length;i++){
 			String nombre = viejo[i];
 			for(int e = 0;e<apiJuegos.getNombreDatos().length;e++){
-				if(nombre.equals(apiJuegos.getDato(e, 4))){
+				if(nombre.equals(apiJuegos.getDato(e, 3))){
 					multijugador[i]=apiJuegos.getDato(e, 7);
 				}
 			}
@@ -175,8 +178,41 @@ public class ManejoApis {
 		return nuevo;
 	}
 	
-	public String[] filtroGeneral(boolean generoB, String generoS, boolean consolaB,String consolaS, boolean multijugadorB,String multijugadorS){
-		String nuevo[]=juegosTodos;
+	public String[] filtroNombre(String[] viejo,String nombreBuscado){
+		int numeroCoincidencias=0;
+		String nombres[]=new String[viejo.length];
+		String nuevo[];
+		int posicion=0;
+		CharSequence nB = nombreBuscado;
+		for(int i = 0;i<viejo.length;i++){
+			String nombre = viejo[i];
+			for(int e = 0;e<apiJuegos.getNombreDatos().length;e++){
+				if(nombre.equals(apiJuegos.getDato(e, 3))){
+					nombres[i]=apiJuegos.getDato(e, 3);
+				}
+			}
+		}
+		
+		for(int i = 0;i<nombres.length;i++){
+			if(nombres[i].contains(nB)){
+				numeroCoincidencias++;
+			}
+		}
+		nuevo = new String[numeroCoincidencias];
+		for(int i = 0;i<viejo.length;i++){
+			if(nombres[i].contains(nB)){
+				nuevo[posicion]=viejo[i];
+				posicion++;
+			}
+		}
+		return nuevo;
+	}
+	
+	public String[] filtroGeneral(boolean nombreB, String nombreS,boolean generoB, String generoS, boolean consolaB,String consolaS, boolean multijugadorB,String multijugadorS){
+		String nuevo[]=juegosTodos;		
+		if(nombreB==true){
+			nuevo = filtroNombre(nuevo, nombreS);
+		}
 		if(generoB==true){
 			nuevo = filtroGenero(nuevo, generoS);
 		}
@@ -184,7 +220,7 @@ public class ManejoApis {
 			nuevo = filtroConsola(nuevo, consolaS);
 		}
 		if(multijugadorB==true){
-			nuevo = filtroGenero(nuevo, multijugadorS);
+			nuevo = filtroMultijugador(nuevo, multijugadorS);
 		}
 		return nuevo;
 	}
