@@ -1,33 +1,47 @@
 package vista;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
+import java.util.Iterator;
 
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.JSeparator;
-import java.awt.Color;
-import javax.swing.SwingConstants;
-import javax.swing.JLayeredPane;
-import javax.swing.border.BevelBorder;
 import javax.swing.JButton;
-import javax.swing.JRadioButton;
-import java.awt.Font;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.EtchedBorder;
 import javax.swing.JComboBox;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JList;
-import javax.swing.JTextArea;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.SwingConstants;
+import javax.swing.border.EtchedBorder;
+
+import controlador.ManejoApis;
+
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class PantallaJuegos extends JPanel {
 	private JTextField nombreField;
-	public PantallaJuegos() {
+	private ManejoApis control;
+	private JRadioButton rdbtnMultijugador;
+	private String multijugador="0";
+	private JList list;
+	
+	public PantallaJuegos(ManejoApis m) {
 		setBounds(0, 0, 1355, 591);
 		setLayout(null);
+		control=m;
 		
 
 		JLayeredPane layeredPane = new JLayeredPane();
@@ -36,16 +50,21 @@ public class PantallaJuegos extends JPanel {
 		add(layeredPane);
 		layeredPane.setLayout(null);
 		
-		JButton btnBuscar = new JButton("Buscar");
-		btnBuscar.setForeground(Color.WHITE);
-		btnBuscar.setContentAreaFilled(false);
-		btnBuscar.setBorderPainted(false);
-		btnBuscar.setOpaque(false);
-		btnBuscar.setFont(new Font("Bell MT", Font.BOLD, 20));
-		btnBuscar.setBounds(15, 15, 102, 23);
-		layeredPane.add(btnBuscar);
 		
-		JRadioButton rdbtnMultijugador = new JRadioButton("Multijugador");
+		
+		rdbtnMultijugador = new JRadioButton("Multijugador");
+		rdbtnMultijugador.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				if(rdbtnMultijugador.isSelected()){
+					multijugador="1";
+					System.out.println("cambio: 1");
+				}else{
+					multijugador="0";
+					System.out.println("cambio: 0");
+				}
+			}
+		});
+		
 		rdbtnMultijugador.setFont(new Font("BatangChe", Font.PLAIN, 19));
 		rdbtnMultijugador.setForeground(Color.WHITE);
 		rdbtnMultijugador.setContentAreaFilled(false);
@@ -54,6 +73,7 @@ public class PantallaJuegos extends JPanel {
 		layeredPane.add(rdbtnMultijugador);
 		
 		nombreField = new JTextField();
+		
 		nombreField.setBounds(270, 30, 175, 20);
 		layeredPane.add(nombreField);
 		nombreField.setColumns(10);
@@ -71,8 +91,12 @@ public class PantallaJuegos extends JPanel {
 		layeredPane.add(lblGnero);
 		
 		JComboBox comboBoxGen = new JComboBox();
-		comboBoxGen.setBounds(545, 30, 150, 20);
+		comboBoxGen.setBounds(545, 30, 150, 20);		
+		for(int x = 0;x<control.getApiGenero().getNombreDatos().length;x++){
+			comboBoxGen.addItem(control.getApiGenero().getNombreDatos()[x]);
+		}
 		layeredPane.add(comboBoxGen);
+		
 		
 		JLabel lblPlataformas = new JLabel("Plataformas:");
 		lblPlataformas.setForeground(Color.WHITE);
@@ -82,8 +106,31 @@ public class PantallaJuegos extends JPanel {
 		
 		JComboBox comboBoxPlat = new JComboBox();
 		comboBoxPlat.setBounds(850, 30, 145, 20);
+		for(int x = 0;x<control.getApiConsola().getNombreDatos().length;x++){
+			comboBoxPlat.addItem(control.getApiConsola().getNombreDatos()[x]);
+		}
 		layeredPane.add(comboBoxPlat);
 		
+		
+		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			
+			boolean nombre=false;
+			if(nombreField.getText().length()>0){
+				nombre=true;
+			}
+				String datosDevueltos[]=control.filtroGeneral(nombre, nombreField.getText(), true, String.valueOf(comboBoxGen.getSelectedIndex()-1), true, String.valueOf(comboBoxPlat.getSelectedIndex()-1), true, multijugador);
+				list.setListData(datosDevueltos);
+			}
+		});
+		btnBuscar.setForeground(Color.WHITE);
+		btnBuscar.setContentAreaFilled(false);
+		btnBuscar.setBorderPainted(false);
+		btnBuscar.setOpaque(false);
+		btnBuscar.setFont(new Font("Bell MT", Font.BOLD, 20));
+		btnBuscar.setBounds(15, 15, 102, 23);
+		layeredPane.add(btnBuscar);
 
 		//IMAGEN DE FONDO
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
@@ -209,13 +256,33 @@ public class PantallaJuegos extends JPanel {
 		scrollPane.getViewport().setOpaque(false);
 		add(scrollPane);
 		
-		JList list = new JList();
+		list = new JList();
+		list.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent arg0) {
+				String datos[]=control.buscarJuego(list.getSelectedValue().toString());
+				lblJuegoNom.setText(datos[3]);
+				lblJuegoGen.setText(datos[4]);
+				lblJuegoEmp.setText(datos[2]);
+				lblJuegoFecha.setText(datos[6]);
+				lblJuegoPlat.setText(datos[1]);
+				textPane.setText(datos[5]);
+				Image imgCaratula = new ImageIcon(this.getClass().getResource(datos[8])).getImage();
+				labelCaratula.setIcon(new ImageIcon(imgCaratula));
+				if(datos[7].equals("0")){
+					lblJuegoMulti.setText("NO");
+				}else{
+					lblJuegoMulti.setText("YES");
+				}
+			}
+		});
+		list.setToolTipText("");
 		list.setOpaque(false);
 		scrollPane.setViewportView(list);
 		JLabel imgFondo = new JLabel("/Fondo.png");
 		imgFondo.setBounds(0, 0, 1355, 600);
 		imgFondo.setFont(new Font("BatangChe", Font.PLAIN, 20));
 		imgFondo.setIcon(new ImageIcon(iFondo));
+		list.setListData(control.getApiJuegos().getNombreDatos());
 		this.add(imgFondo);
 
 	}

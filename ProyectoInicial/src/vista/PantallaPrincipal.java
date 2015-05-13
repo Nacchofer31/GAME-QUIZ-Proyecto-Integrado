@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,8 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import java.awt.Font;
-import java.awt.SystemColor;
+import controlador.ManejoApis;
 
 public class PantallaPrincipal extends JFrame {
 	
@@ -27,11 +27,15 @@ public class PantallaPrincipal extends JFrame {
 	Decada00 d00 = new Decada00();
 	Decada10 d10 = new Decada10();
 	PantallaConsolas pC= new PantallaConsolas();
-	PantallaJuegos pJ= new PantallaJuegos();
+	PantallaJuegos pJ;
 	PantallaQuiz pQ= new PantallaQuiz();
 	PantallaOpciones pO= new PantallaOpciones();
 	
-	public PantallaPrincipal() {
+	private ManejoApis control;
+	
+	public PantallaPrincipal(ManejoApis c) {
+		control = c;
+		pJ= new PantallaJuegos(control);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(005, 000, 1355, 725);

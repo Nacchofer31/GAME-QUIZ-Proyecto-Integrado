@@ -29,8 +29,12 @@ public class ManejoVistas {
 	private PantallaOpciones pO;	
 	private PantallaPrincipal pP;
 	private PantallaDeCarga pCar;
+	
+	private ManejoApis control;
 
-	public ManejoVistas() {
+	public ManejoVistas(ManejoApis x) {
+		control = x;
+		
 		//pCar=new PantallaDeCarga();
 		pI= new PantallaInicio();
 		pH= new PantallaHistoria();
@@ -40,10 +44,10 @@ public class ManejoVistas {
 		d00 = new Decada00();
 		d10 = new Decada10();
 		pC= new PantallaConsolas();
-		pJ= new PantallaJuegos();
+		pJ= new PantallaJuegos(control);
 		pQ= new PantallaQuiz();
 		pO= new PantallaOpciones();	
-		pP= new PantallaPrincipal();
+		pP= new PantallaPrincipal(control);
 		pP.setVisible(true);
 	}
 	
