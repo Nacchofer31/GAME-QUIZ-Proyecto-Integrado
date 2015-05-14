@@ -188,13 +188,16 @@ public class PantallaConsolas extends JPanel {
 		scrollPane.setViewportView(list);
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {
-				String datos[] = control.buscarConsola(list.getSelectedValue().toString());
-				lblJuegoNom.setText(datos[2]);
-				lblJuegoEmp.setText(datos[1]);
-				textPane.setText(datos[3]);
-				lblJuegoPlat.setText(datos[4]);
-				Image imgCaratula = new ImageIcon(this.getClass().getResource(datos[5])).getImage();
-				labelCaratula.setIcon(new ImageIcon(imgCaratula));
+				if(list.getSelectedValue()!=null){
+					String datos[] = control.buscarConsola(list.getSelectedValue().toString());
+					lblJuegoNom.setText(datos[2]);
+					lblJuegoEmp.setText(datos[1]);
+					textPane.setText(datos[3]);
+					lblJuegoPlat.setText(datos[4]);
+					Image imgCaratula = new ImageIcon(this.getClass().getResource(datos[5])).getImage();
+					labelCaratula.setIcon(new ImageIcon(imgCaratula));				
+				}
+
 				
 			}
 		});
