@@ -24,44 +24,47 @@ public class PantallaQuiz extends JPanel {
 		JTextPane textPregunta = new JTextPane();
 		textPregunta.setForeground(Color.WHITE);
 		textPregunta.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		textPregunta.setText("ds\u00F1jfkl sdjfkasldkjf sdfjlasddkfs sdjflasldkjf sdfljsdflkksjf slfjkasdklfjadskf sdljfkewffjwef iejfpjef sdiiwejfwelkfw ljfjewfrwee rjiejfpew\u00F1jf");
+		textPregunta.setText("Pregunta");
 		textPregunta.setOpaque(false);
 		textPregunta.setBounds(164, 69, 977, 91);
 		add(textPregunta);
 		
-		JRadioButton radioButon1 = new JRadioButton("");
-		radioButon1.setOpaque(false);
-		radioButon1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		radioButon1.setBounds(164, 193, 877, 35);
-		add(radioButon1);
+		JButton btnSiguiente = new JButton("Siguiente");
+		btnSiguiente.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnSiguiente.setBounds(1019, 545, 122, 35);
+		add(btnSiguiente);
 		
-		JRadioButton radioButton2 = new JRadioButton("");
-		radioButton2.setOpaque(false);
-		radioButton2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		radioButton2.setBounds(164, 253, 877, 35);
-		add(radioButton2);
+		JButton btnPregunta1 = new JButton("respuesta1");
+		btnPregunta1.setForeground(Color.WHITE);
+		btnPregunta1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnPregunta1.setContentAreaFilled(false);
+		btnPregunta1.setBorderPainted(false);
+		btnPregunta1.setBounds(164, 194, 977, 49);
+		add(btnPregunta1);
 		
-		JRadioButton radioButton3 = new JRadioButton("");
-		radioButton3.setOpaque(false);
-		radioButton3.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		radioButton3.setBounds(164, 315, 877, 35);
-		add(radioButton3);
+		JButton btnPregunta2 = new JButton("respuesta2");
+		btnPregunta2.setForeground(Color.WHITE);
+		btnPregunta2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnPregunta2.setContentAreaFilled(false);
+		btnPregunta2.setBorderPainted(false);
+		btnPregunta2.setBounds(164, 254, 977, 49);
+		add(btnPregunta2);
 		
-		JRadioButton radioButton4 = new JRadioButton("");
-		radioButton4.setOpaque(false);
-		radioButton4.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		radioButton4.setBounds(164, 377, 877, 35);
-		add(radioButton4);
+		JButton btnPregunta3 = new JButton("respuesta3");
+		btnPregunta3.setForeground(Color.WHITE);
+		btnPregunta3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnPregunta3.setContentAreaFilled(false);
+		btnPregunta3.setBorderPainted(false);
+		btnPregunta3.setBounds(164, 314, 977, 49);
+		add(btnPregunta3);
 		
-		JButton btnConfirmar = new JButton("Confirmar");
-		btnConfirmar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnConfirmar.setBounds(164, 480, 122, 35);
-		add(btnConfirmar);
-		
-		JButton btnNewButton = new JButton("Siguiente");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnNewButton.setBounds(837, 488, 122, 35);
-		add(btnNewButton);
+		JButton btnPregunta4 = new JButton("respuesta4");
+		btnPregunta4.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnPregunta4.setForeground(Color.WHITE);
+		btnPregunta4.setContentAreaFilled(false);
+		btnPregunta4.setBorderPainted(false);
+		btnPregunta4.setBounds(164, 367, 977, 49);
+		add(btnPregunta4);
 		JLabel imgFondo = new JLabel("/Fondo.png");
 		imgFondo.setBounds(0, 0, 1355, 600);
 		imgFondo.setIcon(new ImageIcon(iFondo));
