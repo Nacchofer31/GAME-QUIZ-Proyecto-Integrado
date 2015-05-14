@@ -45,9 +45,16 @@ public class PantallaJuegos extends JPanel {
 		setLayout(null);
 		control=m;
 		
+		
+		Image bordeJuegos = new ImageIcon(this.getClass().getResource("/BordeSecciones.png")).getImage();
+		JLabel lblBordeJuegos = new JLabel();
+		lblBordeJuegos.setBounds(87, 130, 1220, 450);
+		lblBordeJuegos.setIcon(new ImageIcon(bordeJuegos));
+		this.add(lblBordeJuegos);
+
 
 		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(96, 52, 1196, 80);
+		layeredPane.setBounds(95, 50, 1195, 80);
 		layeredPane.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		add(layeredPane);
 		layeredPane.setLayout(null);
@@ -173,7 +180,7 @@ public class PantallaJuegos extends JPanel {
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
 		
 		JPanel panelJuegos = new JPanel();
-		panelJuegos.setBounds(435, 131, 860, 424);
+		panelJuegos.setBounds(435, 131, 855, 425);
 		panelJuegos.setForeground(Color.WHITE);
 		panelJuegos.setBorder(null);
 		panelJuegos.setOpaque(false);
@@ -189,7 +196,7 @@ public class PantallaJuegos extends JPanel {
 		JLabel lblSinopsis = new JLabel("Sinopsis:");
 		lblSinopsis.setForeground(Color.WHITE);
 		lblSinopsis.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblSinopsis.setBounds(345, 170, 90, 25);
+		lblSinopsis.setBounds(345, 200, 90, 25);
 		panelJuegos.add(lblSinopsis);
 		
 		JLabel lblPlataforma = new JLabel("Plataforma:");
@@ -269,15 +276,15 @@ public class PantallaJuegos extends JPanel {
 		scrollPane_1.setEnabled(false);
 		scrollPane_1.getViewport().setOpaque(false);
 		scrollPane_1.setOpaque(false);
-		scrollPane_1.setBounds(345, 200, 475, 200);
+		scrollPane_1.setBounds(345, 225, 475, 200);
 		panelJuegos.add(scrollPane_1);
 		
 		JTextPane textPane = new JTextPane();
+		scrollPane_1.setViewportView(textPane);
 		textPane.setEnabled(false);
 		textPane.setOpaque(false);
 		textPane.setEditable(false);
 		textPane.setBorder(null);
-		scrollPane_1.setViewportView(textPane);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(0, 0, -17, 47);
@@ -297,7 +304,8 @@ public class PantallaJuegos extends JPanel {
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {
-				String datos[]=control.buscarJuego(list.getSelectedValue().toString());
+			    if(list.getSelectedValue()!=null){
+			    	String datos[]=control.buscarJuego(list.getSelectedValue().toString());
 				lblJuegoNom.setText(datos[3]);
 				lblJuegoGen.setText(datos[4]);
 				lblJuegoEmp.setText(datos[2]);
@@ -311,6 +319,7 @@ public class PantallaJuegos extends JPanel {
 				}else{
 					lblJuegoMulti.setText("YES");
 				}
+			    }
 			}
 		});
 		list.setToolTipText("");
