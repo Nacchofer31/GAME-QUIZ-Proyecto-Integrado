@@ -23,6 +23,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ListSelectionModel;
 
 public class PantallaConsolas extends JPanel {
 	private JTextField nombreField;
@@ -183,6 +184,7 @@ public class PantallaConsolas extends JPanel {
 		add(scrollPane);
 		
 		list = new JList();
+		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(list);
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {

@@ -30,6 +30,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import javax.swing.ListSelectionModel;
 
 public class PantallaJuegos extends JPanel {
 	private JTextField nombreField;
@@ -293,6 +294,7 @@ public class PantallaJuegos extends JPanel {
 		add(scrollPane);
 		
 		list = new JList();
+		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {
 				String datos[]=control.buscarJuego(list.getSelectedValue().toString());
