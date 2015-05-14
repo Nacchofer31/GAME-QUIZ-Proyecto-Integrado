@@ -3,7 +3,10 @@ package vista;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
-import java.util.Iterator;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -17,20 +20,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import controlador.ManejoApis;
-
-import javax.swing.event.ListSelectionListener;
-import javax.swing.event.ListSelectionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.ItemEvent;
-import javax.swing.ListSelectionModel;
 
 public class PantallaJuegos extends JPanel {
 	private JTextField nombreField;
@@ -46,13 +42,9 @@ public class PantallaJuegos extends JPanel {
 		control=m;
 		
 		
-		Image bordeJuegos = new ImageIcon(this.getClass().getResource("/BordeSecciones.png")).getImage();
-		JLabel lblBordeJuegos = new JLabel();
-		lblBordeJuegos.setBounds(87, 130, 1220, 450);
-		lblBordeJuegos.setIcon(new ImageIcon(bordeJuegos));
-		this.add(lblBordeJuegos);
+		Image bordeJuegos = new ImageIcon(this.getClass().getResource("/BordeJuegos.png")).getImage();
 
-
+		
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(95, 50, 1195, 80);
 		layeredPane.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -178,6 +170,10 @@ public class PantallaJuegos extends JPanel {
 
 		//IMAGEN DE FONDO
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
+		JLabel lblBordeJuegos = new JLabel();
+		lblBordeJuegos.setBounds(85, 130, 1232, 450);
+		lblBordeJuegos.setIcon(new ImageIcon(bordeJuegos));
+		this.add(lblBordeJuegos);
 		
 		JPanel panelJuegos = new JPanel();
 		panelJuegos.setBounds(435, 131, 855, 425);
@@ -196,7 +192,7 @@ public class PantallaJuegos extends JPanel {
 		JLabel lblSinopsis = new JLabel("Sinopsis:");
 		lblSinopsis.setForeground(Color.WHITE);
 		lblSinopsis.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblSinopsis.setBounds(345, 200, 90, 25);
+		lblSinopsis.setBounds(345, 180, 90, 25);
 		panelJuegos.add(lblSinopsis);
 		
 		JLabel lblPlataforma = new JLabel("Plataforma:");
@@ -224,7 +220,6 @@ public class PantallaJuegos extends JPanel {
 		panelJuegos.add(lblEmp);
 		
 		JLabel labelCaratula = new JLabel();
-		labelCaratula.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		labelCaratula.setBounds(10, 13, 300, 315);
 		panelJuegos.add(labelCaratula);
 		
@@ -271,7 +266,6 @@ public class PantallaJuegos extends JPanel {
 		panelJuegos.add(lblMulti);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setViewportBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		scrollPane_1.setBorder(null);
 		scrollPane_1.setEnabled(false);
 		scrollPane_1.getViewport().setOpaque(false);
@@ -293,9 +287,7 @@ public class PantallaJuegos extends JPanel {
 		separator.setOrientation(SwingConstants.VERTICAL);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setOpaque(false);
 		scrollPane.setBounds(95, 145, 330, 410);
-		scrollPane.setViewportBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		scrollPane.setOpaque(false);
 		scrollPane.getViewport().setOpaque(false);
 		add(scrollPane);
