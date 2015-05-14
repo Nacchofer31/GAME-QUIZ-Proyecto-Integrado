@@ -35,7 +35,7 @@ public class ManejoVistas {
 	public ManejoVistas(ManejoApis x) {
 		control = x;
 		
-		//pCar=new PantallaDeCarga();
+		pCar=new PantallaDeCarga();
 		pI= new PantallaInicio();
 		pH= new PantallaHistoria();
 		d70 = new Decada70();
