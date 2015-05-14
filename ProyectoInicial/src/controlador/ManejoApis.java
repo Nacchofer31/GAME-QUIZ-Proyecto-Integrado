@@ -3,6 +3,7 @@ package controlador;
 import modelo.ApiJSONConsolas;
 import modelo.ApiJSONEmpresas;
 import modelo.ApiJSONGenero;
+import modelo.ApiJSONQuiz;
 import modelo.ApiJSONVideojuegos;
 
 public class ManejoApis {
@@ -10,6 +11,7 @@ public class ManejoApis {
 	private ApiJSONGenero apiGenero;
 	private ApiJSONEmpresas apiEmpresa;
 	private ApiJSONConsolas apiConsola;
+	private ApiJSONQuiz apiQuiz;
 	private String juegosTodos[];
 	private String consolasTodas[];
 
@@ -18,6 +20,7 @@ public class ManejoApis {
 		apiGenero = new ApiJSONGenero();
 		apiEmpresa = new ApiJSONEmpresas();
 		apiConsola = new ApiJSONConsolas();
+		apiQuiz = new ApiJSONQuiz();
 		juegosTodos=apiJuegos.getNombreDatos();
 		consolasTodas=apiConsola.getNombreDatos();
 		
