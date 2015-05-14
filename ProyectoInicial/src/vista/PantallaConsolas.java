@@ -181,12 +181,9 @@ public class PantallaConsolas extends JPanel {
 		scrollPane.setViewportBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		scrollPane.getViewport().setOpaque(false);
 		add(scrollPane);
-		JLabel imgFondo = new JLabel("/Fondo.png");
-		imgFondo.setBounds(0, 0, 1355, 600);
-		imgFondo.setFont(new Font("BatangChe", Font.PLAIN, 20));
-		imgFondo.setIcon(new ImageIcon(iFondo));
 		
 		list = new JList();
+		scrollPane.setViewportView(list);
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {
 				String datos[] = control.buscarConsola(list.getSelectedValue().toString());
@@ -197,10 +194,12 @@ public class PantallaConsolas extends JPanel {
 				
 			}
 		});
-		list.setBounds(96, 143, 324, 404);
-		add(list);
 		list.setOpaque(false);
 		list.setListData(control.getApiConsola().getNombreDatos());
+		JLabel imgFondo = new JLabel("/Fondo.png");
+		imgFondo.setBounds(0, 0, 1355, 600);
+		imgFondo.setFont(new Font("BatangChe", Font.PLAIN, 20));
+		imgFondo.setIcon(new ImageIcon(iFondo));
 		this.add(imgFondo);
 
 	}
