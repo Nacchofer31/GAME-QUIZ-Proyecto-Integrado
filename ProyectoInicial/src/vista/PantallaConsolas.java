@@ -191,6 +191,8 @@ public class PantallaConsolas extends JPanel {
 				lblJuegoEmp.setText(datos[1]);
 				textPane.setText(datos[3]);
 				lblJuegoPlat.setText(datos[4]);
+				Image imgCaratula = new ImageIcon(this.getClass().getResource(datos[5])).getImage();
+				labelCaratula.setIcon(new ImageIcon(imgCaratula));
 				
 			}
 		});
@@ -201,6 +203,16 @@ public class PantallaConsolas extends JPanel {
 		imgFondo.setFont(new Font("BatangChe", Font.PLAIN, 20));
 		imgFondo.setIcon(new ImageIcon(iFondo));
 		this.add(imgFondo);
-
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				list.setListData(control.getApiConsola().getNombreDatos());
+				comboBoxEmp.setSelectedIndex(0);
+				nombreField.setText("");
+			}
+		});
+		btnReset.setBounds(25, 49, 89, 23);
+		layeredPane.add(btnReset);
 	}
 }
