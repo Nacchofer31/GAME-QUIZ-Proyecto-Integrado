@@ -1,5 +1,6 @@
 package controlador;
 
+
 import modelo.ApiJSONConsolas;
 import modelo.ApiJSONEmpresas;
 import modelo.ApiJSONGenero;
@@ -14,6 +15,12 @@ public class ManejoApis {
 	private ApiJSONQuiz apiQuiz;
 	private String juegosTodos[];
 	private String consolasTodas[];
+	
+	//VARIABLES PARA EL QUIZ
+	private int aciertos=0;
+	private int fallos=0;
+	private int preguntasCadaTurno[]=new int[10];
+	
 
 	public ManejoApis() {
 		apiJuegos = new ApiJSONVideojuegos();
@@ -23,6 +30,7 @@ public class ManejoApis {
 		apiQuiz = new ApiJSONQuiz();
 		juegosTodos=apiJuegos.getNombreDatos();
 		consolasTodas=apiConsola.getNombreDatos();
+		cargaPreguntas();
 		
 	}
 	
@@ -304,6 +312,29 @@ public class ManejoApis {
 			return new String [0];
 		}*/
 		return nuevo;
+	}
+	
+	public void cargaPreguntas(){
+		for(int i = 0;i<preguntasCadaTurno.length;i++){
+			boolean sigue=false;
+			double nuevaPregunta=0;
+			while(sigue==false){
+				nuevaPregunta= Math.random()*apiQuiz.getNombreDatos().length;
+				int coincidencia=0;
+				for(int x = 0;x<preguntasCadaTurno.length;x++){
+					String f = String.valueOf(nuevaPregunta);
+					int posicionPunto = f.indexOf('.');
+					String k = f.substring(0, posicionPunto);
+					if(String.valueOf(preguntasCadaTurno[x])==k){
+						coincidencia++;
+					}
+				}
+				if(coincidencia==0){
+					sigue=true;
+				}
+			}
+			preguntasCadaTurno[i]=(int)nuevaPregunta;
+		}
 	}
 
 	public ApiJSONConsolas getApiConsola() {
