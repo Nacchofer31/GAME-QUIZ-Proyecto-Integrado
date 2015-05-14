@@ -45,7 +45,7 @@ public class ManejoVistas {
 		d10 = new Decada10();
 		pC= new PantallaConsolas(control);
 		pJ= new PantallaJuegos(control);
-		pQ= new PantallaQuiz();
+		pQ= new PantallaQuiz(control);
 		pO= new PantallaOpciones();	
 		pP= new PantallaPrincipal(control);
 		pP.setVisible(true);

@@ -321,6 +321,10 @@ public class ManejoApis {
 	public ApiJSONEmpresas getApiEmpresa() {
 		return apiEmpresa;
 	}
+
+	public ApiJSONQuiz getApiQuiz() {
+		return apiQuiz;
+	}
 	
 	
 
