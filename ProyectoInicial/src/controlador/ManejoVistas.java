@@ -43,7 +43,7 @@ public class ManejoVistas {
 		d90 = new Decada90();
 		d00 = new Decada00();
 		d10 = new Decada10();
-		pC= new PantallaConsolas();
+		pC= new PantallaConsolas(control);
 		pJ= new PantallaJuegos(control);
 		pQ= new PantallaQuiz();
 		pO= new PantallaOpciones();	

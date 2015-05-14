@@ -37,6 +37,7 @@ public class PantallaJuegos extends JPanel {
 	private JRadioButton rdbtnMultijugador;
 	private String multijugador="0";
 	private JList list;
+	private boolean multi=false;
 	
 	public PantallaJuegos(ManejoApis m) {
 		setBounds(0, 0, 1355, 591);
@@ -55,12 +56,11 @@ public class PantallaJuegos extends JPanel {
 		rdbtnMultijugador = new JRadioButton("Multijugador");
 		rdbtnMultijugador.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
+				multi=true;
 				if(rdbtnMultijugador.isSelected()){
 					multijugador="1";
-					System.out.println("cambio: 1");
 				}else{
 					multijugador="0";
-					System.out.println("cambio: 0");
 				}
 			}
 		});
@@ -92,8 +92,12 @@ public class PantallaJuegos extends JPanel {
 		
 		JComboBox comboBoxGen = new JComboBox();
 		comboBoxGen.setBounds(545, 30, 150, 20);		
-		for(int x = 0;x<control.getApiGenero().getNombreDatos().length;x++){
-			comboBoxGen.addItem(control.getApiGenero().getNombreDatos()[x]);
+		for(int x = 0;x<control.getApiGenero().getNombreDatos().length+1;x++){
+			if(x==0){
+				comboBoxGen.addItem("");
+			}else{
+				comboBoxGen.addItem(control.getApiGenero().getNombreDatos()[x-1]);
+			}
 		}
 		layeredPane.add(comboBoxGen);
 		
@@ -106,8 +110,12 @@ public class PantallaJuegos extends JPanel {
 		
 		JComboBox comboBoxPlat = new JComboBox();
 		comboBoxPlat.setBounds(850, 30, 145, 20);
-		for(int x = 0;x<control.getApiConsola().getNombreDatos().length;x++){
-			comboBoxPlat.addItem(control.getApiConsola().getNombreDatos()[x]);
+		for(int x = 0;x<control.getApiConsola().getNombreDatos().length+1;x++){
+			if(x==0){
+				comboBoxPlat.addItem("");
+			}else{
+				comboBoxPlat.addItem(control.getApiConsola().getNombreDatos()[x-1]);
+			}
 		}
 		layeredPane.add(comboBoxPlat);
 		
@@ -115,14 +123,28 @@ public class PantallaJuegos extends JPanel {
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			
-			boolean nombre=false;
-			if(nombreField.getText().length()>0){
-				nombre=true;
-			}
-				String datosDevueltos[]=control.filtroGeneral(nombre, nombreField.getText(), true, String.valueOf(comboBoxGen.getSelectedIndex()-1), true, String.valueOf(comboBoxPlat.getSelectedIndex()-1), true, multijugador);
+		boolean nombre=false;
+		boolean genero=false;
+		boolean consola=false;
+		if(nombreField.getText().length()>0){
+			nombre=true;
+		}
+		if(comboBoxGen.getSelectedItem().toString().equals("")==false){
+			genero=true;
+		}
+		if(comboBoxPlat.getSelectedItem().toString().equals("")==false){
+			consola=true;
+		}
+		
+			String datosDevueltos[]=control.filtroGeneral(nombre, nombreField.getText(), genero, String.valueOf(comboBoxGen.getSelectedIndex()), consola, String.valueOf(comboBoxPlat.getSelectedIndex()), multi, multijugador);
+			if(datosDevueltos.length!=0){
 				list.setListData(datosDevueltos);
+			}else{
+				String d[]=new String[0];
+				list.setListData(d);
+				
 			}
+		}
 		});
 		btnBuscar.setForeground(Color.WHITE);
 		btnBuscar.setContentAreaFilled(false);
@@ -131,6 +153,20 @@ public class PantallaJuegos extends JPanel {
 		btnBuscar.setFont(new Font("Bell MT", Font.BOLD, 20));
 		btnBuscar.setBounds(15, 15, 102, 23);
 		layeredPane.add(btnBuscar);
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				list.setListData(control.getApiJuegos().getNombreDatos());
+				multi=false;
+				rdbtnMultijugador.setSelected(false);
+				comboBoxPlat.setSelectedIndex(0);
+				comboBoxGen.setSelectedIndex(0);
+				nombreField.setText("");
+			}
+		});
+		btnReset.setBounds(25, 49, 89, 23);
+		layeredPane.add(btnReset);
 
 		//IMAGEN DE FONDO
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();

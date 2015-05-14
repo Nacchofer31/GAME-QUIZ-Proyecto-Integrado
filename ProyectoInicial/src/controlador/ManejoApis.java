@@ -11,6 +11,7 @@ public class ManejoApis {
 	private ApiJSONEmpresas apiEmpresa;
 	private ApiJSONConsolas apiConsola;
 	private String juegosTodos[];
+	private String consolasTodas[];
 
 	public ManejoApis() {
 		apiJuegos = new ApiJSONVideojuegos();
@@ -18,6 +19,7 @@ public class ManejoApis {
 		apiEmpresa = new ApiJSONEmpresas();
 		apiConsola = new ApiJSONConsolas();
 		juegosTodos=apiJuegos.getNombreDatos();
+		consolasTodas=apiConsola.getNombreDatos();
 		
 	}
 	
@@ -108,18 +110,17 @@ public class ManejoApis {
 				numeroCoincidencias++;
 			}
 		}
+		nuevo = new String[numeroCoincidencias];
 		if(numeroCoincidencias!=0){
-			nuevo = new String[numeroCoincidencias];
 			for(int i = 0;i<viejo.length;i++){
 				if(genero[i].equals(generoPedido)){
 					nuevo[posicion]=viejo[i];
 					posicion++;
 				}
 			}
-			return nuevo;
 		}
 		
-		return viejo;
+		return nuevo;
 		
 	}
 	
@@ -222,6 +223,83 @@ public class ManejoApis {
 		if(multijugadorB==true){
 			nuevo = filtroMultijugador(nuevo, multijugadorS);
 		}
+		/*if(nombreB==false&&generoB==false&&consolaB==false&&multijugadorB==false){
+			return new String [0];
+		}*/
+		return nuevo;
+	}
+	
+	public String[] filtroEmpresa(String[] viejo,String empresaPedida){
+		int numeroCoincidencias=0;
+		String empresa[]=new String[viejo.length];
+		String nuevo[];
+		int posicion=0;
+		for(int i = 0;i<viejo.length;i++){
+			String nombre = viejo[i];
+			for(int e = 0;e<apiConsola.getNombreDatos().length;e++){
+				if(nombre.equals(apiConsola.getDato(e, 2))){
+					empresa[i]=apiConsola.getDato(e, 1);
+				}
+			}
+		}
+		for(int i = 0;i<empresa.length;i++){
+			if(empresa[i].equals(empresaPedida)){
+				numeroCoincidencias++;
+			}
+		}
+		nuevo = new String[numeroCoincidencias];
+		if(numeroCoincidencias!=0){
+			for(int i = 0;i<viejo.length;i++){
+				if(empresa[i].equals(empresaPedida)){
+					nuevo[posicion]=viejo[i];
+					posicion++;
+				}
+			}
+		}
+		return nuevo;
+	}
+	
+	public String[] filtroNombreConsola(String[] viejo,String nombreConsolaBuscado){
+		int numeroCoincidencias=0;
+		String nombres[]=new String[viejo.length];
+		String nuevo[];
+		int posicion=0;
+		CharSequence nB = nombreConsolaBuscado;
+		for(int i = 0;i<viejo.length;i++){
+			String nombre = viejo[i];
+			for(int e = 0;e<apiConsola.getNombreDatos().length;e++){
+				if(nombre.equals(apiConsola.getDato(e, 2))){
+					nombres[i]=apiConsola.getDato(e, 2);
+				}
+			}
+		}
+		
+		for(int i = 0;i<nombres.length;i++){
+			if(nombres[i].contains(nB)){
+				numeroCoincidencias++;
+			}
+		}
+		nuevo = new String[numeroCoincidencias];
+		for(int i = 0;i<viejo.length;i++){
+			if(nombres[i].contains(nB)){
+				nuevo[posicion]=viejo[i];
+				posicion++;
+			}
+		}
+		return nuevo;
+	}
+	
+	public String[] filtroGeneralConsola(boolean nombreB, String nombreS,boolean empresaB, String empresaS){
+		String nuevo[]=consolasTodas;		
+		if(nombreB==true){
+			nuevo = filtroNombreConsola(nuevo, nombreS);
+		}
+		if(empresaB==true){
+			nuevo = filtroEmpresa(nuevo, empresaS);
+		}
+		/*if(nombreB==false&&generoB==false&&consolaB==false&&multijugadorB==false){
+			return new String [0];
+		}*/
 		return nuevo;
 	}
 

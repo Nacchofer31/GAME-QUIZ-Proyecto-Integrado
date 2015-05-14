@@ -26,7 +26,7 @@ public class PantallaPrincipal extends JFrame {
 	Decada90 d90 = new Decada90();
 	Decada00 d00 = new Decada00();
 	Decada10 d10 = new Decada10();
-	PantallaConsolas pC= new PantallaConsolas();
+	PantallaConsolas pC;
 	PantallaJuegos pJ;
 	PantallaQuiz pQ= new PantallaQuiz();
 	PantallaOpciones pO= new PantallaOpciones();
@@ -36,6 +36,7 @@ public class PantallaPrincipal extends JFrame {
 	public PantallaPrincipal(ManejoApis c) {
 		control = c;
 		pJ= new PantallaJuegos(control);
+		pC= new PantallaConsolas(control);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(005, 000, 1355, 725);

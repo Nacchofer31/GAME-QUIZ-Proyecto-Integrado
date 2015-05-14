@@ -11,7 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
@@ -19,9 +18,20 @@ import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
 
+import controlador.ManejoApis;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 public class PantallaConsolas extends JPanel {
 	private JTextField nombreField;
-	public PantallaConsolas() {
+	private ManejoApis control;
+	private JComboBox comboBoxEmp;
+	private JList list;
+	public PantallaConsolas(ManejoApis c) {
+		control = c;
+		
 		setBounds(0, 0, 1355, 591);
 		setLayout(null);
 		
@@ -33,6 +43,21 @@ public class PantallaConsolas extends JPanel {
 		layeredPane.setLayout(null);
 		
 		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				boolean nombre=false;
+				boolean empresa=false;
+				if(nombreField.getText().length()>0){
+					nombre=true;
+				}
+				if(comboBoxEmp.getSelectedItem().toString().equals("")==false){
+					empresa=true;
+				}
+				
+				String datosDevueltos[]=control.filtroGeneralConsola(nombre, nombreField.getText(), empresa, String.valueOf(comboBoxEmp.getSelectedIndex()));
+				list.setListData(datosDevueltos);
+			}
+		});
 		btnBuscar.setForeground(Color.WHITE);
 		btnBuscar.setContentAreaFilled(false);
 		btnBuscar.setBorderPainted(false);
@@ -58,8 +83,15 @@ public class PantallaConsolas extends JPanel {
 		lblEmpresa.setBounds(460, 20, 90, 35);
 		layeredPane.add(lblEmpresa);
 		
-		JComboBox comboBoxEmp = new JComboBox();
+		comboBoxEmp = new JComboBox();
 		comboBoxEmp.setBounds(545, 30, 150, 20);
+		for(int x=0;x<control.getApiEmpresa().getNombreDatos().length+1;x++){
+			if(x==0){
+				comboBoxEmp.addItem("");
+			}else{
+				comboBoxEmp.addItem(control.getApiEmpresa().getNombreDatos()[x-1]);
+			}
+		}
 		layeredPane.add(comboBoxEmp);
 		
 
@@ -106,19 +138,19 @@ public class PantallaConsolas extends JPanel {
 		JLabel lblJuegoNom = new JLabel();
 		lblJuegoNom.setForeground(Color.WHITE);
 		lblJuegoNom.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoNom.setBounds(410, 5, 300, 25);
+		lblJuegoNom.setBounds(410, 5, 405, 25);
 		panelJuegos.add(lblJuegoNom);
 		
 		JLabel lblJuegoPlat = new JLabel();
 		lblJuegoPlat.setForeground(Color.WHITE);
 		lblJuegoPlat.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoPlat.setBounds(463, 55, 280, 25);
+		lblJuegoPlat.setBounds(463, 55, 352, 25);
 		panelJuegos.add(lblJuegoPlat);
 		
 		JLabel lblJuegoEmp = new JLabel();
 		lblJuegoEmp.setForeground(Color.WHITE);
 		lblJuegoEmp.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoEmp.setBounds(420, 30, 230, 25);
+		lblJuegoEmp.setBounds(420, 30, 395, 25);
 		panelJuegos.add(lblJuegoEmp);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -145,21 +177,31 @@ public class PantallaConsolas extends JPanel {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setOpaque(false);
-		scrollPane.setBounds(95, 145, 330, 410);
+		scrollPane.setBounds(106, 143, 330, 410);
 		scrollPane.setViewportBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		scrollPane.setOpaque(false);
 		scrollPane.getViewport().setOpaque(false);
 		add(scrollPane);
 		JLabel imgFondo = new JLabel("/Fondo.png");
 		imgFondo.setBounds(0, 0, 1355, 600);
 		imgFondo.setFont(new Font("BatangChe", Font.PLAIN, 20));
 		imgFondo.setIcon(new ImageIcon(iFondo));
-		this.add(imgFondo);
 		
-		JList list = new JList();
-		list.setBounds(128, 196, 324, 404);
+		list = new JList();
+		list.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent arg0) {
+				String datos[] = control.buscarConsola(list.getSelectedValue().toString());
+				lblJuegoNom.setText(datos[2]);
+				lblJuegoEmp.setText(datos[1]);
+				textPane.setText(datos[3]);
+				lblJuegoPlat.setText(datos[4]);
+				
+			}
+		});
+		list.setBounds(96, 143, 324, 404);
 		add(list);
 		list.setOpaque(false);
+		list.setListData(control.getApiConsola().getNombreDatos());
+		this.add(imgFondo);
 
 	}
 }
