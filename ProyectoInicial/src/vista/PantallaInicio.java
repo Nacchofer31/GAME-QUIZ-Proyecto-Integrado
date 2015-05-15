@@ -35,6 +35,11 @@ public class PantallaInicio extends JPanel {
 				
 		//IMAGEN DE FONDO	
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
+		Image iHello = new ImageIcon(this.getClass().getResource("/hola.png")).getImage();
+		JLabel lblHello = new JLabel("");
+		lblHello.setBounds(162, 38, 160, 89);
+		lblHello.setIcon(new ImageIcon(iHello));
+		add(lblHello);
 		JLabel imgFondo = new JLabel("/Fondo.png");
 		imgFondo.setBounds(0, 0, 1355, 605);
 		imgFondo.setIcon(new ImageIcon(iFondo));
