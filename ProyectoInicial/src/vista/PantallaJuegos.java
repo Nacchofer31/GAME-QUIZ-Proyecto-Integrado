@@ -41,12 +41,10 @@ public class PantallaJuegos extends JPanel {
 		setLayout(null);
 		control=m;
 		
-		
 		Image bordeJuegos = new ImageIcon(this.getClass().getResource("/BordeJuegos.png")).getImage();
 
-		
 		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(95, 50, 1195, 80);
+		layeredPane.setBounds(95, 50, 1185, 80);
 		layeredPane.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		add(layeredPane);
 		layeredPane.setLayout(null);
@@ -122,19 +120,19 @@ public class PantallaJuegos extends JPanel {
 		
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent arg0) {
-		boolean nombre=false;
-		boolean genero=false;
-		boolean consola=false;
-		if(nombreField.getText().length()>0){
-			nombre=true;
-		}
-		if(comboBoxGen.getSelectedItem().toString().equals("")==false){
-			genero=true;
-		}
-		if(comboBoxPlat.getSelectedItem().toString().equals("")==false){
-			consola=true;
-		}
+		    public void actionPerformed(ActionEvent arg0) {
+			  	boolean nombre=false;
+			  	boolean genero=false;
+			  	boolean consola=false;
+			  	if(nombreField.getText().length()>0){
+			  		nombre=true;
+			  	}
+			  	if(comboBoxGen.getSelectedItem().toString().equals("")==false){
+			  		genero=true;
+			  	}
+			  	if(comboBoxPlat.getSelectedItem().toString().equals("")==false){
+			  		consola=true;
+			  	}
 		
 			String datosDevueltos[]=control.filtroGeneral(nombre, nombreField.getText(), genero, String.valueOf(comboBoxGen.getSelectedIndex()), consola, String.valueOf(comboBoxPlat.getSelectedIndex()), multi, multijugador);
 			if(datosDevueltos.length!=0){
@@ -151,7 +149,7 @@ public class PantallaJuegos extends JPanel {
 		btnBuscar.setBorderPainted(false);
 		btnBuscar.setOpaque(false);
 		btnBuscar.setFont(new Font("Bell MT", Font.BOLD, 20));
-		btnBuscar.setBounds(15, 15, 102, 23);
+		btnBuscar.setBounds(15, 15, 100, 25);
 		layeredPane.add(btnBuscar);
 		
 		JButton btnReset = new JButton("Reset");
@@ -165,18 +163,14 @@ public class PantallaJuegos extends JPanel {
 				nombreField.setText("");
 			}
 		});
-		btnReset.setBounds(25, 49, 89, 23);
+		btnReset.setBounds(25, 49, 90, 25);
 		layeredPane.add(btnReset);
 
 		//IMAGEN DE FONDO
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
-		JLabel lblBordeJuegos = new JLabel();
-		lblBordeJuegos.setBounds(85, 130, 1232, 450);
-		lblBordeJuegos.setIcon(new ImageIcon(bordeJuegos));
-		this.add(lblBordeJuegos);
 		
 		JPanel panelJuegos = new JPanel();
-		panelJuegos.setBounds(435, 131, 855, 425);
+		panelJuegos.setBounds(435, 130, 855, 425);
 		panelJuegos.setForeground(Color.WHITE);
 		panelJuegos.setBorder(null);
 		panelJuegos.setOpaque(false);
@@ -192,13 +186,13 @@ public class PantallaJuegos extends JPanel {
 		JLabel lblSinopsis = new JLabel("Sinopsis:");
 		lblSinopsis.setForeground(Color.WHITE);
 		lblSinopsis.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblSinopsis.setBounds(345, 180, 90, 25);
+		lblSinopsis.setBounds(345, 170, 90, 25);
 		panelJuegos.add(lblSinopsis);
 		
 		JLabel lblPlataforma = new JLabel("Plataforma:");
 		lblPlataforma.setForeground(Color.WHITE);
 		lblPlataforma.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblPlataforma.setBounds(345, 55, 100, 25);
+		lblPlataforma.setBounds(345, 55, 110, 25);
 		panelJuegos.add(lblPlataforma);
 		
 		JLabel lblGenero = new JLabel("G\u00E9nero:");
@@ -293,6 +287,7 @@ public class PantallaJuegos extends JPanel {
 		add(scrollPane);
 		
 		list = new JList();
+		list.setBorder(null);
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {
@@ -323,6 +318,10 @@ public class PantallaJuegos extends JPanel {
 		imgFondo.setIcon(new ImageIcon(iFondo));
 		list.setListData(control.getApiJuegos().getNombreDatos());
 		this.add(imgFondo);
+		JLabel lblBordeJuegos = new JLabel();
+		lblBordeJuegos.setBounds(90, 50, 1230, 540);
+		lblBordeJuegos.setIcon(new ImageIcon(bordeJuegos));
+		this.add(lblBordeJuegos);
 
 	}
 }

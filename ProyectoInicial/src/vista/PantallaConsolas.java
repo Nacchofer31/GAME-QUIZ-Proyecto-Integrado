@@ -30,15 +30,16 @@ public class PantallaConsolas extends JPanel {
 	private ManejoApis control;
 	private JComboBox comboBoxEmp;
 	private JList list;
+	
+	
 	public PantallaConsolas(ManejoApis c) {
-		control = c;
-		
 		setBounds(0, 0, 1355, 591);
 		setLayout(null);
+		control = c;
 		
 
 		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(96, 52, 1196, 80);
+		layeredPane.setBounds(95, 50, 1185, 80);
 		layeredPane.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		add(layeredPane);
 		layeredPane.setLayout(null);
@@ -64,7 +65,7 @@ public class PantallaConsolas extends JPanel {
 		btnBuscar.setBorderPainted(false);
 		btnBuscar.setOpaque(false);
 		btnBuscar.setFont(new Font("Bell MT", Font.BOLD, 20));
-		btnBuscar.setBounds(15, 15, 102, 23);
+		btnBuscar.setBounds(15, 15, 100, 25);
 		layeredPane.add(btnBuscar);
 		
 		nombreField = new JTextField();
@@ -116,7 +117,7 @@ public class PantallaConsolas extends JPanel {
 		JLabel lblSinopsis = new JLabel("Especificaciones:");
 		lblSinopsis.setForeground(Color.WHITE);
 		lblSinopsis.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblSinopsis.setBounds(345, 170, 163, 25);
+		lblSinopsis.setBounds(345, 170, 165, 25);
 		panelJuegos.add(lblSinopsis);
 		
 		JLabel lblPlataforma = new JLabel("Fecha Salida:");
@@ -145,7 +146,7 @@ public class PantallaConsolas extends JPanel {
 		JLabel lblJuegoPlat = new JLabel();
 		lblJuegoPlat.setForeground(Color.WHITE);
 		lblJuegoPlat.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoPlat.setBounds(463, 55, 352, 25);
+		lblJuegoPlat.setBounds(465, 55, 350, 25);
 		panelJuegos.add(lblJuegoPlat);
 		
 		JLabel lblJuegoEmp = new JLabel();
@@ -178,7 +179,7 @@ public class PantallaConsolas extends JPanel {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setOpaque(false);
-		scrollPane.setBounds(106, 143, 330, 410);
+		scrollPane.setBounds(95, 145, 330, 410);
 		scrollPane.setViewportBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		scrollPane.getViewport().setOpaque(false);
 		add(scrollPane);
