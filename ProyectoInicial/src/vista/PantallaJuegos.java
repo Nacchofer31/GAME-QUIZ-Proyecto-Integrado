@@ -308,7 +308,7 @@ public class PantallaJuegos extends JPanel {
 				if(datos[7].equals("0")){
 					lblJuegoMulti.setText("NO");
 				}else{
-					lblJuegoMulti.setText("YES");
+					lblJuegoMulti.setText("SÍ");
 				}
 			    }
 			}
