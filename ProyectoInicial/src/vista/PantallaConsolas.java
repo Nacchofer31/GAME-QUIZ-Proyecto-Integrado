@@ -65,7 +65,7 @@ public class PantallaConsolas extends JPanel {
 		btnBuscar.setBorderPainted(false);
 		btnBuscar.setOpaque(false);
 		btnBuscar.setFont(new Font("Bell MT", Font.BOLD, 20));
-		btnBuscar.setBounds(15, 15, 100, 25);
+		btnBuscar.setBounds(10, 15, 125, 25);
 		layeredPane.add(btnBuscar);
 		
 		nombreField = new JTextField();
@@ -211,6 +211,8 @@ public class PantallaConsolas extends JPanel {
 		this.add(imgFondo);
 		
 		JButton btnReset = new JButton("Reset");
+		btnReset.setForeground(Color.WHITE);
+		btnReset.setFont(new Font("Dialog", Font.BOLD, 20));
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				list.setListData(control.getApiConsola().getNombreDatos());
@@ -218,7 +220,9 @@ public class PantallaConsolas extends JPanel {
 				nombreField.setText("");
 			}
 		});
-		btnReset.setBounds(25, 49, 89, 23);
+		btnReset.setBounds(10, 45, 125, 25);
+		btnReset.setContentAreaFilled(false);
+		btnReset.setBorderPainted(false);
 		layeredPane.add(btnReset);
 	}
 }
