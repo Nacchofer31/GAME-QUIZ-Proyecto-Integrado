@@ -22,6 +22,12 @@ public class PantallaQuiz extends JPanel {
 	private ManejoApis control;
 	Border emptyBorder = BorderFactory.createEmptyBorder();
 	private int numPreg=1;
+	private JButton btnPregunta1;
+	private JButton btnPregunta2;
+	private JButton btnPregunta3;
+	private JButton btnPregunta4;
+	private JButton btnConfirmar;
+	private JLabel lblPregunta;
 	public PantallaQuiz(ManejoApis c) {
 		control=c;
 		
@@ -36,12 +42,12 @@ public class PantallaQuiz extends JPanel {
 		textPregunta.setEditable(false);
 		textPregunta.setForeground(Color.WHITE);
 		textPregunta.setFont(new Font("Batang", Font.BOLD, 24));
-		textPregunta.setText("> "+control.getApiQuiz().getDato(0, 1));
+		textPregunta.setText("> "+control.primeraPregunta()[1]);
 		textPregunta.setOpaque(false);
 		textPregunta.setBounds(164, 100, 977, 91);
 		add(textPregunta);
 		
-		JLabel lblPregunta = new JLabel("Pregunta "+numPreg+":");
+		lblPregunta = new JLabel("Pregunta "+numPreg+":");
 		lblPregunta.setFont(new Font("BatangChe", Font.BOLD, 21));
 		lblPregunta.setForeground(Color.WHITE);
 		lblPregunta.setBounds(164, 54, 171, 35);
@@ -52,24 +58,64 @@ public class PantallaQuiz extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				numPreg=numPreg+1;
 				lblPregunta.setText("Pregunta "+numPreg+":");
+				String pregunta[] = control.pasarPregunta();
+				int turno[] = control.numeroRespuesta(Math.random()*5);
+				textPregunta.setText(pregunta[1]);
+				btnPregunta1.setText(pregunta[turno[0]]);
+				btnPregunta2.setText(pregunta[turno[1]]);
+				btnPregunta3.setText(pregunta[turno[2]]);
+				btnPregunta4.setText(pregunta[turno[3]]);
+				btnPregunta1.setEnabled(true);
+				btnPregunta2.setEnabled(true);
+				btnPregunta3.setEnabled(true);
+				btnPregunta4.setEnabled(true);
+				btnSiguiente.setEnabled(false);
+				btnPregunta1.setBorder(emptyBorder);
+				btnPregunta2.setBorder(emptyBorder);
+				btnPregunta3.setBorder(emptyBorder);
+				btnPregunta4.setBorder(emptyBorder);
+				
 			}
 		});
 		btnSiguiente.setForeground(Color.WHITE);
+		btnSiguiente.setEnabled(false);
 		btnSiguiente.setContentAreaFilled(false);
 		btnSiguiente.setFont(new Font("BatangChe", Font.BOLD, 20));
 		btnSiguiente.setBounds(1018, 526, 142, 35);
 		add(btnSiguiente);
-		
-		JButton btnPregunta1 = new JButton(control.getApiQuiz().getDato(0, 2));
-		JButton btnPregunta2 = new JButton(control.getApiQuiz().getDato(0, 3));
-		JButton btnPregunta3 = new JButton(control.getApiQuiz().getDato(0, 4));
-		JButton btnPregunta4 = new JButton(control.getApiQuiz().getDato(0, 5));
+		int pregunta[] = control.numeroRespuesta(Math.random()*5);
+		btnPregunta1 = new JButton(control.primeraPregunta()[pregunta[0]]);
+		btnPregunta2 = new JButton(control.primeraPregunta()[pregunta[1]]);
+		btnPregunta3 = new JButton(control.primeraPregunta()[pregunta[2]]);
+		btnPregunta4 = new JButton(control.primeraPregunta()[pregunta[3]]);
 		btnPregunta1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnPregunta1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
-				btnPregunta2.setBorder(emptyBorder);
-				btnPregunta3.setBorder(emptyBorder);
-				btnPregunta4.setBorder(emptyBorder);
+				
+				if(numPreg==10){
+					btnPregunta1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+					btnPregunta2.setBorder(emptyBorder);
+					btnPregunta3.setBorder(emptyBorder);
+					btnPregunta4.setBorder(emptyBorder);
+					control.guardarRespuesta(btnPregunta1.getText());
+					btnPregunta1.setEnabled(false);
+					btnPregunta2.setEnabled(false);
+					btnPregunta3.setEnabled(false);
+					btnPregunta4.setEnabled(false);
+					btnConfirmar.setVisible(true);
+				}else{
+					btnPregunta1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+					btnPregunta2.setBorder(emptyBorder);
+					btnPregunta3.setBorder(emptyBorder);
+					btnPregunta4.setBorder(emptyBorder);
+					control.guardarRespuesta(btnPregunta1.getText());
+					btnPregunta1.setEnabled(false);
+					btnPregunta2.setEnabled(false);
+					btnPregunta3.setEnabled(false);
+					btnPregunta4.setEnabled(false);
+					btnSiguiente.setEnabled(true);
+				}
+				
+				
 			}
 		});
 		btnPregunta1.setForeground(Color.WHITE);
@@ -83,10 +129,30 @@ public class PantallaQuiz extends JPanel {
 		
 		btnPregunta2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnPregunta2.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
-				btnPregunta1.setBorder(emptyBorder);
-				btnPregunta3.setBorder(emptyBorder);
-				btnPregunta4.setBorder(emptyBorder);
+				
+				if(numPreg==10){
+					btnPregunta2.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+					btnPregunta1.setBorder(emptyBorder);
+					btnPregunta3.setBorder(emptyBorder);
+					btnPregunta4.setBorder(emptyBorder);
+					control.guardarRespuesta(btnPregunta2.getText());
+					btnPregunta1.setEnabled(false);
+					btnPregunta2.setEnabled(false);
+					btnPregunta3.setEnabled(false);
+					btnPregunta4.setEnabled(false);
+					btnConfirmar.setVisible(true);
+				}else{
+					btnPregunta2.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+					btnPregunta1.setBorder(emptyBorder);
+					btnPregunta3.setBorder(emptyBorder);
+					btnPregunta4.setBorder(emptyBorder);
+					control.guardarRespuesta(btnPregunta2.getText());
+					btnPregunta1.setEnabled(false);
+					btnPregunta2.setEnabled(false);
+					btnPregunta3.setEnabled(false);
+					btnPregunta4.setEnabled(false);
+					btnSiguiente.setEnabled(true);
+				}
 			}
 		});
 		btnPregunta2.setForeground(Color.WHITE);
@@ -100,10 +166,30 @@ public class PantallaQuiz extends JPanel {
 		
 		btnPregunta3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnPregunta3.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
-				btnPregunta1.setBorder(emptyBorder);
-				btnPregunta2.setBorder(emptyBorder);
-				btnPregunta4.setBorder(emptyBorder);
+				
+				if(numPreg==10){
+					btnPregunta3.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+					btnPregunta1.setBorder(emptyBorder);
+					btnPregunta2.setBorder(emptyBorder);
+					btnPregunta4.setBorder(emptyBorder);
+					control.guardarRespuesta(btnPregunta3.getText());
+					btnPregunta1.setEnabled(false);
+					btnPregunta2.setEnabled(false);
+					btnPregunta3.setEnabled(false);
+					btnPregunta4.setEnabled(false);
+					btnConfirmar.setVisible(true);
+				}else{
+					btnPregunta3.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+					btnPregunta1.setBorder(emptyBorder);
+					btnPregunta2.setBorder(emptyBorder);
+					btnPregunta4.setBorder(emptyBorder);
+					control.guardarRespuesta(btnPregunta3.getText());
+					btnPregunta1.setEnabled(false);
+					btnPregunta2.setEnabled(false);
+					btnPregunta3.setEnabled(false);
+					btnPregunta4.setEnabled(false);
+					btnSiguiente.setEnabled(true);
+				}
 			}
 		});
 		btnPregunta3.setForeground(Color.WHITE);
@@ -117,10 +203,31 @@ public class PantallaQuiz extends JPanel {
 		
 		btnPregunta4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnPregunta4.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
-				btnPregunta1.setBorder(emptyBorder);
-				btnPregunta2.setBorder(emptyBorder);
-				btnPregunta3.setBorder(emptyBorder);
+				
+				if(numPreg==10){
+					btnPregunta4.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+					btnPregunta1.setBorder(emptyBorder);
+					btnPregunta2.setBorder(emptyBorder);
+					btnPregunta3.setBorder(emptyBorder);
+					control.guardarRespuesta(btnPregunta4.getText());
+					btnPregunta1.setEnabled(false);
+					btnPregunta2.setEnabled(false);
+					btnPregunta3.setEnabled(false);
+					btnPregunta4.setEnabled(false);
+					btnConfirmar.setVisible(true);
+				}else{
+					btnPregunta4.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+					btnPregunta1.setBorder(emptyBorder);
+					btnPregunta2.setBorder(emptyBorder);
+					btnPregunta3.setBorder(emptyBorder);
+					control.guardarRespuesta(btnPregunta4.getText());
+					btnPregunta1.setEnabled(false);
+					btnPregunta2.setEnabled(false);
+					btnPregunta3.setEnabled(false);
+					btnPregunta4.setEnabled(false);
+					btnSiguiente.setEnabled(true);
+				}
+				
 			}
 		});
 		btnPregunta4.setFont(new Font("Trebuchet MS", Font.PLAIN, 17));
@@ -135,6 +242,22 @@ public class PantallaQuiz extends JPanel {
 		lblTipQuiz.setBounds(1084, 39, 190, 130);
 		lblTipQuiz.setIcon(new ImageIcon(iTipQuiz));
 		add(lblTipQuiz);
+		
+		btnConfirmar = new JButton("Conocer Resultado");
+		btnConfirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnPregunta1.setVisible(false);
+				btnPregunta2.setVisible(false);
+				btnPregunta3.setVisible(false);
+				btnPregunta4.setVisible(false);
+				btnSiguiente.setVisible(false);
+				lblPregunta.setVisible(false);
+				textPregunta.setText(control.resultado());
+			}
+		});
+		btnConfirmar.setVisible(false);
+		btnConfirmar.setBounds(164, 535, 142, 23);
+		add(btnConfirmar);
 		JLabel imgFondo = new JLabel("/Fondo.png");
 		imgFondo.setBounds(0, 0, 1355, 600);
 		imgFondo.setIcon(new ImageIcon(iFondo));

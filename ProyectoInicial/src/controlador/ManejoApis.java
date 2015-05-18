@@ -20,6 +20,7 @@ public class ManejoApis {
 	private int aciertos=0;
 	private int fallos=0;
 	private int preguntasCadaTurno[]=new int[10];
+	private int numeroPregunta = 0;
 	
 
 	public ManejoApis() {
@@ -336,6 +337,71 @@ public class ManejoApis {
 			preguntasCadaTurno[i]=(int)nuevaPregunta;
 		}
 	}
+	
+	public void guardarRespuesta(String respuesta){
+		if(respuesta.equals(apiQuiz.getDato(preguntasCadaTurno[numeroPregunta], 2))){
+			aciertos++;
+		}else{
+			fallos++;
+		}
+	}
+	
+	public String[] pasarPregunta(){
+		if(numeroPregunta<=preguntasCadaTurno.length){
+			numeroPregunta++;
+			int preguntaAhora=preguntasCadaTurno[numeroPregunta];
+			String pregunta[]=apiQuiz.getFilaConsulta(preguntaAhora);
+			return pregunta;
+		}
+		
+		return null;
+	}
+	public String[] primeraPregunta(){
+		String x[] = apiQuiz.getFilaConsulta(preguntasCadaTurno[0]);
+		return x;
+	}
+	
+	public int[] numeroRespuesta(double x){
+		int orden[]=new int[4];
+		if(x>=0&&x<1){
+			orden[0]=2;
+			orden[1]=3;
+			orden[2]=4;
+			orden[3]=5;
+		}
+		if(x>=1&&x<2){
+			orden[0]=5;
+			orden[1]=4;
+			orden[2]=3;
+			orden[3]=2;
+		}
+		if(x>=2&&x<3){
+			orden[0]=4;
+			orden[1]=5;
+			orden[2]=2;
+			orden[3]=3;
+		}
+		if(x>=3&&x<4){
+			orden[0]=3;
+			orden[1]=2;
+			orden[2]=5;
+			orden[3]=4;
+		}
+		if(x>=4&&x<5){
+			orden[0]=4;
+			orden[1]=2;
+			orden[2]=3;
+			orden[3]=5;
+		}
+		
+		
+		return orden;
+	}
+	
+	public String resultado(){
+		int totalPreguntas=preguntasCadaTurno.length;
+		return "Has acertado "+aciertos+" preguntas de un total de: "+totalPreguntas;
+	}
 
 	public ApiJSONConsolas getApiConsola() {
 		return apiConsola;
@@ -355,6 +421,14 @@ public class ManejoApis {
 
 	public ApiJSONQuiz getApiQuiz() {
 		return apiQuiz;
+	}
+
+	public int[] getPreguntasCadaTurno() {
+		return preguntasCadaTurno;
+	}
+
+	public int getNumeroPregunta() {
+		return numeroPregunta;
 	}
 	
 	
