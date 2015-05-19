@@ -326,7 +326,7 @@ public class ManejoApis {
 					String f = String.valueOf(nuevaPregunta);
 					int posicionPunto = f.indexOf('.');
 					String k = f.substring(0, posicionPunto);
-					if(String.valueOf(preguntasCadaTurno[x]).equals(k)){
+					if(String.valueOf(preguntasCadaTurno[x])==k){
 						coincidencia++;
 					}
 				}
