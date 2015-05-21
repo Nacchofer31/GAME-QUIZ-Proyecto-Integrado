@@ -317,24 +317,23 @@ public class ManejoApis {
 	
 	public void cargaPreguntas(){
 		for(int i = 0;i<preguntasCadaTurno.length;i++){
-			boolean sigue=false;
+			int coincidencia=1;
 			double nuevaPregunta=0;
-			while(sigue==false){
+			int nueva=0;
+			while(coincidencia!=0){
 				nuevaPregunta= Math.random()*apiQuiz.getNombreDatos().length;
-				int coincidencia=0;
-				for(int x = 0;x<preguntasCadaTurno.length;x++){
-					String f = String.valueOf(nuevaPregunta);
-					int posicionPunto = f.indexOf('.');
-					String k = f.substring(0, posicionPunto);
-					if(String.valueOf(preguntasCadaTurno[x])==k){
+				nueva = (int) nuevaPregunta;
+				coincidencia=0;
+				for(int x = 0;x<i;x++){
+					if(nueva==preguntasCadaTurno[x]){
 						coincidencia++;
+						break;
 					}
-				}
-				if(coincidencia==0){
-					sigue=true;
+					
 				}
 			}
-			preguntasCadaTurno[i]=(int)nuevaPregunta;
+			preguntasCadaTurno[i]=nueva;
+			if(i==10) break;
 		}
 	}
 	
