@@ -14,30 +14,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import controlador.ManejoApis;
+import controlador.ManejoVistas;
 
 public class PantallaPrincipal extends JFrame {
 	
 	private JPanel contentPane;
 	private static JPanel panelPantallas = new JPanel();
-	PantallaInicio pI= new PantallaInicio();
-	PantallaHistoria pH= new PantallaHistoria();
-	Decada70 d70 = new Decada70();
-	Decada80 d80 = new Decada80();
-	Decada90 d90 = new Decada90();
-	Decada00 d00 = new Decada00();
-	Decada10 d10 = new Decada10();
-	PantallaConsolas pC;
-	PantallaJuegos pJ;
-	PantallaQuiz pQ;
-	PantallaOpciones pO= new PantallaOpciones();
 	
 	private ManejoApis control;
+	private ManejoVistas controlV;
 	
-	public PantallaPrincipal(ManejoApis c) {
+	public PantallaPrincipal(ManejoApis c,ManejoVistas m) {
 		control = c;
-		pJ= new PantallaJuegos(control);
-		pC= new PantallaConsolas(control);
-		pQ= new PantallaQuiz(control);
+		controlV=m;
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(005, 000, 1355, 725);
@@ -52,38 +41,38 @@ public class PantallaPrincipal extends JFrame {
 		panelPantallas.setLayout(new CardLayout(0, 0));
 
 				
-		panelPantallas.add(pI,"PanelInicio");
-		pI.setLayout(null);
+		panelPantallas.add(controlV.getpI(),"PanelInicio");
+		controlV.getpI().setLayout(null);
 				
-		panelPantallas.add(pH,"PanelHistoria");
-		pH.setLayout(null);
+		panelPantallas.add(controlV.getpH(),"PanelHistoria");
+		controlV.getpH().setLayout(null);
 		
-		panelPantallas.add(d70,"Decada70");
-		d70.setLayout(null);
+		panelPantallas.add(controlV.getD70(),"Decada70");
+		controlV.getD70().setLayout(null);
 			
-		panelPantallas.add(d80,"Decada80");
-		d80.setLayout(null);
+		panelPantallas.add(controlV.getD80(),"Decada80");
+		controlV.getD80().setLayout(null);
 		
-		panelPantallas.add(d90,"Decada90");
-		d90.setLayout(null);
+		panelPantallas.add(controlV.getD90(),"Decada90");
+		controlV.getD90().setLayout(null);
 		
-		panelPantallas.add(d00,"Decada00");
-		d00.setLayout(null);
+		panelPantallas.add(controlV.getD00(),"Decada00");
+		controlV.getD00().setLayout(null);
 			
-		panelPantallas.add(d10,"Decada10");
-		d10.setLayout(null);
+		panelPantallas.add(controlV.getD10(),"Decada10");
+		controlV.getD10().setLayout(null);
 			
-		panelPantallas.add(pC,"PanelConsolas");
-			pC.setLayout(null);
+		panelPantallas.add(controlV.getpC(),"PanelConsolas");
+		controlV.getpC().setLayout(null);
 		
-		panelPantallas.add(pJ,"PanelJuegos");
-			pJ.setLayout(null);
+		panelPantallas.add(controlV.getpJ(),"PanelJuegos");
+		controlV.getpJ().setLayout(null);
 		
-		panelPantallas.add(pQ,"PanelQuiz");
-			pQ.setLayout(null);
+		panelPantallas.add(controlV.getpQ(),"PanelQuiz");
+		controlV.getpQ().setLayout(null);
 		
-		panelPantallas.add(pO,"PanelOpciones");
-			pO.setLayout(null);
+		panelPantallas.add(controlV.getpO(),"PanelOpciones");
+		controlV.getpO().setLayout(null);
 		
 		// JPanel para los botones
 		JPanel panelBotones = new JPanel();

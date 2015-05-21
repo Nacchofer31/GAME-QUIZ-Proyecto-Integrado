@@ -47,7 +47,7 @@ public class ManejoVistas {
 		pJ= new PantallaJuegos(control);
 		pQ= new PantallaQuiz(control);
 		pO= new PantallaOpciones();	
-		pP= new PantallaPrincipal(control);
+		pP= new PantallaPrincipal(control,this);
 		pP.setVisible(true);
 	}
 	
