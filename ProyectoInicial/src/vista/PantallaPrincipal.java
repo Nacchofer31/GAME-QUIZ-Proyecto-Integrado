@@ -199,6 +199,33 @@ public class PantallaPrincipal extends JFrame {
 		//Logo GameQuiz
 		Image imgLogo = new ImageIcon(this.getClass().getResource("/LogoDef.png")).getImage();
 		
+		JButton esp = new JButton("");
+		esp.setContentAreaFilled(false);
+		esp.setOpaque(false);
+		esp.setBounds(1201, 43, 47, 23);
+		panelBotones.add(esp);
+		
+		JButton ing = new JButton("");
+		ing.setOpaque(false);
+		ing.setContentAreaFilled(false);
+		ing.setBounds(1258, 43, 47, 23);
+		panelBotones.add(ing);
+		
+		//Imagen español
+		Image imgEspañol = new ImageIcon(this.getClass().getResource("/español.png")).getImage();
+						
+		//Label ingles
+		Image imgIngles = new ImageIcon(this.getClass().getResource("/ingles.png")).getImage();
+		
+		JLabel labelIng = new JLabel(" ");
+		labelIng.setBounds(1258, 43, 47, 23);
+		panelBotones.add(labelIng);
+		labelIng.setIcon(new ImageIcon(imgIngles));
+		JLabel labelEsp = new JLabel(" ");
+		labelEsp.setBounds(1201, 43, 47, 23);
+		panelBotones.add(labelEsp);
+		labelEsp.setIcon(new ImageIcon(imgEspañol));
+		
 		
 		
 		
@@ -210,6 +237,7 @@ public class PantallaPrincipal extends JFrame {
 		header.setBounds(0, 0, 1355, 85);
 		panelBotones.add(header);
 		header.setIcon(new ImageIcon(imgHeader));
+		
 		
 		//MARCO BAJO BOTONES SOBRE PANTALLA
 		JPanel panel = new JPanel();
