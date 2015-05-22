@@ -31,6 +31,15 @@ public class PantallaConsolas extends JPanel {
 	private JComboBox comboBoxEmp;
 	private JList list;
 	
+	private JLabel lblNombre;
+	private JButton btnBuscar;
+	private JLabel lblEmpresa;
+	
+	private JLabel lblNom;
+	private JLabel lblSinopsis;
+	private JLabel lblFecha;
+	private JLabel lblEmp;
+	
 	
 	public PantallaConsolas(ManejoApis c) {
 		setBounds(0, 0, 1355, 591);
@@ -44,7 +53,7 @@ public class PantallaConsolas extends JPanel {
 		add(layeredPane);
 		layeredPane.setLayout(null);
 		
-		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				boolean nombre=false;
@@ -73,13 +82,13 @@ public class PantallaConsolas extends JPanel {
 		layeredPane.add(nombreField);
 		nombreField.setColumns(10);
 		
-		JLabel lblNombre = new JLabel("Nombre:");
+		lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("BatangChe", Font.PLAIN, 19));
 		lblNombre.setForeground(Color.WHITE);
 		lblNombre.setBounds(190, 20, 75, 35);
 		layeredPane.add(lblNombre);
 		
-		JLabel lblEmpresa = new JLabel("Empresa:");
+		lblEmpresa = new JLabel("Empresa:");
 		lblEmpresa.setForeground(Color.WHITE);
 		lblEmpresa.setFont(new Font("BatangChe", Font.PLAIN, 19));
 		lblEmpresa.setBounds(460, 20, 90, 35);
@@ -108,25 +117,25 @@ public class PantallaConsolas extends JPanel {
 		add(panelJuegos);
 		panelJuegos.setLayout(null);
 		
-		JLabel lblNom = new JLabel("Nombre:");
+		lblNom = new JLabel("Nombre:");
 		lblNom.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblNom.setForeground(Color.WHITE);
 		lblNom.setBounds(345, 5, 65, 25);
 		panelJuegos.add(lblNom);
 		
-		JLabel lblSinopsis = new JLabel("Especificaciones:");
+		lblSinopsis = new JLabel("Especificaciones:");
 		lblSinopsis.setForeground(Color.WHITE);
 		lblSinopsis.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblSinopsis.setBounds(345, 170, 165, 25);
 		panelJuegos.add(lblSinopsis);
 		
-		JLabel lblPlataforma = new JLabel("Fecha Salida:");
-		lblPlataforma.setForeground(Color.WHITE);
-		lblPlataforma.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblPlataforma.setBounds(345, 55, 125, 25);
-		panelJuegos.add(lblPlataforma);
+		lblFecha = new JLabel("Fecha Salida:");
+		lblFecha.setForeground(Color.WHITE);
+		lblFecha.setFont(new Font("BatangChe", Font.PLAIN, 18));
+		lblFecha.setBounds(345, 55, 125, 25);
+		panelJuegos.add(lblFecha);
 		
-		JLabel lblEmp = new JLabel("Empresa:");
+		lblEmp = new JLabel("Empresa:");
 		lblEmp.setForeground(Color.WHITE);
 		lblEmp.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblEmp.setBounds(345, 30, 80, 25);
@@ -225,4 +234,41 @@ public class PantallaConsolas extends JPanel {
 		btnReset.setBorderPainted(false);
 		layeredPane.add(btnReset);
 	}
+
+
+	public JLabel getLblNombre() {
+		return lblNombre;
+	}
+
+
+	public JButton getBtnBuscar() {
+		return btnBuscar;
+	}
+
+
+	public JLabel getLblEmpresa() {
+		return lblEmpresa;
+	}
+
+
+	public JLabel getLblNom() {
+		return lblNom;
+	}
+
+
+	public JLabel getLblSinopsis() {
+		return lblSinopsis;
+	}
+
+
+	public JLabel getLblFecha() {
+		return lblFecha;
+	}
+
+
+	public JLabel getLblEmp() {
+		return lblEmp;
+	}
+	
+	
 }

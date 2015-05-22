@@ -24,6 +24,11 @@ public class PantallaPrincipal extends JFrame {
 	private ManejoApis control;
 	private ManejoVistas controlV;
 	
+	private JButton btnInicio;
+	private JButton btnHistoria;
+	private JButton btnConsolas;
+	private JButton btnJuegos;
+	
 	public PantallaPrincipal(ManejoApis c,ManejoVistas m) {
 		control = c;
 		controlV=m;
@@ -81,7 +86,7 @@ public class PantallaPrincipal extends JFrame {
 		panelBotones.setLayout(null);
 		
 		// Boton Inicio
-		JButton btnInicio = new JButton("Inicio");
+		btnInicio = new JButton("Inicio");
 		Image imgInicio = new ImageIcon(this.getClass().getResource("/home.png")).getImage();
 		btnInicio.setIcon(new ImageIcon(imgInicio));
 		btnInicio.setFont(new Font("Courgette", Font.PLAIN, 19));
@@ -101,7 +106,7 @@ public class PantallaPrincipal extends JFrame {
 		panelBotones.add(btnInicio);
 		
 		//Boton Historia
-		JButton btnHistoria = new JButton("Historia");
+		btnHistoria = new JButton("Historia");
 		Image imgHistoria = new ImageIcon(this.getClass().getResource("/book.png")).getImage();
 		btnHistoria.setIcon(new ImageIcon(imgHistoria));
 		btnHistoria.setFont(new Font("Courgette", Font.PLAIN, 19));
@@ -119,7 +124,7 @@ public class PantallaPrincipal extends JFrame {
 		panelBotones.add(btnHistoria);
 		
 		//Boton Consolas
-		JButton btnConsolas = new JButton("Consolas");
+		btnConsolas = new JButton("Consolas");
 		Image imgConsolas = new ImageIcon(this.getClass().getResource("/consoles.png")).getImage();
 		btnConsolas.setIcon(new ImageIcon(imgConsolas));
 		btnConsolas.setFont(new Font("Courgette", Font.PLAIN, 19));
@@ -138,7 +143,7 @@ public class PantallaPrincipal extends JFrame {
 		
 		
 		//Boton Juegos
-		JButton btnJuegos = new JButton("Juegos");
+		btnJuegos = new JButton("Juegos");
 		Image imgJuegos = new ImageIcon(this.getClass().getResource("/games.png")).getImage();
 		btnJuegos.setIcon(new ImageIcon(imgJuegos));
 		btnJuegos.setFont(new Font("Courgette", Font.PLAIN, 19));
@@ -193,6 +198,10 @@ public class PantallaPrincipal extends JFrame {
 		
 		//Logo GameQuiz
 		Image imgLogo = new ImageIcon(this.getClass().getResource("/LogoDef.png")).getImage();
+		
+		
+		
+		
 		JLabel logo = new JLabel("");
 		logo.setBounds(38, 6, 80, 84);
 		logo.setIcon(new ImageIcon(imgLogo));
@@ -239,5 +248,21 @@ public class PantallaPrincipal extends JFrame {
 	public static void ponerDecada10(){
 		CardLayout c= (CardLayout)panelPantallas.getLayout();
 		c.show(panelPantallas, "Decada10");
+	}
+
+	public JButton getBtnInicio() {
+		return btnInicio;
+	}
+
+	public JButton getBtnHistoria() {
+		return btnHistoria;
+	}
+
+	public JButton getBtnConsolas() {
+		return btnConsolas;
+	}
+
+	public JButton getBtnJuegos() {
+		return btnJuegos;
 	}
 }

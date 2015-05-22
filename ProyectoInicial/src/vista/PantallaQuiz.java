@@ -26,8 +26,10 @@ public class PantallaQuiz extends JPanel {
 	private JButton btnPregunta2;
 	private JButton btnPregunta3;
 	private JButton btnPregunta4;
-	private JButton btnConfirmar;
-	private JLabel lblPregunta;
+	
+	private JButton btnConfirmar;	
+	private JLabel lblPregunta;	
+	private JButton btnSiguiente;
 	public PantallaQuiz(ManejoApis c) {
 		control=c;
 		
@@ -53,7 +55,7 @@ public class PantallaQuiz extends JPanel {
 		lblPregunta.setBounds(164, 54, 171, 35);
 		add(lblPregunta);
 		
-		JButton btnSiguiente = new JButton("Siguiente");
+		btnSiguiente = new JButton("Siguiente");
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				numPreg=numPreg+1;
@@ -264,4 +266,21 @@ public class PantallaQuiz extends JPanel {
 		this.add(imgFondo);
 
 	}
+	public int getNumPreg() {
+		return numPreg;
+	}
+	public void setNumPreg(int numPreg) {
+		this.numPreg = numPreg;
+	}
+	public JButton getBtnConfirmar() {
+		return btnConfirmar;
+	}
+	public JLabel getLblPregunta() {
+		return lblPregunta;
+	}
+	public JButton getBtnSiguiente() {
+		return btnSiguiente;
+	}
+	
+	
 }

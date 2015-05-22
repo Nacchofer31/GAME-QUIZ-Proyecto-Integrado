@@ -18,6 +18,7 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 
 public class Decada90 extends JPanel {
+	private JTextPane txtpnDec90;
 	
 	public Decada90() {
 		
@@ -109,7 +110,7 @@ public class Decada90 extends JPanel {
 		jscroll.setBorder(null);
 		this.add(jscroll);
 				
-		JTextPane txtpnDec90 = new JTextPane();
+		txtpnDec90 = new JTextPane();
 		txtpnDec90.setEnabled(false);
 		txtpnDec90.setFont(new Font("BatangChe", Font.PLAIN, 16));
 		txtpnDec90.setForeground(Color.WHITE);
@@ -165,4 +166,10 @@ public class Decada90 extends JPanel {
 		
 
 	}
+
+	public JTextPane getTxtpnDec90() {
+		return txtpnDec90;
+	}
+	
+	
 }

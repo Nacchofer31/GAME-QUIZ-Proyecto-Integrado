@@ -19,6 +19,8 @@ import javax.swing.text.StyleConstants;
 
 public class Decada10 extends JPanel {
 	
+	private JTextPane txtpnDecActual;
+	
 	public Decada10() {
 		
 		setLayout(null);
@@ -109,7 +111,7 @@ public class Decada10 extends JPanel {
 		jscroll.setBorder(null);
 		this.add(jscroll);
 				
-		JTextPane txtpnDecActual = new JTextPane();
+		txtpnDecActual = new JTextPane();
 		txtpnDecActual.setEnabled(false);
 		txtpnDecActual.setFont(new Font("BatangChe", Font.PLAIN, 16));
 		txtpnDecActual.setForeground(Color.WHITE);
@@ -141,4 +143,10 @@ public class Decada10 extends JPanel {
 		
 
 	}
+
+	public JTextPane getTxtpnDecActual() {
+		return txtpnDecActual;
+	}
+	
+	
 }

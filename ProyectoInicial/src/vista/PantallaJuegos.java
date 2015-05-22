@@ -31,10 +31,23 @@ import controlador.ManejoApis;
 public class PantallaJuegos extends JPanel {
 	private JTextField nombreField;
 	private ManejoApis control;
-	private JRadioButton rdbtnMultijugador;
 	private String multijugador="0";
 	private JList list;
 	private boolean multi=false;
+	
+	private JRadioButton rdbtnMultijugador;
+	private JLabel lblNombre;
+	private JLabel lblGnero;
+	private JLabel lblPlataformas;
+	private JButton btnBuscar;
+	
+	private JLabel lblNom;
+	private JLabel lblSinopsis;
+	private JLabel lblPlataforma;
+	private JLabel lblGenero;
+	private JLabel lblFechaSalida;
+	private JLabel lblEmp;
+	private JLabel lblMulti;
 	
 	public PantallaJuegos(ManejoApis m) {
 		setBounds(0, 0, 1355, 591);
@@ -76,13 +89,13 @@ public class PantallaJuegos extends JPanel {
 		layeredPane.add(nombreField);
 		nombreField.setColumns(10);
 		
-		JLabel lblNombre = new JLabel("Nombre:");
+		lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("BatangChe", Font.PLAIN, 19));
 		lblNombre.setForeground(Color.WHITE);
 		lblNombre.setBounds(190, 20, 75, 35);
 		layeredPane.add(lblNombre);
 		
-		JLabel lblGnero = new JLabel("G\u00E9nero:");
+		lblGnero = new JLabel("G\u00E9nero:");
 		lblGnero.setForeground(Color.WHITE);
 		lblGnero.setFont(new Font("BatangChe", Font.PLAIN, 19));
 		lblGnero.setBounds(460, 20, 90, 35);
@@ -100,7 +113,7 @@ public class PantallaJuegos extends JPanel {
 		layeredPane.add(comboBoxGen);
 		
 		
-		JLabel lblPlataformas = new JLabel("Plataformas:");
+		lblPlataformas = new JLabel("Plataformas:");
 		lblPlataformas.setForeground(Color.WHITE);
 		lblPlataformas.setFont(new Font("BatangChe", Font.PLAIN, 19));
 		lblPlataformas.setBounds(715, 20, 135, 35);
@@ -118,7 +131,7 @@ public class PantallaJuegos extends JPanel {
 		layeredPane.add(comboBoxPlat);
 		
 		
-		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent arg0) {
 			  	boolean nombre=false;
@@ -181,37 +194,37 @@ public class PantallaJuegos extends JPanel {
 		add(panelJuegos);
 		panelJuegos.setLayout(null);
 		
-		JLabel lblNom = new JLabel("Nombre:");
+		lblNom = new JLabel("Nombre:");
 		lblNom.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblNom.setForeground(Color.WHITE);
 		lblNom.setBounds(345, 5, 65, 25);
 		panelJuegos.add(lblNom);
 		
-		JLabel lblSinopsis = new JLabel("Sinopsis:");
+		lblSinopsis = new JLabel("Sinopsis:");
 		lblSinopsis.setForeground(Color.WHITE);
 		lblSinopsis.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblSinopsis.setBounds(345, 170, 90, 25);
 		panelJuegos.add(lblSinopsis);
 		
-		JLabel lblPlataforma = new JLabel("Plataforma:");
+		lblPlataforma = new JLabel("Plataforma:");
 		lblPlataforma.setForeground(Color.WHITE);
 		lblPlataforma.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblPlataforma.setBounds(345, 55, 110, 25);
 		panelJuegos.add(lblPlataforma);
 		
-		JLabel lblGenero = new JLabel("G\u00E9nero:");
+		lblGenero = new JLabel("G\u00E9nero:");
 		lblGenero.setForeground(Color.WHITE);
 		lblGenero.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblGenero.setBounds(345, 30, 65, 25);
 		panelJuegos.add(lblGenero);
 		
-		JLabel lblFechaSalida = new JLabel("Fecha Salida:");
+		lblFechaSalida = new JLabel("Fecha Salida:");
 		lblFechaSalida.setForeground(Color.WHITE);
 		lblFechaSalida.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblFechaSalida.setBounds(345, 105, 125, 25);
 		panelJuegos.add(lblFechaSalida);
 		
-		JLabel lblEmp = new JLabel("Empresa:");
+		lblEmp = new JLabel("Empresa:");
 		lblEmp.setForeground(Color.WHITE);
 		lblEmp.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblEmp.setBounds(345, 80, 80, 25);
@@ -257,7 +270,7 @@ public class PantallaJuegos extends JPanel {
 		lblJuegoMulti.setBounds(465, 130, 65, 25);
 		panelJuegos.add(lblJuegoMulti);
 		
-		JLabel lblMulti = new JLabel("Multijugador:");
+		lblMulti = new JLabel("Multijugador:");
 		lblMulti.setForeground(Color.WHITE);
 		lblMulti.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblMulti.setBounds(345, 130, 125, 25);
@@ -328,4 +341,54 @@ public class PantallaJuegos extends JPanel {
 		this.add(lblBordeJuegos);
 
 	}
+
+	public JRadioButton getRdbtnMultijugador() {
+		return rdbtnMultijugador;
+	}
+
+	public JLabel getLblNombre() {
+		return lblNombre;
+	}
+
+	public JLabel getLblGnero() {
+		return lblGnero;
+	}
+
+	public JLabel getLblPlataformas() {
+		return lblPlataformas;
+	}
+
+	public JButton getBtnBuscar() {
+		return btnBuscar;
+	}
+
+	public JLabel getLblNom() {
+		return lblNom;
+	}
+
+	public JLabel getLblSinopsis() {
+		return lblSinopsis;
+	}
+
+	public JLabel getLblPlataforma() {
+		return lblPlataforma;
+	}
+
+	public JLabel getLblGenero() {
+		return lblGenero;
+	}
+
+	public JLabel getLblFechaSalida() {
+		return lblFechaSalida;
+	}
+
+	public JLabel getLblEmp() {
+		return lblEmp;
+	}
+
+	public JLabel getLblMulti() {
+		return lblMulti;
+	}
+	
+	
 }
