@@ -17,6 +17,7 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 
 public class Decada70 extends JPanel {
+	private JTextPane txtpnDec70;
 	
 	public Decada70() {
 		
@@ -113,7 +114,7 @@ public class Decada70 extends JPanel {
   		jscroll.setBorder(null);
   		this.add(jscroll);
     				
-  		JTextPane txtpnDec70 = new JTextPane();
+  		txtpnDec70 = new JTextPane();
  		txtpnDec70.setEditable(false);
  		txtpnDec70.setEnabled(false);
     		txtpnDec70.setFont(new Font("BatangChe", Font.PLAIN, 17));
@@ -152,17 +153,11 @@ public class Decada70 extends JPanel {
 		imgFondo.setBounds(0, 0, 1355, 600);
 		imgFondo.setIcon(new ImageIcon(iFondo));
 		this.add(imgFondo);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 	}
+
+	public JTextPane getTxtpnDec70() {
+		return txtpnDec70;
+	}
+	
+	
 }

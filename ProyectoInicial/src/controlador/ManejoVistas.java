@@ -1,5 +1,10 @@
 package controlador;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 import vista.Decada00;
 import vista.Decada10;
 import vista.Decada70;
@@ -31,9 +36,51 @@ public class ManejoVistas {
 	private PantallaDeCarga pCar;
 	
 	private ManejoApis control;
+	
+	private Properties textoEsp;
+	private Properties textoIng;
+	private InputStream archivoEs=null;
+	private InputStream archivoIn=null;
 
 	public ManejoVistas(ManejoApis x) {
 		control = x;
+		
+		try{
+			textoEsp=new Properties();
+			archivoEs=new FileInputStream(this.getClass().getResource("/castellano.properties").getFile());
+			textoEsp.load(archivoEs);
+		}catch(IOException t){
+			t.printStackTrace();
+		}
+		finally{
+			if(archivoEs!=null){
+				try{
+					archivoEs.close();
+				}catch(IOException b){
+					b.printStackTrace(); 
+				}
+			}
+		}
+		
+		try{
+			textoIng=new Properties();
+			archivoIn=new FileInputStream(this.getClass().getResource("/english.properties").getFile());
+			textoIng.load(archivoIn);
+		}catch(IOException t){
+			t.printStackTrace();
+		}
+		finally{
+			if(archivoIn!=null){
+				try{
+					archivoIn.close();
+				}catch(IOException b){
+					b.printStackTrace(); 
+				}
+			}
+		}
+		
+		
+		
 		
 		//pCar=new PantallaDeCarga();
 		pI= new PantallaInicio();
@@ -46,12 +93,29 @@ public class ManejoVistas {
 		pC= new PantallaConsolas(control);
 		pJ= new PantallaJuegos(control);
 		pQ= new PantallaQuiz(control);
-		pO= new PantallaOpciones();	
+		pO= new PantallaOpciones(this);	
 		pP= new PantallaPrincipal(control,this);
 		pP.setVisible(true);
 	}
 	
 	
+
+	public ManejoApis getControl() {
+		return control;
+	}
+
+
+
+	public Properties getTextoEsp() {
+		return textoEsp;
+	}
+
+
+
+	public Properties getTextoIng() {
+		return textoIng;
+	}
+
 
 	public PantallaInicio getpI() {
 		return pI;

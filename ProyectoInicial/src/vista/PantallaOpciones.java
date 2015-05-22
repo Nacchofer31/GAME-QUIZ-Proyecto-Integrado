@@ -5,32 +5,31 @@ import java.awt.Cursor;
 import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.io.IOException;
 import java.net.URI;
-import java.net.URISyntaxException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 
-import java.awt.SystemColor;
-import java.awt.Rectangle;
-import java.awt.event.MouseAdapter;
+import controlador.ManejoVistas;
 
 public class PantallaOpciones extends JPanel {
+	
+	private ManejoVistas controlV;
 
-	public PantallaOpciones() {
+	public PantallaOpciones(ManejoVistas v) {
+		controlV=v;
 		
 		setLayout(null);
 		setBounds(0, 105, 1355, 591);
@@ -40,6 +39,7 @@ public class PantallaOpciones extends JPanel {
 		JButton esp = new JButton("");
 		esp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				controlV.getD70().getTxtpnDec70().setText(controlV.getTextoEsp().getProperty("decada70"));
 			}
 		});
 		esp.setBounds(492, 62, 100, 80);
@@ -49,6 +49,11 @@ public class PantallaOpciones extends JPanel {
 		
 		//Boton ingles
 		JButton ing = new JButton("");
+		ing.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				controlV.getD70().getTxtpnDec70().setText(controlV.getTextoIng().getProperty("decada70"));
+			}
+		});
 		ing.setBounds(766, 62, 100, 80);
 		ing.setContentAreaFilled(false);
 		ing.setBorderPainted(false);
