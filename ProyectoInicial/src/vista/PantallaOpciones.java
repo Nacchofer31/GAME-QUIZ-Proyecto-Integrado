@@ -1,3 +1,4 @@
+
 package vista;
 
 import java.awt.Color;
@@ -40,6 +41,7 @@ public class PantallaOpciones extends JPanel {
 		esp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controlV.getD70().getTxtpnDec70().setText(controlV.getTextoEsp().getProperty("decada70"));
+				controlV.getD70().ponerTitulosEsp();
 			}
 		});
 		esp.setBounds(492, 62, 100, 80);
@@ -52,6 +54,7 @@ public class PantallaOpciones extends JPanel {
 		ing.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controlV.getD70().getTxtpnDec70().setText(controlV.getTextoIng().getProperty("decada70"));
+				controlV.getD70().ponerTitulosEng();
 			}
 		});
 		ing.setBounds(766, 62, 100, 80);
