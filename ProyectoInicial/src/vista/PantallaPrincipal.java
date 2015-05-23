@@ -254,6 +254,8 @@ public class PantallaPrincipal extends JFrame {
 				controlV.getpI().getLblJuegos().setText(controlV.getTextoEsp().getProperty("infoJ"));
 				controlV.getpI().getLblQuiz().setText(controlV.getTextoEsp().getProperty("infoQ"));
 				controlV.getpI().getLblOpciones().setText(controlV.getTextoEsp().getProperty("infoO"));
+				controlV.getpH().getLblElige().setText(controlV.getTextoEsp().getProperty("elige"));
+
 			}
 		});
 		esp.setContentAreaFilled(false);
@@ -316,6 +318,8 @@ public class PantallaPrincipal extends JFrame {
 				controlV.getpI().getLblJuegos().setText(controlV.getTextoIng().getProperty("infoJ"));
 				controlV.getpI().getLblQuiz().setText(controlV.getTextoIng().getProperty("infoQ"));
 				controlV.getpI().getLblOpciones().setText(controlV.getTextoIng().getProperty("infoO"));
+				controlV.getpH().getLblElige().setText(controlV.getTextoIng().getProperty("elige"));
+
 			}
 		});
 		ing.setOpaque(false);

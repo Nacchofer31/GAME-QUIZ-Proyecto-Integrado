@@ -179,7 +179,32 @@ public class Decada00 extends JPanel {
 		StyleConstants.setItalic(sas, true);
 		StyleConstants.setFontSize(sas, 23);
 		
-		txtpnDec00.getStyledDocument().setCharacterAttributes(0, 29, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(0, 34, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(1169, 29, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(1656, 31, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(2152, 39, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(3421, 36, sas, false);
+		
+		txtpnDec00.getStyledDocument().setCharacterAttributes(3871, 35, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(4768, 15, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(5548, 18, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(5702, 52, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(6468, 24, sas, false);
+		
+		txtpnDec00.getStyledDocument().setCharacterAttributes(6802, 30, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(7176, 29, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(7562, 37, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(8435, 29, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(9449, 37, sas, false);
+		
+		txtpnDec00.getStyledDocument().setCharacterAttributes(9814, 11, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(10559, 24, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(11691, 23, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(12810, 22, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(13229, 24, sas, false);
+	
+		txtpnDec00.getStyledDocument().setCharacterAttributes(13688, 36, sas, false);
+		txtpnDec00.getStyledDocument().setCharacterAttributes(14020, 28, sas, false);
 
 
 		return txtpnDec00;
