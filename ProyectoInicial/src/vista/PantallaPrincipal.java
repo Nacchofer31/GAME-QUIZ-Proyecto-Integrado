@@ -200,29 +200,141 @@ public class PantallaPrincipal extends JFrame {
 		Image imgLogo = new ImageIcon(this.getClass().getResource("/LogoDef.png")).getImage();
 		
 		JButton esp = new JButton("");
+		esp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//CAMBIO TEXTO DECADAS
+				controlV.getD70().getTxtpnDec70().setText(controlV.getTextoEsp().getProperty("decada70"));
+				controlV.getD70().getJscroll().setViewportView(controlV.getD70().ponerTitulosEsp70());
+				controlV.getD80().getTxtpnDec80().setText(controlV.getTextoEsp().getProperty("decada80"));
+				controlV.getD80().getJscroll().setViewportView(controlV.getD80().ponerTitulosEsp80());
+				controlV.getD90().getTxtpnDec90().setText(controlV.getTextoEsp().getProperty("decada90"));
+				controlV.getD90().getJscroll().setViewportView(controlV.getD90().ponerTitulosEsp90());
+				controlV.getD00().getTxtpnDec00().setText(controlV.getTextoEsp().getProperty("decada00"));
+				controlV.getD00().getJscroll().setViewportView(controlV.getD00().ponerTitulosEsp00());
+				//CAMBIO BOTONES INICIO
+				controlV.getD10().getTxtpnDecActual().setText(controlV.getTextoEsp().getProperty("decada10"));
+				controlV.getD10().getJscroll().setViewportView(controlV.getD10().ponerTitulosEsp10());
+				controlV.getpP().getBtnInicio().setText(controlV.getTextoEsp().getProperty("inicio"));
+				controlV.getpP().getBtnHistoria().setText(controlV.getTextoEsp().getProperty("historia"));
+				controlV.getpP().getBtnConsolas().setText(controlV.getTextoEsp().getProperty("consolas"));
+				controlV.getpP().getBtnJuegos().setText(controlV.getTextoEsp().getProperty("juegos"));
+				//CAMBIO DATOS JUEGOS
+				controlV.getpJ().getBtnBuscar().setText(controlV.getTextoEsp().getProperty("buscar"));	
+				controlV.getpJ().getLblEmp().setText(controlV.getTextoEsp().getProperty("empresa")+": ");	
+				controlV.getpJ().getLblFechaSalida().setText(controlV.getTextoEsp().getProperty("fecha")+":");	
+				controlV.getpJ().getLblGenero().setText(controlV.getTextoEsp().getProperty("genero")+":");	
+				controlV.getpJ().getLblGnero().setText(controlV.getTextoEsp().getProperty("genero")+": ");	
+				controlV.getpJ().getLblMulti().setText(controlV.getTextoEsp().getProperty("multijugador")+":");	
+				controlV.getpJ().getLblNom().setText(controlV.getTextoEsp().getProperty("nombre")+":");	
+				controlV.getpJ().getLblNombre().setText(controlV.getTextoEsp().getProperty("nombre")+": ");	
+				controlV.getpJ().getLblPlataforma().setText(controlV.getTextoEsp().getProperty("plataforma")+":");
+				controlV.getpJ().getLblPlataformas().setText(controlV.getTextoEsp().getProperty("plataforma")+":");	
+				controlV.getpJ().getLblSinopsis().setText(controlV.getTextoEsp().getProperty("sinopsis")+":");
+				controlV.getpJ().getRdbtnMultijugador().setText(controlV.getTextoEsp().getProperty("multijugador"));
+				//CAMBIO DATOS CONSOLAS
+				controlV.getpC().getBtnBuscar().setText(controlV.getTextoEsp().getProperty("buscar"));	
+				controlV.getpC().getLblEmp().setText(controlV.getTextoEsp().getProperty("empresa")+":");
+				controlV.getpC().getLblEmpresa().setText(controlV.getTextoEsp().getProperty("empresa")+":");
+				controlV.getpC().getLblFecha().setText(controlV.getTextoEsp().getProperty("fecha")+":");
+				controlV.getpC().getLblNom().setText(controlV.getTextoEsp().getProperty("nombre")+":");
+				controlV.getpC().getLblNombre().setText(controlV.getTextoEsp().getProperty("nombre")+":");
+				controlV.getpC().getLblSinopsis().setText(controlV.getTextoEsp().getProperty("especificaciones")+":");
+				//CAMBIO DATOS QUIZ
+				controlV.getpQ().getBtnConfirmar().setText(controlV.getTextoEsp().getProperty("resultado"));
+				controlV.getpQ().getBtnSiguiente().setText(controlV.getTextoEsp().getProperty("siguiente"));
+				controlV.getpQ().getLblPregunta().setText(controlV.getTextoEsp().getProperty("pregunta")+" "+controlV.getpQ().getNumPreg()+":");
+				//CAMBIO DATOS OPCIONES
+				controlV.getpO().getLblEligeIdioma().setText(controlV.getTextoEsp().getProperty("idioma"));
+				controlV.getpO().getCopyRight().setText("Copyright \r\n"+controlV.getTextoEsp().getProperty("copy"));
+				controlV.getpO().getTextoEnlace().setText(controlV.getTextoEsp().getProperty("aplicacion"));
+				//CAMBIO DATOS INICIO
+				controlV.getpI().getLblBienvenido().setText(controlV.getTextoEsp().getProperty("bienvenido"));
+				controlV.getpI().getLblHistoria().setText(controlV.getTextoEsp().getProperty("infoH"));
+				controlV.getpI().getLblConsola().setText(controlV.getTextoEsp().getProperty("infoC"));
+				controlV.getpI().getLblJuegos().setText(controlV.getTextoEsp().getProperty("infoJ"));
+				controlV.getpI().getLblQuiz().setText(controlV.getTextoEsp().getProperty("infoQ"));
+				controlV.getpI().getLblOpciones().setText(controlV.getTextoEsp().getProperty("infoO"));
+			}
+		});
 		esp.setContentAreaFilled(false);
 		esp.setOpaque(false);
-		esp.setBounds(1201, 43, 47, 23);
+		esp.setBounds(1201, 33, 40, 32);
 		panelBotones.add(esp);
 		
 		JButton ing = new JButton("");
+		ing.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//CAMBIO TEXTO DECADAS
+				controlV.getD70().getTxtpnDec70().setText(controlV.getTextoIng().getProperty("decada70"));
+				controlV.getD70().getJscroll().setViewportView(controlV.getD70().ponerTitulosEng70());
+				controlV.getD80().getTxtpnDec80().setText(controlV.getTextoIng().getProperty("decada80"));
+				controlV.getD80().getJscroll().setViewportView(controlV.getD80().ponerTitulosEng80());
+				controlV.getD90().getTxtpnDec90().setText(controlV.getTextoIng().getProperty("decada90"));
+				controlV.getD90().getJscroll().setViewportView(controlV.getD90().ponerTitulosEng90());
+				controlV.getD00().getTxtpnDec00().setText(controlV.getTextoIng().getProperty("decada00"));
+				controlV.getD00().getJscroll().setViewportView(controlV.getD00().ponerTitulosEng00());
+				//CAMBIO BOTONES INICIO
+				controlV.getD10().getTxtpnDecActual().setText(controlV.getTextoIng().getProperty("decada10"));
+				controlV.getD10().getJscroll().setViewportView(controlV.getD10().ponerTitulosEng10());
+				controlV.getpP().getBtnInicio().setText(controlV.getTextoIng().getProperty("inicio"));
+				controlV.getpP().getBtnHistoria().setText(controlV.getTextoIng().getProperty("historia"));
+				controlV.getpP().getBtnConsolas().setText(controlV.getTextoIng().getProperty("consolas"));
+				controlV.getpP().getBtnJuegos().setText(controlV.getTextoIng().getProperty("juegos"));
+				//CAMBIO DATOS JUEGOS
+				controlV.getpJ().getBtnBuscar().setText(controlV.getTextoIng().getProperty("buscar"));	
+				controlV.getpJ().getLblEmp().setText(controlV.getTextoIng().getProperty("empresa")+":");	
+				controlV.getpJ().getLblFechaSalida().setText(controlV.getTextoIng().getProperty("fecha")+":");	
+				controlV.getpJ().getLblGenero().setText(controlV.getTextoIng().getProperty("genero")+":");	
+				controlV.getpJ().getLblGnero().setText(controlV.getTextoIng().getProperty("genero")+":");	
+				controlV.getpJ().getLblMulti().setText(controlV.getTextoIng().getProperty("multijugador")+":");	
+				controlV.getpJ().getLblNom().setText(controlV.getTextoIng().getProperty("nombre")+":");	
+				controlV.getpJ().getLblNombre().setText(controlV.getTextoIng().getProperty("nombre")+":");	
+				controlV.getpJ().getLblPlataforma().setText(controlV.getTextoIng().getProperty("plataforma")+":");
+				controlV.getpJ().getLblPlataformas().setText(controlV.getTextoIng().getProperty("plataforma")+":");	
+				controlV.getpJ().getLblSinopsis().setText(controlV.getTextoIng().getProperty("sinopsis")+":");
+				controlV.getpJ().getRdbtnMultijugador().setText(controlV.getTextoIng().getProperty("multijugador"));
+				//CAMBIO DATOS CONSOLAS
+				controlV.getpC().getBtnBuscar().setText(controlV.getTextoIng().getProperty("buscar"));	
+				controlV.getpC().getLblEmp().setText(controlV.getTextoIng().getProperty("empresa")+":");
+				controlV.getpC().getLblEmpresa().setText(controlV.getTextoIng().getProperty("empresa")+":");
+				controlV.getpC().getLblFecha().setText(controlV.getTextoIng().getProperty("fecha")+":");
+				controlV.getpC().getLblNom().setText(controlV.getTextoIng().getProperty("nombre")+":");
+				controlV.getpC().getLblNombre().setText(controlV.getTextoIng().getProperty("nombre")+":");
+				controlV.getpC().getLblSinopsis().setText(controlV.getTextoIng().getProperty("especificaciones")+":");
+				//CAMBIO DATOS QUIZ
+				controlV.getpQ().getBtnConfirmar().setText(controlV.getTextoIng().getProperty("resultado"));
+				controlV.getpQ().getBtnSiguiente().setText(controlV.getTextoIng().getProperty("siguiente"));
+				controlV.getpQ().getLblPregunta().setText(controlV.getTextoIng().getProperty("pregunta")+" "+controlV.getpQ().getNumPreg()+":");
+				//CAMBIO DATOS OPCIONES
+				controlV.getpO().getLblEligeIdioma().setText(controlV.getTextoIng().getProperty("idioma"));
+				controlV.getpO().getCopyRight().setText("Copyright \r\n"+controlV.getTextoIng().getProperty("copy"));
+				controlV.getpO().getTextoEnlace().setText(controlV.getTextoIng().getProperty("aplicacion"));
+				//CAMBIO DATOS INICIO
+				controlV.getpI().getLblBienvenido().setText(controlV.getTextoIng().getProperty("bienvenido"));
+				controlV.getpI().getLblHistoria().setText(controlV.getTextoIng().getProperty("infoH"));
+				controlV.getpI().getLblConsola().setText(controlV.getTextoIng().getProperty("infoC"));
+				controlV.getpI().getLblJuegos().setText(controlV.getTextoIng().getProperty("infoJ"));
+				controlV.getpI().getLblQuiz().setText(controlV.getTextoIng().getProperty("infoQ"));
+				controlV.getpI().getLblOpciones().setText(controlV.getTextoIng().getProperty("infoO"));
+			}
+		});
 		ing.setOpaque(false);
 		ing.setContentAreaFilled(false);
-		ing.setBounds(1258, 43, 47, 23);
+		ing.setBounds(1258, 33, 40, 32);
 		panelBotones.add(ing);
 		
 		//Imagen español
-		Image imgEspañol = new ImageIcon(this.getClass().getResource("/español.png")).getImage();
+		Image imgEspañol = new ImageIcon(this.getClass().getResource("/miniEspañol.png")).getImage();
 						
 		//Label ingles
-		Image imgIngles = new ImageIcon(this.getClass().getResource("/ingles.png")).getImage();
+		Image imgIngles = new ImageIcon(this.getClass().getResource("/miniIngles.png")).getImage();
 		
 		JLabel labelIng = new JLabel(" ");
-		labelIng.setBounds(1258, 43, 47, 23);
+		labelIng.setBounds(1258, 33, 40, 32);
 		panelBotones.add(labelIng);
 		labelIng.setIcon(new ImageIcon(imgIngles));
 		JLabel labelEsp = new JLabel(" ");
-		labelEsp.setBounds(1201, 43, 47, 23);
+		labelEsp.setBounds(1201, 33, 40, 32);
 		panelBotones.add(labelEsp);
 		labelEsp.setIcon(new ImageIcon(imgEspañol));
 		

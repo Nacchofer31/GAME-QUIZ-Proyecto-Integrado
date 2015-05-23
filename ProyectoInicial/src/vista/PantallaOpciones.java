@@ -277,5 +277,17 @@ public class PantallaOpciones extends JPanel {
 		jscroll.setOpaque(false);
 		jscroll.getViewport().setOpaque(false);
 	}
+
+	public JLabel getLblEligeIdioma() {
+		return lblEligeIdioma;
+	}
+
+	public JTextPane getCopyRight() {
+		return CopyRight;
+	}
+
+	public JLabel getTextoEnlace() {
+		return textoEnlace;
+	}
 	
 }
