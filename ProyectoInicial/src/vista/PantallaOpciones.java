@@ -46,12 +46,16 @@ public class PantallaOpciones extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				//CAMBIO TEXTO DECADAS
 				controlV.getD70().getTxtpnDec70().setText(controlV.getTextoEsp().getProperty("decada70"));
-				//controlV.getD70().getJscroll().setViewportView(controlV.getD70().ponerTitulosEsp());
+				controlV.getD70().getJscroll().setViewportView(controlV.getD70().ponerTitulosEsp70());
 				controlV.getD80().getTxtpnDec80().setText(controlV.getTextoEsp().getProperty("decada80"));
+				controlV.getD80().getJscroll().setViewportView(controlV.getD80().ponerTitulosEsp80());
 				controlV.getD90().getTxtpnDec90().setText(controlV.getTextoEsp().getProperty("decada90"));
+				controlV.getD90().getJscroll().setViewportView(controlV.getD90().ponerTitulosEsp90());
 				controlV.getD00().getTxtpnDec00().setText(controlV.getTextoEsp().getProperty("decada00"));
+				controlV.getD00().getJscroll().setViewportView(controlV.getD00().ponerTitulosEsp00());
 				//CAMBIO BOTONES INICIO
 				controlV.getD10().getTxtpnDecActual().setText(controlV.getTextoEsp().getProperty("decada10"));
+				controlV.getD10().getJscroll().setViewportView(controlV.getD10().ponerTitulosEsp10());
 				controlV.getpP().getBtnInicio().setText(controlV.getTextoEsp().getProperty("inicio"));
 				controlV.getpP().getBtnHistoria().setText(controlV.getTextoEsp().getProperty("historia"));
 				controlV.getpP().getBtnConsolas().setText(controlV.getTextoEsp().getProperty("consolas"));
@@ -85,11 +89,16 @@ public class PantallaOpciones extends JPanel {
 				lblEligeIdioma.setText(controlV.getTextoEsp().getProperty("idioma"));
 				CopyRight.setText("Copyright \r\n"+controlV.getTextoEsp().getProperty("copy"));
 				textoEnlace.setText(controlV.getTextoEsp().getProperty("aplicacion"));
-				
-				
+				//CAMBIO DATOS INICIO
+				controlV.getpI().getLblBienvenido().setText(controlV.getTextoEsp().getProperty("bienvenido"));
+				controlV.getpI().getLblHistoria().setText(controlV.getTextoEsp().getProperty("infoH"));
+				controlV.getpI().getLblConsola().setText(controlV.getTextoEsp().getProperty("infoC"));
+				controlV.getpI().getLblJuegos().setText(controlV.getTextoEsp().getProperty("infoJ"));
+				controlV.getpI().getLblQuiz().setText(controlV.getTextoEsp().getProperty("infoQ"));
+				controlV.getpI().getLblOpciones().setText(controlV.getTextoEsp().getProperty("infoO"));
 			}
 		});
-		esp.setBounds(492, 62, 100, 80);
+		esp.setBounds(488, 62, 100, 80);
 		esp.setContentAreaFilled(false);
 		esp.setBorderPainted(false);
 		this.add(esp);
@@ -100,12 +109,16 @@ public class PantallaOpciones extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				//CAMBIO TEXTO DECADAS
 				controlV.getD70().getTxtpnDec70().setText(controlV.getTextoIng().getProperty("decada70"));
-				//controlV.getD70().getJscroll().setViewportView(controlV.getD70().ponerTitulosEng());
+				controlV.getD70().getJscroll().setViewportView(controlV.getD70().ponerTitulosEng70());
 				controlV.getD80().getTxtpnDec80().setText(controlV.getTextoIng().getProperty("decada80"));
+				controlV.getD80().getJscroll().setViewportView(controlV.getD80().ponerTitulosEng80());
 				controlV.getD90().getTxtpnDec90().setText(controlV.getTextoIng().getProperty("decada90"));
+				controlV.getD90().getJscroll().setViewportView(controlV.getD90().ponerTitulosEng90());
 				controlV.getD00().getTxtpnDec00().setText(controlV.getTextoIng().getProperty("decada00"));
+				controlV.getD00().getJscroll().setViewportView(controlV.getD00().ponerTitulosEng00());
 				//CAMBIO BOTONES INICIO
 				controlV.getD10().getTxtpnDecActual().setText(controlV.getTextoIng().getProperty("decada10"));
+				controlV.getD10().getJscroll().setViewportView(controlV.getD10().ponerTitulosEng10());
 				controlV.getpP().getBtnInicio().setText(controlV.getTextoIng().getProperty("inicio"));
 				controlV.getpP().getBtnHistoria().setText(controlV.getTextoIng().getProperty("historia"));
 				controlV.getpP().getBtnConsolas().setText(controlV.getTextoIng().getProperty("consolas"));
@@ -139,10 +152,17 @@ public class PantallaOpciones extends JPanel {
 				lblEligeIdioma.setText(controlV.getTextoIng().getProperty("idioma"));
 				CopyRight.setText("Copyright \r\n"+controlV.getTextoIng().getProperty("copy"));
 				textoEnlace.setText(controlV.getTextoIng().getProperty("aplicacion"));
+				//CAMBIO DATOS INICIO
+				controlV.getpI().getLblBienvenido().setText(controlV.getTextoIng().getProperty("bienvenido"));
+				controlV.getpI().getLblHistoria().setText(controlV.getTextoIng().getProperty("infoH"));
+				controlV.getpI().getLblConsola().setText(controlV.getTextoIng().getProperty("infoC"));
+				controlV.getpI().getLblJuegos().setText(controlV.getTextoIng().getProperty("infoJ"));
+				controlV.getpI().getLblQuiz().setText(controlV.getTextoIng().getProperty("infoQ"));
+				controlV.getpI().getLblOpciones().setText(controlV.getTextoIng().getProperty("infoO"));
 				
 				}
 		});
-		ing.setBounds(766, 62, 100, 80);
+		ing.setBounds(772, 62, 100, 80);
 		ing.setContentAreaFilled(false);
 		ing.setBorderPainted(false);
 		this.add(ing);
@@ -151,20 +171,20 @@ public class PantallaOpciones extends JPanel {
 		lblEligeIdioma = new JLabel("Elige idioma");
 		lblEligeIdioma.setFont(new Font("BatangChe", Font.PLAIN, 18));
 		lblEligeIdioma.setForeground(Color.WHITE);
-		lblEligeIdioma.setBounds(623, 70, 125, 59);
+		lblEligeIdioma.setBounds(622, 70, 164, 59);
 		this.add(lblEligeIdioma);
 		
 		//Imagen español
 		Image imgEspañol = new ImageIcon(this.getClass().getResource("/español.png")).getImage();
 		JLabel labelEsp = new JLabel(" ");
-		labelEsp.setBounds(492, 62, 100, 80);
+		labelEsp.setBounds(488, 62, 100, 80);
 		labelEsp.setIcon(new ImageIcon(imgEspañol));
 		this.add(labelEsp);
 		
 		//Label ingles
 		Image imgIngles = new ImageIcon(this.getClass().getResource("/ingles.png")).getImage();
 		JLabel labelIng = new JLabel(" ");
-		labelIng.setBounds(766, 62, 100, 80);
+		labelIng.setBounds(772, 62, 100, 80);
 		labelIng.setIcon(new ImageIcon(imgIngles));
 		this.add(labelIng);
 		

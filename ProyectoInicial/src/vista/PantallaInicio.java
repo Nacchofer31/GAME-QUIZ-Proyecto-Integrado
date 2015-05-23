@@ -17,6 +17,16 @@ import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
 
 public class PantallaInicio extends JPanel {
+	
+	private JLabel lblBienvenido;
+	private JLabel lblHistoria;
+	private JLabel lblConsola;
+	private JLabel lblJuegos;
+	private JLabel lblQuiz;
+	private JLabel lblOpciones;
+
+	
+
 
 	private String mensajes[]={"En el arcade original de Donkey Kong  Mario se llama JumpMan y es un carpintero, no un fontanero.",
 					   "El que los enemigos acelerasen en el “Space Invaders” original de 1971, fue un bug, pero se mantuvo.",
@@ -45,41 +55,41 @@ public class PantallaInicio extends JPanel {
 		imgFondo.setIcon(new ImageIcon(iFondo));
 		this.add(imgFondo);
 		
-		JLabel lblBienvenido = new JLabel("\u00A1Bienvenidos a GAME QUIZ!");
+		lblBienvenido = new JLabel("\u00A1Bienvenidos a GAME QUIZ!");
 		lblBienvenido.setFont(new Font("BatangChe", Font.BOLD, 32));
 		lblBienvenido.setForeground(Color.WHITE);
 		lblBienvenido.setBounds(448, 38, 475, 76);
 		add(lblBienvenido);
 		
-		JLabel lblHistoria = new JLabel(">Historia...........Estudia las principales d\u00E9cadas de la Historia de  los Videojuegos.");
+		lblHistoria = new JLabel(">Historia...........Estudia las principales d\u00E9cadas de la Historia de  los Videojuegos.");
 		lblHistoria.setFont(new Font("BatangChe", Font.ITALIC, 18));
 		lblHistoria.setForeground(Color.WHITE);
 		lblHistoria.setBounds(228, 158, 814, 32);
 		add(lblHistoria);
 		
-		JLabel lblConsola = new JLabel(">Consolas...........Conoce y descubre las consolas m\u00E1s reconocidas en el mundo del Gaming.");
+		lblConsola = new JLabel(">Consolas...........Conoce y descubre las consolas m\u00E1s reconocidas en el mundo del Gaming.");
 		lblConsola.setForeground(Color.WHITE);
 		lblConsola.setFont(new Font("BatangChe", Font.ITALIC, 18));
 		lblConsola.setBounds(228, 191, 832, 32);
 		add(lblConsola);
 		
-		JLabel lblJuegos = new JLabel(">Juegos  ...........Busca tus juegos favoritos, juegos que marcaron tu infancia, tus pr\u00F3ximas adquisiciones....");
+		lblJuegos = new JLabel(">Juegos  ...........Busca tus juegos favoritos, juegos que marcaron tu infancia, tus pr\u00F3ximas adquisiciones....");
 		lblJuegos.setForeground(Color.WHITE);
 		lblJuegos.setFont(new Font("BatangChe", Font.ITALIC, 18));
 		lblJuegos.setBounds(228, 221, 1017, 32);
 		add(lblJuegos);
 		
-		JLabel lblQuiz = new JLabel(">Quiz!   ...........Desarrolla y pon a prueba tus conocimientos como gamer y haz frente lo aprendido.");
+		lblQuiz = new JLabel(">Quiz!   ...........Desarrolla y pon a prueba tus conocimientos como gamer y haz frente lo aprendido.");
 		lblQuiz.setForeground(Color.WHITE);
 		lblQuiz.setFont(new Font("BatangChe", Font.ITALIC, 18));
 		lblQuiz.setBounds(228, 257, 979, 32);
 		add(lblQuiz);
 		
-		JLabel lblopcionesdesarrollaYPon = new JLabel(">Opciones...........Accede al men\u00FA de opciones para cambiar el tama\u00F1o de la letra, cambiar idioma...");
-		lblopcionesdesarrollaYPon.setForeground(Color.WHITE);
-		lblopcionesdesarrollaYPon.setFont(new Font("BatangChe", Font.ITALIC, 18));
-		lblopcionesdesarrollaYPon.setBounds(228, 291, 936, 32);
-		add(lblopcionesdesarrollaYPon);
+		lblOpciones = new JLabel(">Opciones...........Accede al menú de opciones para cambiar el idioma, visitar nuestra página web....");
+		lblOpciones.setForeground(Color.WHITE);
+		lblOpciones.setFont(new Font("BatangChe", Font.ITALIC, 18));
+		lblOpciones.setBounds(228, 291, 936, 32);
+		add(lblOpciones);
 		
 		JLabel lblTipsTricks = new JLabel("Tips & Tricks");
 		lblTipsTricks.setHorizontalAlignment(SwingConstants.CENTER);
@@ -122,5 +132,31 @@ public class PantallaInicio extends JPanel {
 		this.add(imgFondo);
 		
 	}
+	
+	public JLabel getLblBienvenido() {
+		return lblBienvenido;
+	}
+	
+	public JLabel getLblHistoria() {
+		return lblHistoria;
+	}
+	
+	public JLabel getLblConsola() {
+		return lblConsola;
+	}
+	
+	public JLabel getLblJuegos() {
+		return lblJuegos;
+	}
+	
+	public JLabel getLblQuiz() {
+		return lblQuiz;
+	}
+	
+	public JLabel getLblOpciones() {
+		return lblOpciones;
+	}
+
+	
 }
  

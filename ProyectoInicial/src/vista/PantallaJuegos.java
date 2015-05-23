@@ -92,7 +92,7 @@ public class PantallaJuegos extends JPanel {
 		lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("BatangChe", Font.PLAIN, 19));
 		lblNombre.setForeground(Color.WHITE);
-		lblNombre.setBounds(190, 20, 75, 35);
+		lblNombre.setBounds(193, 23, 97, 35);
 		layeredPane.add(lblNombre);
 		
 		lblGnero = new JLabel("G\u00E9nero:");
