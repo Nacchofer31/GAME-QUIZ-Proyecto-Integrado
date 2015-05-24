@@ -96,6 +96,7 @@ public class PantallaOpciones extends JPanel {
 				controlV.getpI().getLblJuegos().setText(controlV.getTextoEsp().getProperty("infoJ"));
 				controlV.getpI().getLblQuiz().setText(controlV.getTextoEsp().getProperty("infoQ"));
 				controlV.getpI().getLblOpciones().setText(controlV.getTextoEsp().getProperty("infoO"));
+				controlV.getpH().getLblElige().setText(controlV.getTextoEsp().getProperty("elige"));
 			}
 		});
 		esp.setBounds(488, 62, 100, 80);
@@ -159,6 +160,7 @@ public class PantallaOpciones extends JPanel {
 				controlV.getpI().getLblJuegos().setText(controlV.getTextoIng().getProperty("infoJ"));
 				controlV.getpI().getLblQuiz().setText(controlV.getTextoIng().getProperty("infoQ"));
 				controlV.getpI().getLblOpciones().setText(controlV.getTextoIng().getProperty("infoO"));
+				controlV.getpH().getLblElige().setText(controlV.getTextoIng().getProperty("elige"));
 				
 				}
 		});

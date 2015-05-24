@@ -180,7 +180,33 @@ public class Decada90 extends JPanel {
 		StyleConstants.setItalic(sas, true);
 		StyleConstants.setFontSize(sas, 23);
 		
-		txtpnDec90.getStyledDocument().setCharacterAttributes(0, 30, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(0, 33, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(554, 41, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(1348, 25, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(1897, 42, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(2567, 32, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(3313, 39, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(4006, 39, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(4573, 26, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(4932, 26, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(5778, 25, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(6326, 28, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(6682, 12, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(7353, 14, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(8068, 26, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(8591, 10, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(8952, 33, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(9910, 31, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(10159, 13, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(10744, 23, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(11065, 38, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(12442, 37, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(12743, 22, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(13110, 44, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(13620, 36, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(14277, 42, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(14789, 39, sas, false);
+		txtpnDec90.getStyledDocument().setCharacterAttributes(15310, 27, sas, false);
 	
 		return txtpnDec90;
 	}

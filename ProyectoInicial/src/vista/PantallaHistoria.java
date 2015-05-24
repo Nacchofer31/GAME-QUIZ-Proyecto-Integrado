@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 
 public class PantallaHistoria extends JPanel {
 	
+	private JLabel lblElige;
+	
 	
 	public PantallaHistoria() {
 
@@ -114,7 +116,7 @@ public class PantallaHistoria extends JPanel {
 		
 		
 		//Label elige
-		JLabel lblElige = new JLabel("Elige la década que quieras leer");
+		lblElige = new JLabel("Elige la década que quieras leer");
 		lblElige.setForeground(Color.WHITE);
 		lblElige.setFont(new Font("BatangChe", Font.BOLD, 20));
 		lblElige.setBounds(475, 50, 365, 33);
@@ -128,4 +130,10 @@ public class PantallaHistoria extends JPanel {
 		this.add(imgFondo);
 		
 	}
+
+
+	public JLabel getLblElige() {
+		return lblElige;
+	}
+
 }

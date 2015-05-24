@@ -180,7 +180,35 @@ public class Decada80 extends JPanel {
 		StyleConstants.setBold(sas, true);
 		StyleConstants.setItalic(sas, true);
 		StyleConstants.setFontSize(sas, 23);
-		txtpnDec80.getStyledDocument().setCharacterAttributes(0, 32, sas, false);
+		
+		txtpnDec80.getStyledDocument().setCharacterAttributes(0, 33, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(336,16, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(952,35, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(1933,15, sas, false);
+	
+		txtpnDec80.getStyledDocument().setCharacterAttributes(3150,38, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(3701,22, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(4164,28, sas, false);
+		
+		txtpnDec80.getStyledDocument().setCharacterAttributes(4447, 18, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(5842,22, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(6352,40, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(7074,32, sas, false);
+		
+		txtpnDec80.getStyledDocument().setCharacterAttributes(7794, 38, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(8853,17, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(9125,27, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(9735,22, sas, false);
+		
+		txtpnDec80.getStyledDocument().setCharacterAttributes(10075,23, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(10521,34, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(11353,20, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(12065,33, sas, false);
+		
+		txtpnDec80.getStyledDocument().setCharacterAttributes(12913,37, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(13551,28, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(13908,18, sas, false);
+		txtpnDec80.getStyledDocument().setCharacterAttributes(14542,28, sas, false);
 
 		return txtpnDec80;
 	}

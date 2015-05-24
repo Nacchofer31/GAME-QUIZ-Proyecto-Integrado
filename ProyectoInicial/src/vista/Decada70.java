@@ -169,7 +169,18 @@ public class Decada70 extends JPanel {
   		StyleConstants.setBold(sas, true);
  		StyleConstants.setItalic(sas, true);
 		StyleConstants.setFontSize(sas, 23);
-		txtpnDec70.getStyledDocument().setCharacterAttributes(0, 32, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(0, 36, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(584,18, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(975,10, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(1465,25, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(2071,22, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(3416,47, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(4206,20, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(5008,29, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(5687,29, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(6895,20, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(7609,22, sas, false);
+		txtpnDec70.getStyledDocument().setCharacterAttributes(8224,23, sas, false);
 
 		return txtpnDec70;
 	}
