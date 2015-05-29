@@ -27,9 +27,12 @@ public class PantallaQuiz extends JPanel {
 	private JButton btnPregunta3;
 	private JButton btnPregunta4;
 	
+	private JTextPane textPregunta;
+	
 	private JButton btnConfirmar;	
 	private JLabel lblPregunta;	
 	private JButton btnSiguiente;
+	private JButton btnReset;
 	public PantallaQuiz(ManejoApis c) {
 		control=c;
 		
@@ -39,7 +42,7 @@ public class PantallaQuiz extends JPanel {
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
 		setLayout(null);
 		
-		JTextPane textPregunta = new JTextPane();
+		textPregunta = new JTextPane();
 		textPregunta.setEnabled(false);
 		textPregunta.setEditable(false);
 		textPregunta.setForeground(Color.WHITE);
@@ -255,11 +258,46 @@ public class PantallaQuiz extends JPanel {
 				btnSiguiente.setVisible(false);
 				lblPregunta.setVisible(false);
 				textPregunta.setText(control.resultado());
+				btnReset.setVisible(true);
 			}
 		});
 		btnConfirmar.setVisible(false);
 		btnConfirmar.setBounds(164, 535, 142, 23);
 		add(btnConfirmar);
+		
+		btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				control.cargaPreguntas();
+				int pregunta[] = control.numeroRespuesta(Math.random()*5);
+				btnPregunta1.setText(control.primeraPregunta()[pregunta[0]]);
+				btnPregunta2.setText(control.primeraPregunta()[pregunta[1]]);
+				btnPregunta3.setText(control.primeraPregunta()[pregunta[2]]);
+				btnPregunta4.setText(control.primeraPregunta()[pregunta[3]]);
+				textPregunta.setText("> "+control.primeraPregunta()[1]);
+				btnPregunta1.setVisible(true);
+				btnPregunta2.setVisible(true);
+				btnPregunta3.setVisible(true);
+				btnPregunta4.setVisible(true);
+				btnPregunta1.setEnabled(true);
+				btnPregunta2.setEnabled(true);
+				btnPregunta3.setEnabled(true);
+				btnPregunta4.setEnabled(true);
+				numPreg=1;
+				lblPregunta.setText("Pregunta "+numPreg+":");
+				lblPregunta.setVisible(true);
+				btnReset.setVisible(false);
+				btnConfirmar.setVisible(false);
+				btnSiguiente.setVisible(true);
+				control.setNumeroPregunta(0);
+				control.setAciertos(0);
+				control.setFallos(0);
+			}
+		});
+		btnReset.setBounds(612, 535, 89, 23);
+		btnReset.setVisible(false);
+		add(btnReset);
+		
 		JLabel imgFondo = new JLabel("/Fondo.png");
 		imgFondo.setBounds(0, 0, 1355, 600);
 		imgFondo.setIcon(new ImageIcon(iFondo));
@@ -281,6 +319,4 @@ public class PantallaQuiz extends JPanel {
 	public JButton getBtnSiguiente() {
 		return btnSiguiente;
 	}
-	
-	
 }

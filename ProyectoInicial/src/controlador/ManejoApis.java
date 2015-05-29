@@ -429,6 +429,18 @@ public class ManejoApis {
 	public int getNumeroPregunta() {
 		return numeroPregunta;
 	}
+
+	public void setNumeroPregunta(int numeroPregunta) {
+		this.numeroPregunta = numeroPregunta;
+	}
+
+	public void setAciertos(int aciertos) {
+		this.aciertos = aciertos;
+	}
+
+	public void setFallos(int fallos) {
+		this.fallos = fallos;
+	}
 	
 	
 
