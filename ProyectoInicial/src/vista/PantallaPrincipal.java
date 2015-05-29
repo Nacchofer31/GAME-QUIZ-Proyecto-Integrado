@@ -328,19 +328,19 @@ public class PantallaPrincipal extends JFrame {
 		panelBotones.add(ing);
 		
 		//Imagen español
-		//Image imgEspañol = new ImageIcon(this.getClass().getResource("/miniEspañol.png")).getImage();
+		Image imgEspañol = new ImageIcon(this.getClass().getResource("/miniEspañol.png")).getImage();
 						
 		//Label ingles
-//		Image imgIngles = new ImageIcon(this.getClass().getResource("/miniIngles.png")).getImage();
+		Image imgIngles = new ImageIcon(this.getClass().getResource("/miniIngles.png")).getImage();
 		
 		JLabel labelIng = new JLabel(" ");
 		labelIng.setBounds(1258, 33, 40, 32);
 		panelBotones.add(labelIng);
-//		labelIng.setIcon(new ImageIcon(imgIngles));
+		labelIng.setIcon(new ImageIcon(imgIngles));
 		JLabel labelEsp = new JLabel(" ");
 		labelEsp.setBounds(1201, 33, 40, 32);
 		panelBotones.add(labelEsp);
-//		labelEsp.setIcon(new ImageIcon(imgEspañol));
+		labelEsp.setIcon(new ImageIcon(imgEspañol));
 		
 		
 		
