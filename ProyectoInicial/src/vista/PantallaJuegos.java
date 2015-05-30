@@ -237,7 +237,7 @@ public class PantallaJuegos extends JPanel {
 		JLabel lblJuegoNom = new JLabel();
 		lblJuegoNom.setForeground(Color.WHITE);
 		lblJuegoNom.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblJuegoNom.setBounds(410, 5, 300, 25);
+		lblJuegoNom.setBounds(410, 5, 445, 25);
 		panelJuegos.add(lblJuegoNom);
 		
 		JLabel lblJuegoGen = new JLabel();
