@@ -227,7 +227,7 @@ public class PantallaJuegos extends JPanel {
 		lblEmp = new JLabel("Empresa:");
 		lblEmp.setForeground(Color.WHITE);
 		lblEmp.setFont(new Font("BatangChe", Font.PLAIN, 18));
-		lblEmp.setBounds(345, 80, 80, 25);
+		lblEmp.setBounds(345, 80, 90, 25);
 		panelJuegos.add(lblEmp);
 		
 		JLabel labelCaratula = new JLabel();
