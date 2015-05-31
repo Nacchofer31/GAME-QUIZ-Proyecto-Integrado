@@ -249,6 +249,10 @@ public class PantallaQuiz extends JPanel {
 		add(lblTipQuiz);
 		
 		btnConfirmar = new JButton("Conocer Resultado");
+		btnConfirmar.setContentAreaFilled(false);
+		btnConfirmar.setBorderPainted(false);
+		btnConfirmar.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnConfirmar.setForeground(Color.WHITE);
 		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				btnPregunta1.setVisible(false);
@@ -262,10 +266,16 @@ public class PantallaQuiz extends JPanel {
 			}
 		});
 		btnConfirmar.setVisible(false);
-		btnConfirmar.setBounds(164, 535, 142, 23);
+		btnConfirmar.setBounds(164, 509, 209, 49);
 		add(btnConfirmar);
 		
+		Image iReset = new ImageIcon(this.getClass().getResource("/refresh.png")).getImage();
 		btnReset = new JButton("Reset");
+		btnReset.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnReset.setIcon(new ImageIcon(iReset));
+		btnReset.setForeground(Color.WHITE);
+		btnReset.setContentAreaFilled(false);
+		btnReset.setBorderPainted(false);
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				control.cargaPreguntas();
@@ -294,7 +304,7 @@ public class PantallaQuiz extends JPanel {
 				control.setFallos(0);
 			}
 		});
-		btnReset.setBounds(612, 535, 89, 23);
+		btnReset.setBounds(538, 509, 163, 49);
 		btnReset.setVisible(false);
 		add(btnReset);
 		
