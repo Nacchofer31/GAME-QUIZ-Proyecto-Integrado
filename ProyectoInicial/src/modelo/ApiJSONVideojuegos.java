@@ -8,6 +8,7 @@ import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
+import javax.swing.JOptionPane;
 
 public class ApiJSONVideojuegos{
 	private static String ID_VID="Id_Juego";
@@ -25,7 +26,7 @@ public class ApiJSONVideojuegos{
 	private String titulos[]={ID_VID,IDCON_VID,IDEMPRESA_VID,NOMBRE_VID,GENERO_VID,SINOPSIS_VID,FECHA_VID,MULTI_VID,CARATULA_COL};
 	
 	public ApiJSONVideojuegos(){
-		videojuegosQuerry();
+		
 	}
 	
 	/*
@@ -62,8 +63,24 @@ public class ApiJSONVideojuegos{
 			}
 			
 			}catch(Exception e){
-				e.printStackTrace();
 			}
+	}
+	
+	public void cargar(){
+		datos = new ArrayList <String[]>();
+		int x = 0;
+		while(x!=10){
+			videojuegosQuerry();
+			x++;
+			if(datos.size()!=0){
+				break;
+			}
+		}
+		if(datos.size()==0){
+			Object[] opciones = {"      OK      "};
+			JOptionPane.showOptionDialog(null, "ERROR AL CONECTAR CON LA BASE DE DATOS, COMPRUEBA TU CONEXION A INTERNET Y VUELVE A PROBAR", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,null, opciones, opciones[0]);
+			System.exit(0);
+		}
 	}
 	
 	public String[] getFilaConsulta(int x){

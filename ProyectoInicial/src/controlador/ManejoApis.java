@@ -31,7 +31,6 @@ public class ManejoApis {
 		apiQuiz = new ApiJSONQuiz();
 		juegosTodos=apiJuegos.getNombreDatos();
 		consolasTodas=apiConsola.getNombreDatos();
-		cargaPreguntas();
 		
 	}
 	

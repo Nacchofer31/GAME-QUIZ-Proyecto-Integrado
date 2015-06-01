@@ -8,6 +8,7 @@ import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
+import javax.swing.JOptionPane;
 
 public class ApiJSONEmpresas {
 	private static String ID_EMP="Id_Empresa";
@@ -19,7 +20,7 @@ public class ApiJSONEmpresas {
 	private String titulos[]={ID_EMP,NOMBRE,PAIS};
 
 	public ApiJSONEmpresas() {
-		empresasQuerry();
+		
 	}
 	
 	
@@ -55,8 +56,24 @@ public class ApiJSONEmpresas {
 			
 			
 			}catch(Exception e){
-				e.printStackTrace();
 			}
+	}
+	
+	public void cargar(){
+		datos = new ArrayList <String[]>();
+		int x = 0;
+		while(x!=10){
+			empresasQuerry();
+			x++;
+			if(datos.size()!=0){
+				break;
+			}
+		}
+		if(datos.size()==0){
+			Object[] opciones = {"      OK      "};
+			JOptionPane.showOptionDialog(null, "ERROR AL CONECTAR CON LA BASE DE DATOS, COMPRUEBA TU CONEXION A INTERNET Y VUELVE A PROBAR", "ERROR", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,null, opciones, opciones[0]);
+			System.exit(0);
+		}
 	}
 	
 	public String[] getFilaConsulta(int x){

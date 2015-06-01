@@ -82,7 +82,7 @@ public class ManejoVistas {
 		
 		
 		
-		//pCar=new PantallaDeCarga();
+		pCar=new PantallaDeCarga(control);
 		pI= new PantallaInicio();
 		pH= new PantallaHistoria();
 		d70 = new Decada70();
