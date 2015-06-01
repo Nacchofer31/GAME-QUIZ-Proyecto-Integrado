@@ -54,8 +54,6 @@ public class PantallaJuegos extends JPanel {
 		setLayout(null);
 		control=m;
 		
-		Image bordeJuegos = new ImageIcon(this.getClass().getResource("/BordeJuegos.png")).getImage();
-
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(95, 50, 1185, 80);
 		layeredPane.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -335,10 +333,7 @@ public class PantallaJuegos extends JPanel {
 		imgFondo.setIcon(new ImageIcon(iFondo));
 		list.setListData(control.getApiJuegos().getNombreDatos());
 		this.add(imgFondo);
-		JLabel lblBordeJuegos = new JLabel();
-		lblBordeJuegos.setBounds(90, 50, 1230, 540);
-		lblBordeJuegos.setIcon(new ImageIcon(bordeJuegos));
-		this.add(lblBordeJuegos);
+	
 
 	}
 
