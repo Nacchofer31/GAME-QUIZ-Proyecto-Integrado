@@ -116,11 +116,11 @@ public class PantallaHistoria extends JPanel {
 		
 		
 		//Label elige
-		lblElige = new JLabel("Elige la década que quieras leer");
-		lblElige.setForeground(Color.WHITE);
-		lblElige.setFont(new Font("BatangChe", Font.BOLD, 20));
-		lblElige.setBounds(475, 50, 365, 33);
-		add(lblElige);
+//		lblElige = new JLabel("Elige la década que quieras leer");
+//		lblElige.setForeground(Color.WHITE);
+//		lblElige.setFont(new Font("BatangChe", Font.BOLD, 20));
+//		lblElige.setBounds(475, 50, 365, 33);
+//		add(lblElige);
 		
 		//IMAGEN DE FONDO
 		Image iFondo = new ImageIcon(this.getClass().getResource("/Fondo.png")).getImage();
