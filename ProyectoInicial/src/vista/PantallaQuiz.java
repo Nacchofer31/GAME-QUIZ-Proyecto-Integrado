@@ -84,15 +84,20 @@ public class PantallaQuiz extends JPanel {
 		});
 		btnSiguiente.setForeground(Color.WHITE);
 		btnSiguiente.setEnabled(false);
+		btnSiguiente.setBorderPainted(false);
 		btnSiguiente.setContentAreaFilled(false);
 		btnSiguiente.setFont(new Font("BatangChe", Font.BOLD, 20));
 		btnSiguiente.setBounds(1018, 526, 142, 35);
 		add(btnSiguiente);
 		int pregunta[] = control.numeroRespuesta(Math.random()*5);
 		btnPregunta1 = new JButton(control.primeraPregunta()[pregunta[0]]);
+		btnPregunta1.setBackground(new Color(102, 0, 102));
 		btnPregunta2 = new JButton(control.primeraPregunta()[pregunta[1]]);
+		btnPregunta2.setBackground(new Color(153, 0, 0));
 		btnPregunta3 = new JButton(control.primeraPregunta()[pregunta[2]]);
+		btnPregunta3.setBackground(new Color(255, 153, 0));
 		btnPregunta4 = new JButton(control.primeraPregunta()[pregunta[3]]);
+		btnPregunta4.setBackground(new Color(255, 255, 51));
 		btnPregunta1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -123,7 +128,7 @@ public class PantallaQuiz extends JPanel {
 				
 			}
 		});
-		btnPregunta1.setForeground(Color.WHITE);
+		btnPregunta1.setForeground(new Color(102, 0, 102));
 		btnPregunta1.setFont(new Font("Trebuchet MS", Font.PLAIN, 17));
 		btnPregunta1.setContentAreaFilled(false);
 		btnPregunta1.setBorderPainted(true);
@@ -160,7 +165,7 @@ public class PantallaQuiz extends JPanel {
 				}
 			}
 		});
-		btnPregunta2.setForeground(Color.WHITE);
+		btnPregunta2.setForeground(new Color(153, 0, 0));
 		btnPregunta2.setFont(new Font("Trebuchet MS", Font.PLAIN, 17));
 		btnPregunta2.setContentAreaFilled(false);
 		btnPregunta2.setBorderPainted(true);
@@ -197,7 +202,7 @@ public class PantallaQuiz extends JPanel {
 				}
 			}
 		});
-		btnPregunta3.setForeground(Color.WHITE);
+		btnPregunta3.setForeground(new Color(255, 153, 0));
 		btnPregunta3.setFont(new Font("Trebuchet MS", Font.PLAIN, 17));
 		btnPregunta3.setContentAreaFilled(false);
 		btnPregunta3.setBorderPainted(true);
@@ -236,7 +241,7 @@ public class PantallaQuiz extends JPanel {
 			}
 		});
 		btnPregunta4.setFont(new Font("Trebuchet MS", Font.PLAIN, 17));
-		btnPregunta4.setForeground(Color.WHITE);
+		btnPregunta4.setForeground(new Color(255, 255, 51));
 		btnPregunta4.setContentAreaFilled(false);
 		btnPregunta4.setBorderPainted(true);
 		btnPregunta4.setBorder(emptyBorder);
