@@ -20,7 +20,7 @@ public class ApiJSONEmpresas {
 	private String titulos[]={ID_EMP,NOMBRE,PAIS};
 
 	public ApiJSONEmpresas() {
-		
+		cargar();
 	}
 	
 	

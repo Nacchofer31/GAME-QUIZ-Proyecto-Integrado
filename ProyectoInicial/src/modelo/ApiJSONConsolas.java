@@ -24,7 +24,7 @@ public class ApiJSONConsolas {
 	private String titulos[]={ID_CON,ID_EMPRESA_CON,NOMBRE_CON,ESPECIFICACIONES_CON,FECHA_CON,IMAGEN_CON};
 	
 	public ApiJSONConsolas() {
-		
+		cargar();
 		
 	}
 	

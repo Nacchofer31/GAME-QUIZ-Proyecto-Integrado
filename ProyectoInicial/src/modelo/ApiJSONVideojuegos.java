@@ -26,7 +26,7 @@ public class ApiJSONVideojuegos{
 	private String titulos[]={ID_VID,IDCON_VID,IDEMPRESA_VID,NOMBRE_VID,GENERO_VID,SINOPSIS_VID,FECHA_VID,MULTI_VID,CARATULA_COL};
 	
 	public ApiJSONVideojuegos(){
-		
+		cargar();
 	}
 	
 	/*

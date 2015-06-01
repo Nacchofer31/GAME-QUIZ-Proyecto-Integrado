@@ -23,7 +23,7 @@ public class ApiJSONQuiz{
 	private String titulos[]={ID_QUIZ,PREGUNTA,RESPUESTA,MALA1,MALA2,MALA3};
 	
 	public ApiJSONQuiz(){
-		
+		cargar();
 	}
 	
 	/*

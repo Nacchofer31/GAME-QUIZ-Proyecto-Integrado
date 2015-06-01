@@ -22,7 +22,7 @@ public class ApiJSONGenero {
 	private String titulos[]={ID_GEN,NOMBRE};
 	
 	public ApiJSONGenero() {
-		
+		cargar();
 	}
 	
 	/*
