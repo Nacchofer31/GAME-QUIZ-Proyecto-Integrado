@@ -13,7 +13,7 @@ public class PantallaDeCarga {
 	public PantallaDeCarga(ManejoApis v){
 		try {
 			//Crea una pantalla de cargando.
-			JSplash splash = new JSplash (PantallaDeCarga.class.getResource("/Welcome.png"),true,true,false,"GameQuiz-preAlpha 0.1",null,Color.RED,Color.BLACK);
+			JSplash splash = new JSplash (PantallaDeCarga.class.getResource("/Welcome.png"),true,true,false,"GameQuiz OpenBeta-1.0",null,Color.RED,Color.BLACK);
 			splash.splashOn();
 			splash.setProgress(20,"Sacando de la caja...  (20%)");
 			Thread.sleep(3000);
